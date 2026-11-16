@@ -6,7 +6,7 @@ This repository contains the guide to the Lean proofs and the finite computation
 
 by Daniel Tubbenhauer.
 
-Let $A$ be a complex positive semidefinite matrix with $m$ block rows and columns, each block of size $k\times k$, and let $G_{ij}$ be the permanent of block $A_{ij}$. The paper uses symmetric webs to prove Marcus’s inequality $\operatorname{per}(A)\geq\operatorname{per}(G)$ for $m\leq4$ at every positive block size, for $m=5$ at block size $k\geq3$, and for any $m\geq2$ once $k$ is large enough. Theorem 1A.1 gives the precise bound. [Project page](https://www.dtubbenhauer.com/blockpermanents.html) · [Theorem index](ai/theorem-index.md)
+Let $A$ be a complex positive semidefinite matrix with $m$ block rows and columns, each block of size $k\times k$, and let $G_{ij}$ be the permanent of block $A_{ij}$. The paper uses symmetric webs to prove Marcus’s inequality $per(A)\geq per(G)$ for $m\leq4$ at every positive block size, for $m=5$ at block size $k\geq3$, and for any $m\geq2$ once $k$ is large enough. Theorem 1A.1 gives the precise bound. [Project page](https://www.dtubbenhauer.com/blockpermanents.html) · [Theorem index](ai/theorem-index.md)
 
 ## If you are an AI or a bot
 

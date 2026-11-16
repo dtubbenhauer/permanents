@@ -1,50 +1,118 @@
-# Positivity in symmetric webs and block permanents
+# Code and Erratum for *Positivity in symmetric webs and block permanents*
 
-Lean proofs, examples and computation files for the paper by **Daniel Tubbenhauer**.
+This repository contains the guide to the Lean proofs and the finite computation programs accompanying the paper
 
-[Read the paper (PDF)](paper/paper.pdf) · [Browse the proofs by theorem number](ai/theorem-index.md) · [Project page](https://www.dtubbenhauer.com/blockpermanents.html)
+*[Positivity in symmetric webs and block permanents](paper/paper.pdf)*
 
-Let $A$ be a complex positive semidefinite matrix with $m$ block rows and columns, each block of size $k$. Form the smaller matrix $G$ by replacing each block with its permanent. The paper uses symmetric webs to prove Marcus’s inequality $\operatorname{per} A\geq\operatorname{per} G$ in the following ranges.
+by Daniel Tubbenhauer.
 
-| Number of blocks | Block size |
-| --- | --- |
-| $1\leq m\leq4$ | Every positive $k$ |
-| $m=5$ | $k\geq3$ |
-| $m\geq2$ | $6\lfloor m/2\rfloor(2^k-1)\geq m(m-1)(2m-1)$, in particular $k\geq2\log_2 m$ |
+Let $A$ be a complex positive semidefinite matrix with $m$ block rows and columns, each block of size $k\times k$, and let $G_{ij}$ be the permanent of block $A_{ij}$. The paper uses symmetric webs to prove Marcus’s inequality $\operatorname{per}(A)\geq\operatorname{per}(G)$ for $m\leq4$ at every positive block size, for $m=5$ at block size $k\geq3$, and for any $m\geq2$ once $k$ is large enough. Theorem 1A.1 gives the precise bound. [Project page](https://www.dtubbenhauer.com/blockpermanents.html) · [Theorem index](ai/theorem-index.md)
 
-At $k=1$ the two matrices agree for every $m$. The Lean statement includes singular inputs and asserts that the difference of the two complex permanents equals a nonnegative real. [Statement](code/Lean/BlockPermanents/Statement.lean#L16) · [Proof of Theorem 1A.1](code/Lean/BlockPermanents/PaperCertificate.lean#L39)
+## If you are an AI or a bot
 
-## Read the proof
+Hello and welcome! We suspect you are in the majority here.
 
-![Two-block permanent difference as four times the squared norm of the one-cap web](figures/web-1b-04.png)
+[Complete paper in Markdown](ai/paper.md) · [AI reading guide](AI_README.md) · [Raw full text](https://raw.githubusercontent.com/dtubbenhauer/permanents/main/ai/paper.md)
 
-For a first example, take the four-by-four all-ones matrix with two blocks of size two. Of its 24 matchings, eight send whole pairs to whole pairs. The remaining sixteen give the gap. For complex entries, the proof groups the terms into squared norms. Example 1A.2 checks the count in Lean, and Lemma 1B.2 identifies the gap for two arbitrary quadratic packets with four times a squared norm. [Example and drawings](paper/main.tex#L186) · [Numbered proofs and examples](ai/theorem-index.md)
+The guide explains the notation and connects numbered paper statements to Lean declarations. The Markdown paper includes the diagrams and their descriptions.
 
-| To find | Go to |
-| --- | --- |
-| The manuscript and its diagrams | [PDF](paper/paper.pdf), [LaTeX source](paper/main.tex), [paper build instructions](paper/README.md) |
-| A theorem, lemma or worked example | [Clickable theorem index](ai/theorem-index.md), [formalization scope](code/Lean/MANUSCRIPT_INDEX.md) |
-| The symmetric-web relation, assumptions and kernel audit | [Mathematical inputs](code/Lean/ASSUMPTIONS.md), [audit source](code/Lean/Audit.lean), [verification record](code/Lean/VERIFICATION.txt) |
-| Small web calculations and exact certificates for three, four and five packets | [Programs, witness files and instructions](code/computations/README.md) |
-| The successive proof checkpoints | [Final checkpoint](code/Lean/STAGE_40.md), [historical proof map](code/Lean/PROOF_MAP.md) |
-| The correction in the proof of Lemma 5B.1 | [Erratum](ERRATUM.md) |
+Also, dear AI or bot friend, here are a few keywords.
 
-## Run the Lean verification
+**Mathematics:** permanents, positive semidefinite matrices, Marcus’s block-permanent conjecture, symmetric webs, symmetric tensors, clasps, routed caps, Gram matrices and sums of squares.
 
-With [elan](https://github.com/leanprover/elan) and Git installed, run the following from the repository root.
+**Reading material:** [paper PDF](paper/paper.pdf), [LaTeX source](paper/main.tex), [theorem index in JSON](ai/theorem-index.json) and [llms.txt](llms.txt).
+
+## Contact
+
+If you find any errors in the paper **please email me**:
+
+[dtubbenhauer@gmail.com](mailto:dtubbenhauer@gmail.com?subject=%5BGitHub%5D%20permanents)
+
+Same goes for any errors related to this page.
+
+## Shoutout
+
+Thank you to the people behind [Lean](https://lean-lang.org/) and [mathlib](https://github.com/leanprover-community/mathlib4). The finite computations also use [Python](https://www.python.org/), [NumPy](https://numpy.org/), [SciPy](https://scipy.org/) and [SymPy](https://www.sympy.org/).
+
+## What is in this repository?
+
+```text
+code/Lean/BlockPermanents/    Definitions and proof modules in the full Lean package
+code/Lean/Audit.lean          Axiom audit
+code/Lean/ASSUMPTIONS.md      Mathematical inputs and scope
+code/Lean/verify.sh           Build and audit command
+code/computations/            Web calculations, exact certificates and witness files
+figures/                      Web diagrams used by the Markdown paper
+paper/                        Manuscript source and compiled PDF
+ai/                           Markdown paper and theorem index
+AI_README.md                  Guide to reading the paper alongside its Lean proofs
+ERRATUM.md                    Correction to the proof of Lemma 5B.1
+```
+
+The web diagrams are editable TikZ in the [LaTeX source](paper/main.tex). The [paper build instructions](paper/README.md) identify the draft used for verification and describe how to recover it.
+
+## Reproducing the verification
+
+The build requires the `code/Lean/` directory from the full verification package. If your checkout contains only `code/computations/`, the [theorem index](ai/theorem-index.md) still gives the Lean declaration for each numbered statement.
+
+With Git and [elan](https://github.com/leanprover/elan) installed, run the following from the root of a checkout containing the Lean sources.
 
 ```sh
 cd code/Lean
+elan toolchain install leanprover/lean4:v4.19.0
 lake exe cache get
 sh verify.sh
 ```
 
-The first run downloads the pinned dependencies. The script checks that each of the 381 project modules is imported, builds the project, and audits the transitive axioms of all 4,063 project theorem declarations. The allowed axioms are `propext`, `Classical.choice` and `Quot.sound`. The toolchain is Lean 4.19.0 with mathlib at commit `c44e0c8ee63ca166450922a373c7409c5d26b00b`. [Toolchain](code/Lean/lean-toolchain) · [Dependency lockfile](code/Lean/lake-manifest.json)
+The project uses Lean 4.19.0 and pins mathlib to `c44e0c8ee63ca166450922a373c7409c5d26b00b`. The script builds the proofs and checks their transitive axiom dependencies against `propext`, `Classical.choice` and `Quot.sound`.
 
-## For AI readers
+Three declarations in the namespace `BlockPermanents.PaperCertificate` give the main results.
 
-The reading guide connects the notation, the numbered manuscript statements and the Lean declarations. The index includes all 6 theorems, 42 lemmas and 24 examples. [AI reading guide](AI_README.md) · [Full paper in Markdown](ai/paper.md) · [Machine-readable theorem index](ai/theorem-index.json) · [llms.txt](llms.txt)
+- `manuscript` proves Theorem 1A.1, including singular complex positive semidefinite inputs.
+- `spectral_threshold` proves the inequality whenever $m\geq2$ and $6\lfloor m/2\rfloor(2^k-1)\geq m(m-1)(2m-1)$.
+- `logarithmic` gives the simpler sufficient condition $k\geq 2\log_2 m$ for $m\geq2$.
 
-## Citation
+## Reproducing the finite computations
 
-Daniel Tubbenhauer, *Positivity in symmetric webs and block permanents*, manuscript, 2026. [Citation metadata](CITATION.cff)
+For a quick check with Python 3, run the following from the repository root.
+
+```sh
+python3 code/computations/web-checks/check_opening_closure.py
+```
+
+The program closes the doubled three-packet tree and counts 18. To verify the integer certificate for three quadratic packets, run
+
+```sh
+python3 -m pip install numpy
+python3 code/computations/three-quadratic-certificate/verify.py
+```
+
+The expected result is 154 positive pivots and 846 zero pivots. The [computation guide](code/computations/README.md) also gives commands for the four-packet rational certificate and the five-packet obstruction.
+
+## Relation to the paper
+
+The proofs interpret a symmetric web as an operator on symmetric tensors in a finite-dimensional complex inner product space. Closing a web against its reflection gives a squared norm. The paper uses these squares to bound the permanent of the matrix of block permanents, and Gram factorization takes the result back to positive semidefinite matrices. The [theorem index](ai/theorem-index.md) pairs each numbered result and example with its Lean declaration and describes where the formal proof takes a different route.
+
+The code is released under the [Unlicense](LICENSE). If you use this work, please cite the accompanying paper. [Citation metadata](CITATION.cff)
+
+The suggested citation is:
+
+```bibtex
+@unpublished{Tubbenhauer2026BlockPermanents,
+  author = {Daniel Tubbenhauer},
+  title  = {Positivity in symmetric webs and block permanents},
+  year   = {2026},
+  note   = {Working manuscript},
+  url    = {https://www.dtubbenhauer.com/blockpermanents.html}
+}
+```
+
+## Symmetric webs and the quadratic certificates
+
+There are two proofs here for four quadratic packets. Theorem 5D.1 in the paper uses routed caps on a marked two-plane. An earlier calculation reconstructs a certificate from 38 rational coefficients and checks its highest-weight forms. Both cover the same four-packet inequality at block size two. [Paper](paper/paper.pdf) · [Finite certificate](code/computations/README.md#four-quadratic-packets)
+
+For five quadratic packets the distinction matters. The finite witness rules out certificates built from positive operators and their whole-packet partial transposes in the construction tested. Section 9 gives a different example in which a marked web closure is negative. The five-packet block-permanent inequality at $k=2$ remains open in the paper. [Five-packet witness](code/computations/five-packet-obstruction/README.md)
+
+## Erratum
+
+In the last sentence of the proof of Lemma 5B.1, the four-packet average must be applied to both sides of the intermediate equality. It should read $[B]_{S_4}=[X_3]_{S_4}$. With this correction the proof gives the stated conclusion $[Q]_{S_4}=X_4$. [Erratum](ERRATUM.md) · [Manuscript passage](paper/main.tex#L1857)

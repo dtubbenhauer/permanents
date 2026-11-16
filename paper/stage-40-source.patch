@@ -1,0 +1,20 @@
+--- main.tex
++++ stage-40.tex
+@@ -1195,7 +1195,7 @@
+ \end{proof}
+ 
+ \begin{example}[Three quadratic packets]
+-At $n=k=2$ the fine weights are $6,48,36$ and the packet weights are $2,4$. Thus $X_3^\Gamma=X_2\otimes\id+48|V_1|^2+36|V_2|^2-4|u|^2$. The packets of $X_2$ are still upright.
++At $n=k=2$ the fine weights are $6,48,36$ and the packet weights are $2,4$. Thus $X_3^\Gamma=X_2\otimes\id+48|V_1|^2+36|V_2|^2-4|u|^2$. Both packets of $X_2$ are still upright.
+ \end{example}
+ 
+ \begin{remark}
+@@ -1207,7 +1207,7 @@
+ The packet average of $Y$ is $[Y]=\frac1{m!}\sum_{\sigma\in S_m}\sigma Y\sigma^{-1}$. Each term relabels both ends of $Y$ by the same permutation.
+ \end{definition}
+ 
+-For example, let $T=F\otimes G\otimes H$. Suppose $B$ on the first two packets absorbs their packet clasp on both ends. The third cable, the \emph{spectator}, passes straight through. Its label determines the closure:
++For example, let $T=F\otimes G\otimes H$ and suppose $B$ on the first two packets absorbs their packet clasp on both ends. The third cable, the \emph{spectator}, passes straight through. Its label determines the closure:
+ 
+ \[
+ \langle T,[B]T\rangle

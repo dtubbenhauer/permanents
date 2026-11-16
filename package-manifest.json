@@ -1,0 +1,2845 @@
+{
+  "title": "Positivity in symmetric webs and block permanents",
+  "author": "Daniel Tubbenhauer",
+  "snapshot_date": "2026-11-17",
+  "entry_points": {
+    "guide": "README.md",
+    "paper": "paper/paper.pdf",
+    "manuscript_source": "paper/main.tex",
+    "lean": "code/Lean/BlockPermanents.lean",
+    "main_theorem": "BlockPermanents.PaperCertificate.manuscript",
+    "audit": "code/Lean/verify.sh",
+    "numbered_results": "ai/theorem-index.json",
+    "computations": "code/computations/README.md",
+    "correction": "ERRATUM.md"
+  },
+  "toolchain": "leanprover/lean4:v4.19.0",
+  "mathlib_commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 607,
+      "sha256": "665cab8933777bab9db0004bb30b7f500cab25d44ff6416fc3b072365a9c840b"
+    },
+    {
+      "path": "AI_README.md",
+      "bytes": 3398,
+      "sha256": "bfecb8a7e02c50306a5e2ec0636148e53324b6dbdaa321187b0d3da3cea6e57a"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 691,
+      "sha256": "66cfae095c0644581abd87d9755c0c2b5c900bb3c2ee4009d0148a656838355a"
+    },
+    {
+      "path": "ERRATUM.md",
+      "bytes": 620,
+      "sha256": "c70346be262efd52dd47fef65bf8ee58fc08dee909ea3201d597bdedf27b5e91"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3789,
+      "sha256": "8f3a0f21a180fbc1d88181bb5649a4d1a9dfc2b38842baad596f127057ea478a"
+    },
+    {
+      "path": "ai/paper.md",
+      "bytes": 107278,
+      "sha256": "425b3da0f58643606f06a0ae2c8436ff4da6791250fdd0b63ef96292cdf10ceb"
+    },
+    {
+      "path": "ai/theorem-index.json",
+      "bytes": 85105,
+      "sha256": "84e6fbe60e521dd291616bf408b4c85262f47e62f927cd362e6be659a523b5fb"
+    },
+    {
+      "path": "ai/theorem-index.md",
+      "bytes": 26889,
+      "sha256": "a4f810bef9c2e2ff86f78ccb1b2e3f60e69b47ae846b471be99ffbd37405508b"
+    },
+    {
+      "path": "code/Lean/ASSUMPTIONS.md",
+      "bytes": 5102,
+      "sha256": "53e4fafb611179c50671182d71e343b7c31ad0a64f61b7fb3f3fe50ad8a6e422"
+    },
+    {
+      "path": "code/Lean/Audit.lean",
+      "bytes": 30994,
+      "sha256": "f7674fc53d0ea229c2129827c8a9048ab5609665a8fd67412c9f4afc6e2d2a86"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedAssembly.lean",
+      "bytes": 4112,
+      "sha256": "6a3191689b37e56922272876c5a66c7720a6425613f8a1ea0946f85a97379180"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedBorder.lean",
+      "bytes": 4350,
+      "sha256": "5d0a349c9d7b6f4879c37b4ce596b20e884cacb121981f587c48ce4bbc1c4bb9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedCoarse.lean",
+      "bytes": 3080,
+      "sha256": "afb20a4e830f9e45f233b7e802bdb23bd8208409e0bdefeae90afa423e695ed5"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedCorners.lean",
+      "bytes": 6185,
+      "sha256": "37b509ff9af95deb9166b9e5cb6d5db5a9b7b304300ff66c27fdc89d97715035"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedCubicCertificate.lean",
+      "bytes": 5896,
+      "sha256": "69a61671d5f9b33e22b5217b08322346a777b789932f327a1f3226d05199170f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedCubicExterior.lean",
+      "bytes": 2336,
+      "sha256": "f63a44ffb289a391d36a46a43931ddde96ea735184a175508719243a70db5991"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedCubicFine.lean",
+      "bytes": 3637,
+      "sha256": "f9622acd0f9f419e01101f6a3804c6b6306e55de64ecff3bfbb2c16f60bd9dec"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedCubicMarcus.lean",
+      "bytes": 2712,
+      "sha256": "730f2192d405b99ebdccb7787a7fb5cd1629786ddad26d377acf7bd5e0bf6e75"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedCubicTau.lean",
+      "bytes": 6801,
+      "sha256": "475ea0c0cf8fab19273fc1218b524384a79f8e1f08ee98d944491619a87204cf"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedCut.lean",
+      "bytes": 4533,
+      "sha256": "14ec63a76f5dfdafe99963acc2a8f0b143fa6b7ba2692e1decd8f7ba78114406"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedDivisionDefect.lean",
+      "bytes": 2696,
+      "sha256": "a6b6659a8951cb734f9cf639447269437fe3052555721c03897d2ce981d4c0f5"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedDivisionGram.lean",
+      "bytes": 5690,
+      "sha256": "0a516a58339af3909115ea8d3ec4657d74735f63fa0e27827f7434b5e7e32c9a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedDivisionPair.lean",
+      "bytes": 1195,
+      "sha256": "d44a0262e32ca11fe8dc579336a4c4210d8613d958838574f1ef17c7dbd5b773"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedDivisionParallel.lean",
+      "bytes": 3087,
+      "sha256": "f4d614d1204d84643e66143cf6bf366459a1c8fd5e80b266b72528ec6a6b3e14"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedEndpoint.lean",
+      "bytes": 3365,
+      "sha256": "4666553cc8000dcd6d60118492a54dcf383ea56422d163bce80b7aa98a4191ab"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedEvaluation.lean",
+      "bytes": 2610,
+      "sha256": "2fd4ace9f8ccaa0411d454f7cc43900df518babf024aafbcced0e0f3de6ca6ca"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedExtremes.lean",
+      "bytes": 2770,
+      "sha256": "53eb33212fa36b0f13b48909b88a4e8a118f9926357acddcc0fb6a31aab9c5a4"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastAverage.lean",
+      "bytes": 5271,
+      "sha256": "ed27585e114e6c85ab479eebf5bdb03d0acd5d085e9ad871f272299213869bc0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastBubble.lean",
+      "bytes": 2757,
+      "sha256": "4db3dd68f74b106653b20d4a1f9635a12dc27384d44ad53f0297c4ea945ccae8"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastCompression.lean",
+      "bytes": 3547,
+      "sha256": "d9add13f008d6b4334e5746d46cfb180d05fb0c898c93e5a20b24b54e8000791"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastDifferences.lean",
+      "bytes": 3658,
+      "sha256": "3ae077ff01ba8349fa9af16e00860964d0eb1de1e6d96815790709220078a17e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastEnvelope.lean",
+      "bytes": 3154,
+      "sha256": "0c92018ca0ac5d042ea5cf3446ca8de257d372ca280cff844a09185dc803a442"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastExample.lean",
+      "bytes": 2963,
+      "sha256": "051743d201b698d03e134da1cae4fe9f072a87cf418d210c607c4bec58132586"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastForm.lean",
+      "bytes": 2278,
+      "sha256": "d30c0e789c53345e45b0eea3c2173d65ce21450804105769e0c38ba20e3a74aa"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastIntrinsic.lean",
+      "bytes": 3803,
+      "sha256": "3b952441489ed67fcfd29c6294953b9f25c4b889aa6ad2ae1e67de432f0e9f68"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastJoint.lean",
+      "bytes": 6662,
+      "sha256": "83822ea623e52581ad37a59f3ed16e94c775d8e9fdfe37a2c3be363f349bbc29"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastMarcus.lean",
+      "bytes": 1193,
+      "sha256": "cfbd5130b998b0be35c441e15865ca1832edeb1f6368f71269c2af1dcfb8d892"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastPacket.lean",
+      "bytes": 5002,
+      "sha256": "dbaedb4c6865e2a52f0189b652e4d0499800ece8039a4a192c9cf8e5dc8796ca"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastPlanes.lean",
+      "bytes": 8066,
+      "sha256": "b2831233f935e842c1936a5b6814e6e2e10ba8218a7325b5c271be07ebb5cd58"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastRectangle.lean",
+      "bytes": 4119,
+      "sha256": "9afef83c0ceb9e7eeba26a323c173d2c26254178650e764e79dfbb195f023595"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastTrace.lean",
+      "bytes": 3780,
+      "sha256": "6df7d034880ecc0104f3b60f8f0c201ae7a962460f3ff03e383921aabd72d56c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedLastWeight.lean",
+      "bytes": 2886,
+      "sha256": "2e7124f651df07917178eade707c143c57197099eae996668f3b4a4c1dd7e654"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedOpen.lean",
+      "bytes": 4046,
+      "sha256": "21f31c9f099f0722a4d23520ac8cc76d9ab4d5365086fbea4f0c9d91ea792008"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedPacket.lean",
+      "bytes": 3884,
+      "sha256": "d1766de49b651eecaa75a3d936f8cb27e3fc9965fe222935c703411da77b7410"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedPacketEnergy.lean",
+      "bytes": 3816,
+      "sha256": "ac8f12966fab49638f8384efbaa2961d0c94dabfec021d83f3ccc05f8da0fcbd"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedPairTrace.lean",
+      "bytes": 9940,
+      "sha256": "4c9da992e535326fcabb164cae096d87a5625bc96b08a7027bb4bca5ec4b870a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedPositive.lean",
+      "bytes": 3379,
+      "sha256": "ed7f725852411753cb5d0584c12dc6548db110f51269f68768ad6392187a7ff1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedRoutes.lean",
+      "bytes": 4363,
+      "sha256": "8871f2f5a2fd6b2bc8163db933968ed75f7335727ecd7738841869bf3ed57a80"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedSigned.lean",
+      "bytes": 5793,
+      "sha256": "67d0231174ca85ca65ed26350cdf4ceac24bc7a0acf1eed3a5490f9824ba8c37"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedSupport.lean",
+      "bytes": 6330,
+      "sha256": "7e9be6424a482bb5abf5ff1cd3506620dc2a9bb99f0390c1a34132369027ecf4"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BalancedTrace.lean",
+      "bytes": 3879,
+      "sha256": "67f1ecd7fb5109129fbf52f90d4c76a0b5b41bc8c1480d39798bd3bc3062f954"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Bend.lean",
+      "bytes": 15983,
+      "sha256": "8a3677c18315276a8124f826df33b4ea814df942533d935ff4c51be301da0c4e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/BendCoordinates.lean",
+      "bytes": 2531,
+      "sha256": "966c023edf14a9e467721832d76a9a4b516eeccf7357e58d58484f9398b0c951"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Bridges.lean",
+      "bytes": 7696,
+      "sha256": "44a6f727c111a831caeb1aeeae89c51805b86b1f1343b6a820903a5c1ed9a6f0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ClaspAbsorb.lean",
+      "bytes": 3759,
+      "sha256": "37b68ba660c9a93611d643b68c2814470a441798ab28eeeb8dff511120d0beb0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Closures.lean",
+      "bytes": 13970,
+      "sha256": "fd6df67a99abd01719ef16fd8ac3a12b530209b6a773f3fa90cc35a75c91a8eb"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Coarse.lean",
+      "bytes": 2066,
+      "sha256": "cf508afea62239991029b3770f4d456d0ee25cd07b1db288e575f385b1967f7d"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ComplexCapExample.lean",
+      "bytes": 3512,
+      "sha256": "33ab710d50fd1394a01c360cab20309a99cfc342df9de0ddd55029ac3df78245"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ConsecutiveCycleSquares.lean",
+      "bytes": 8295,
+      "sha256": "f286bbc8bb70f78ca7b499757310c5718e342ccc9ed1137a3b6288ea0d967859"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CountingExamples.lean",
+      "bytes": 3495,
+      "sha256": "5717af4459ac727fc54a1ad13ce6e0f9cf64391e9e13862bebc9f3362ff9e1bb"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CubicSquares.lean",
+      "bytes": 9516,
+      "sha256": "2fb3608db4e7b6f864b023269dae5647708ff2bba49ada9f00b370297644506e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleAllocation.lean",
+      "bytes": 5083,
+      "sha256": "01901ca1477c47a3f662620fc3853697df08e807422a0cc1c272059c732959d3"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleClasses.lean",
+      "bytes": 5495,
+      "sha256": "c4eab8b2dc74666efd898c699cf25074da41518ad959a8dad1c56caa6ebe9f45"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleCoefficients.lean",
+      "bytes": 3632,
+      "sha256": "dff05bd0f2b258705bdbe7d4e18793525d8121171cc245488bba9bd31ef0a19c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleComposition.lean",
+      "bytes": 8572,
+      "sha256": "63eaddcd449d67ecc82860f6f95461799b13b72df84829633479e78401a80997"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleCuts.lean",
+      "bytes": 4869,
+      "sha256": "ca54882d376dbe21774bb4214554fbdb08958ab0d7dc8df844095ddfe543e9b0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleMatching.lean",
+      "bytes": 16776,
+      "sha256": "bceb9b762d2e8c10d99794f450618afeeaee0a0d02238cb53ed0a796fcf5be40"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleParameters.lean",
+      "bytes": 5533,
+      "sha256": "1ab327f80ffcbac1e4c00d579c3c5f08d9d2606e1be21659b58f09e3f6a1be77"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CyclePartitionSum.lean",
+      "bytes": 4819,
+      "sha256": "8c5db0450afa0718a665bf111ab7555209d42cf3f4a4b98b96edd6f4e128bb84"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CyclePlans.lean",
+      "bytes": 5789,
+      "sha256": "ca1776deb20845199298ad5ba1a8f041f94e40726de78c3a0135e532eb80b3f5"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CyclePolynomial.lean",
+      "bytes": 3910,
+      "sha256": "73bbc8e648ae7cfc5eea70b32d8ecd79f26a8ac5aca238795f126ccc0c026562"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleSmall.lean",
+      "bytes": 3279,
+      "sha256": "32b9aeea653d0191e5b8674a8caa39c513babaa969d75894cbe9fa8c996e3199"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleTen.lean",
+      "bytes": 7204,
+      "sha256": "43930c987059718147dca94525f9fc8d41319fba25f1a6216a17d459586efc96"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/CycleUnbounded.lean",
+      "bytes": 10052,
+      "sha256": "c57fa9b25b7f41e0fa6b6e961a91586eca1323c150d3f052871b956d3e37b95e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Cycles.lean",
+      "bytes": 2846,
+      "sha256": "02cd6b6032de7f2cced45c25bd7a43bb48f2a1bbbd3e8a214ed7265f49a5a3c5"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Digon.lean",
+      "bytes": 3155,
+      "sha256": "12fbdb56050ddeffcb9a832c473b94676a2a8fbe7c42dfa32f5c38c66c61ac68"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/DisjointCycleCertificate.lean",
+      "bytes": 7827,
+      "sha256": "62194039d9467e184c1be6590625b4cab7ec80547658c8aaaa6ebddac400792c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/DisjointCycles.lean",
+      "bytes": 1800,
+      "sha256": "946c54082268562693fa7cbf8d621de0df0934d90c860231f5727f57065ddad0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ExitAverage.lean",
+      "bytes": 4882,
+      "sha256": "e0b0497fdce02f0843ec27eea1bbb83e6f5ba96eeb2605e787e505c3f415a6db"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ExitTransfer.lean",
+      "bytes": 9082,
+      "sha256": "58ff6e68496caa4b1e5e017bf0c05f8b6f96c1ab4c9704a73a9bacb04de1c78a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceCoarseCertificate.lean",
+      "bytes": 2701,
+      "sha256": "a32445c907d7ae5da9ddde35bcd508f688112f38227b31ee7526b8fc32844138"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceCounts.lean",
+      "bytes": 4399,
+      "sha256": "c0fba3d182e6acb9cdf1a6b814703d1b8a0ba2b5f8e96934ade0e77d2d02b48b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceExit.lean",
+      "bytes": 6640,
+      "sha256": "1c0b9355cc43ac29ba2835292923a5ccb6371cdb930cd972a19f1ab596f448c3"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceMeanSquares.lean",
+      "bytes": 3395,
+      "sha256": "3628266b7fb4bd48111baef76c4c7e60458a66f3b0bc2b02dc4e198c1fcfbf5b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceMeans.lean",
+      "bytes": 4601,
+      "sha256": "0f130f31a73841dbefd5a855e6774e759b615bb4b5dc095c3de9ae47aa7a30d2"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FacePeel.lean",
+      "bytes": 6060,
+      "sha256": "d40d68054d3b6282c46bd5c8e5c22b4189f9f56f5ec6b5ead3ee8541026ed2ed"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FacePropagationSquares.lean",
+      "bytes": 3984,
+      "sha256": "3ae8fb16d49e1b9d08f39708ef287417018472d9a5495fb60aa3309ba7ff45e6"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceRelabel.lean",
+      "bytes": 4644,
+      "sha256": "2c869658356e9fc9d59ca1522f691e3bf0ca7a39dd44be649864d00d929686f5"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceSampling.lean",
+      "bytes": 1993,
+      "sha256": "358668adc9aeaa407f7e3866f329fb86bf1ff51a765c1203a633d7bcd7e3c75e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceSlacks.lean",
+      "bytes": 6464,
+      "sha256": "eccc715dec00084d2c5a677e5c8370b4e4f2ce660a5d2c716d2db452bbca9a1d"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceSpectral.lean",
+      "bytes": 4053,
+      "sha256": "34d15901eac089db0f1abe36326b63c2afba79e6e5f6e8c9afabf182f8914a26"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceStraightSquares.lean",
+      "bytes": 5276,
+      "sha256": "7161edb3b7f85ee13ffc6a58f28151b25232e1263ec8c9fd4e8dccd8b523be7c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceTrade.lean",
+      "bytes": 4654,
+      "sha256": "fab967f47e90607abbcf9261bb0140a9d07ce0109cb351747187a21bb88d936f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceTradeSquares.lean",
+      "bytes": 2786,
+      "sha256": "988fd5a6cc407ab75523fd9249e3945c178f066cef6f4abacc61629c165abb67"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FaceWeights.lean",
+      "bytes": 3957,
+      "sha256": "69ee27de6f9072d8937b674f71e35b3c12b5970fe0eba92b87563cb48443a97f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveAverage.lean",
+      "bytes": 5381,
+      "sha256": "7025ecb40a6eff1b2e7b9e292ff0ae275c8473882dea37bc24673e9676acf94b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveConjugacy.lean",
+      "bytes": 1106,
+      "sha256": "95630a9ae70ff11781b64cd8b3c8cff3daccf25077ba2208b2885ef06e96afca"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveCubicExample.lean",
+      "bytes": 7028,
+      "sha256": "1d05700b6167592b99bb82461a37329e164e3ede9b549fd5d24eb17e862f4ec6"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveCycles.lean",
+      "bytes": 9000,
+      "sha256": "c5d8f6e186d8da1e758b986fa0fdc47ae29f5dc5e6c52579447026778c2e955f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveEstimate.lean",
+      "bytes": 4314,
+      "sha256": "bf1aafb2b626bca3e80873023cb9e9bec1f0ca95e863480ddf5f6dd3a0778763"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveFreeCoefficient.lean",
+      "bytes": 4061,
+      "sha256": "9a0089136e3d7fc30a8643f06230a742ffe7efef25c6b089c5102112262997fb"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveFreeResidual.lean",
+      "bytes": 10663,
+      "sha256": "acc263928cd07f3924f257ca62f022599cd09006b0b0cbffdc478f5875aacdab"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveFullCertificate.lean",
+      "bytes": 5110,
+      "sha256": "bccf4fdbf2136262dcce0e118fba42a99d59da240ab17126461f3dd58cc7fe7a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveMain.lean",
+      "bytes": 3578,
+      "sha256": "ab847e0a707b0fdd713cc469654850e07f0e61c95ea3abea120cfea644b270d6"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveMean.lean",
+      "bytes": 1369,
+      "sha256": "f38e4d733c2dfd424a372f1b8de3df888666d3c7aaf678cc310bd13917421dcf"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveMerge.lean",
+      "bytes": 3577,
+      "sha256": "1be03cfe1c38b8928bea0fe03deb05b4b5a2eee8f5d0c8a78c215352b368d61a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveMixed.lean",
+      "bytes": 4158,
+      "sha256": "3f55c68e63da41099ae946c102f1199776330d5eab9dc676d72fe638d1d0baca"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveMixedAverageSquares.lean",
+      "bytes": 6624,
+      "sha256": "414592c749ca1f5b1e4b31f45f93091d7aba5f7abc1c896f889f1cb81e345b3f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveMixedSquares.lean",
+      "bytes": 6870,
+      "sha256": "0d2baea8fa75067dfe0188829b7c81988df89e23eb7a90d81c022ee5b8870a57"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveNumbers.lean",
+      "bytes": 1747,
+      "sha256": "9923bb01764813495de3557b6677b1c962256eaa80e4f211e9f1772df5b382e1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveOuter.lean",
+      "bytes": 4092,
+      "sha256": "73705b94d53f940c5a39842c953ce4316859fe401a3c4c8f32cbc3dd9bba5888"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveOuterSquares.lean",
+      "bytes": 8846,
+      "sha256": "d245af3465f229c32cbcb666535cb29fbaa24c44eeb2aa4d3876ed7ce40168e9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FivePointwiseSquares.lean",
+      "bytes": 3774,
+      "sha256": "7746ac5370150f094d6a9942bddc5929fc788976f5cb7a4712c322bdae19cf2f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveProjection.lean",
+      "bytes": 13573,
+      "sha256": "482c0f337fa6df70a53d561c30f6f28ff41647287d7c7cec27424a5bd2ba951c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveResidualGram.lean",
+      "bytes": 6066,
+      "sha256": "eac7f68b3fe1c29d378b543a121db89bea37b5617ed4ab76ae9b2b7e11d82fa7"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveScalarSquares.lean",
+      "bytes": 4574,
+      "sha256": "9650f9c9ff4304e2e646108899d25a5ac336ad31ff803bb213c312f094217dc9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveSupport.lean",
+      "bytes": 7116,
+      "sha256": "37aa84cd11182fc21730116aaffcdaa8e376ca76cc8ff912a00f58467684f782"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FiveTriangleExample.lean",
+      "bytes": 5056,
+      "sha256": "8594a6107e6d58c708f2c264a60f49e008e0722fcde1f755f7888f46a1b536df"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ForcedCertificate.lean",
+      "bytes": 2642,
+      "sha256": "0276baf53f3b07e48bcdbf241f205ad72bd50e52d2ea4eaa44899136f577f4f7"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ForcedQuadratics.lean",
+      "bytes": 3673,
+      "sha256": "77b7f30b814b2eb3e2f517c62e7d156a7d77639873f034dde417581d5541d617"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ForcedRoutes.lean",
+      "bytes": 5745,
+      "sha256": "85ea75efd2c336278229c5968bafe0fe3087eecde0d9e0c037ef1af4210cd1c7"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ForcedWitness.lean",
+      "bytes": 15514,
+      "sha256": "70b7bd97c2b412e17d70babcc1dc3e1fc7b184e11eeb2ec2658c6aa0f85dce19"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourActualAlgebra.lean",
+      "bytes": 4478,
+      "sha256": "c89f0092cb77cfb248979db73ed897e506d598730fcdfde3d2ee421fea8dc87d"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourAdjoints.lean",
+      "bytes": 10248,
+      "sha256": "4b7c46d38caa9b9356ccd90dec26495a048143114e20759396329a8115381622"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourAtomExample.lean",
+      "bytes": 6703,
+      "sha256": "9c599e42d6297eef5a69b4d83efcd38a326e9623b1694d08264ddd572833bbfb"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourBend.lean",
+      "bytes": 3913,
+      "sha256": "362ca61f00d51fbab1fe8e72309aee036ee662659a8ff43192661ff2655b5fac"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourBendCovariance.lean",
+      "bytes": 3662,
+      "sha256": "36887e0e331cf127bbc3e927475785df281b2df4337aa9434a5624ffa677b4ca"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourBendIdentity.lean",
+      "bytes": 2779,
+      "sha256": "7a3c0f065fc3d1c20b1f3fe6504636dfa9531914bd3a109e2d3cff719b804d56"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourCapAction.lean",
+      "bytes": 4149,
+      "sha256": "6a8b5038d35778bcc79976c1bbc80e0a3c3a3340fa93ab8dc79f98f652d3e446"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourCapOrbit.lean",
+      "bytes": 7842,
+      "sha256": "d2c6a1d453a62b2c035702ad166e09b9f64447feb31045d2fb532ef3b9b5b2ad"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourCapReindex.lean",
+      "bytes": 2115,
+      "sha256": "ad4bd6d51df1a5593db33d70188ee2dc6e9411d22c7c176f808807fadeebbafa"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourCapValues.lean",
+      "bytes": 13419,
+      "sha256": "74ab630724064ed1c743202b473ff414ef01427910ab4d95f72c908f45b9b878"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourCommonCuts.lean",
+      "bytes": 1295,
+      "sha256": "878df47e6a4d54508dccd605b65c28cc10cccd378036cfeef5e272e658a194b2"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourComplement.lean",
+      "bytes": 3912,
+      "sha256": "f274e0edd3cc7b28f6432c753ebfd568b1fa8e88c849777771a6cf14228b3bdb"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourCompression.lean",
+      "bytes": 5945,
+      "sha256": "7abc28223803379cd0c20da21434d620167ec71cba10ff594f4e02fd7ef75d40"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourCompressionPSD.lean",
+      "bytes": 8475,
+      "sha256": "eff1171560fe3c1c6e26546d8e73978e91a473dd2b3239c61fdbbd8e94615087"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourExchangeBasis.lean",
+      "bytes": 1608,
+      "sha256": "9e96c5a9dbe6e01ac7300494bb41ab3bd97d1e2bae1c587a1c71181f6acd5213"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourExchangeKernel.lean",
+      "bytes": 5406,
+      "sha256": "1e5d91159464892df37f75f0e2fd385ebd50394b2f5d290df70f2d073fdb3c28"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourExchangeRoutes.lean",
+      "bytes": 1887,
+      "sha256": "ee8412a115e51d7a0b9d966299745a487cee719a4f84f558935c19d9f41eb64f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourFirstProper.lean",
+      "bytes": 2970,
+      "sha256": "657670f7375a3fbeef2bd53cdddca48edb11f560cf0044dae555b14eabc7277b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourFootAverage.lean",
+      "bytes": 6085,
+      "sha256": "dd6ec8145dfa283590753729a97dca437cf53bea3e2661c46e2383456fd49654"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourFormKernel.lean",
+      "bytes": 2527,
+      "sha256": "29a1dfd847532c1b1c869d62b401d168e1ab7cbab167ed87b62f2bb50a598d54"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourFullCapRow.lean",
+      "bytes": 2266,
+      "sha256": "937a5d5adbb83835d82ed13499c48f6653980be6a010e02e4bad516aa3f2e04a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourFullValues.lean",
+      "bytes": 12939,
+      "sha256": "c012d0f1c4ee114a87bbf7e13ea7322992846498daec6206787ba28be0fc2f0b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourGeneralProduct.lean",
+      "bytes": 4648,
+      "sha256": "2cbd7d6e3aef219d075acba602714c5126b70dbdaa08ffd555cfd63c0a52617d"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourGram.lean",
+      "bytes": 4992,
+      "sha256": "1faf0f7a2e2d53936b604220af0e399d0f988f16fba14682bd007ec22abcea15"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourLastCaps.lean",
+      "bytes": 15190,
+      "sha256": "70e2142e09cab74e0a754a1b957877c4e54e74b2d2c27de243901677d44a5329"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourLocalCompression.lean",
+      "bytes": 8174,
+      "sha256": "a9f595aa9e7ddedaf405e9c50ce1afc59610c810eb1d0232c9d35ce47fad961f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourLocalSlots.lean",
+      "bytes": 3946,
+      "sha256": "8d51aa223a5953628e131395d18404dc760d84fbeb7c9a86987a1c5d0ec25a7e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourMarked.lean",
+      "bytes": 1237,
+      "sha256": "3ac544444653bb8c5d947c8590c79da71502b8f5afc1c00c379bda728f6236bf"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourMatrix.lean",
+      "bytes": 2559,
+      "sha256": "fed408f9e7d61323e645f1ee0634b690203859a95a79d2e9da35a0fac8af7275"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourMatrixHalves.lean",
+      "bytes": 2235,
+      "sha256": "78905470814fffb13f0309cdd1fcfa13caafffff4e75149adadf100fe348f18e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourMergedClasp.lean",
+      "bytes": 1230,
+      "sha256": "2cb0732735fe9bbd46ee29d2e61650ec3bdde7d704c78d1b6705fe974fe39a7b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourMergedHalf.lean",
+      "bytes": 2697,
+      "sha256": "6a4e2bbc028ee158405cb725ad8568f2791479d26fdc6059ba8b1a599fd5ebe5"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourMergedOrder.lean",
+      "bytes": 3841,
+      "sha256": "2e86a87408f425c83f32c5df0cdc26309a33e62ef21ebb53bb44e14bf9fb3b0b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourNativeBoundary.lean",
+      "bytes": 2178,
+      "sha256": "820c75327a39935691098d404b2fe22ea44d11eb4399b08efd154c844cf5ed40"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourNativeCap.lean",
+      "bytes": 2948,
+      "sha256": "1e1787be07456386ea847b9116a5aed0955ee6d09c8c6865af54cba93a03a573"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourNativeFull.lean",
+      "bytes": 2487,
+      "sha256": "cf0402ab498c6793f952371a81bff494032e6827e70d19d35ed3514c584a43ae"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourNativeSurvivor.lean",
+      "bytes": 4418,
+      "sha256": "f6d5ba75ac5fb72aad7349696365252e85dd32b2fe69f8751015c497db4ff655"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourNativeTerminal.lean",
+      "bytes": 4870,
+      "sha256": "ad382621722b2586ffc38eba6871f02d47a21a057939b7f3599bbc30a38a268b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourNativeUpright.lean",
+      "bytes": 5284,
+      "sha256": "da7bdba332832f20ed663074b35083f54c59019f839881de0509cc7200aadb7b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourOpenings.lean",
+      "bytes": 10919,
+      "sha256": "38e74fff3e590cbcdb7f2d833f17cfe5ffd51c7ff27d27add2e395ec89ae4057"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourOutputProjection.lean",
+      "bytes": 2824,
+      "sha256": "d90e1cba8f462d919a35b015059c2678b6dc18d7077f8bf2f1572273562bebdc"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourPlaneBasis.lean",
+      "bytes": 4608,
+      "sha256": "9f41ab1edffb59c93c65984e294d91d9d038fc8ff770362ef3d4c81221108497"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourPlaneCompression.lean",
+      "bytes": 3078,
+      "sha256": "f71683bae3184606b29baa2f3c09a66ee1044d12cfc2bccba45fe4998972b044"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourPlaneIdentification.lean",
+      "bytes": 2373,
+      "sha256": "e115dafbba7dca888d8c914fcf68ab116017c20c39cccb958daed37198d9a094"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourPlaneMarcus.lean",
+      "bytes": 2399,
+      "sha256": "33b1b7d24480361eb088734d1f655a808f93b26cd4f956facc01100aed8973bb"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourPlaneSpan.lean",
+      "bytes": 2266,
+      "sha256": "560ca28b960246058475b4b6d6e05a68cc57a8f3b75a63cc75f500e7deef8ade"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourPlaneTensor.lean",
+      "bytes": 3919,
+      "sha256": "f355ee80c53c5a5fce6c2d83f62ed6c42a7bb99674031dd92a866a0bff874c35"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourPortNorm.lean",
+      "bytes": 8714,
+      "sha256": "2b2d42caa5eb2fedc293bbbe2ad2f503db2ee7bf72ac8bff64248ece3007412e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourProperBoundary.lean",
+      "bytes": 2352,
+      "sha256": "6230e76f89b09ace4e63d1022f9cc41ad42d865338db7813281d18a26cb91783"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourProperHalf.lean",
+      "bytes": 2672,
+      "sha256": "3ea942bd26b7049fa1746a7fd95342779950c26665d40639dc54029aea65ed0a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourProperOrder.lean",
+      "bytes": 4754,
+      "sha256": "f27e339db57edbd79e029b8c89f795117e8ab8158d9a4efeb354a7c35e04e8c4"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourQuadratic.lean",
+      "bytes": 9757,
+      "sha256": "d056a0792111af63174e9d8bf7a4b4e424b5752f3bee4f5f4efe858b1402d7ef"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourRestricted.lean",
+      "bytes": 1963,
+      "sha256": "a4cb100100daf2cff6e6b8ad6f472923aa46d06dcd2a2654395c7fcd9b235042"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourRotatedCompression.lean",
+      "bytes": 4370,
+      "sha256": "e3646fbf8073f96c3b3079ea6ceeee22881de5eecf2ddc86209145557b5cc36e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourRouteNorm.lean",
+      "bytes": 4826,
+      "sha256": "f07f06e1b724a4e0d9ae76e6d45f4da5bac04a3aebeedfe90e93c3d28408ae38"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourRoutePositive.lean",
+      "bytes": 2414,
+      "sha256": "3cd3cb19ecf2ba759780cc62afbac2d6bc7a94a79fd2d8e77eaea0f9d7fa12a6"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourRoutes.lean",
+      "bytes": 5265,
+      "sha256": "1cb5df19b06f8d5186fdb56c78455d0ac78db250c6fad780d4fe91b2987cbbf9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourSecondProper.lean",
+      "bytes": 3752,
+      "sha256": "f99c468ab4820e4ad9a0eeba9ad79ceeb4c7a0137158e1e7466c45719fe06b55"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourSpectator.lean",
+      "bytes": 9150,
+      "sha256": "e296c3074d96fede60cad1e74fa2eea504687115c9eaf72bae53ff37192d9f7f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourSupport.lean",
+      "bytes": 3475,
+      "sha256": "cecf31b070be4d756fd2930dd06e51929701f6bcd5838227b6f47c68d2319c83"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourSupportedTensor.lean",
+      "bytes": 6969,
+      "sha256": "2c22ec099ef2e98c41d7a088a7199711dcbcd63fa5361c639aad4ca97f189c76"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourSymbolic.lean",
+      "bytes": 10053,
+      "sha256": "dade18a1016f62ceb1ef0835e43211a3284730270872670c14f0ee11e8fbf483"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourTarget.lean",
+      "bytes": 9126,
+      "sha256": "7d048d76dd6b94a362eeb4f6f0fa4933ed98cfbff67f7bab4ea2a8285abe6071"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourTerminalFixed.lean",
+      "bytes": 2046,
+      "sha256": "ebf7d95ad622e4860518067e86543c4607f8be488ababbb5199170f33fc361f7"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourThickCompression.lean",
+      "bytes": 3505,
+      "sha256": "8965d807e64fcd2ed15d33250d6117f5eb95b8e255c156750e8602f7c610300e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourThickExchange.lean",
+      "bytes": 4898,
+      "sha256": "c1598db2161fd9413055ec908a2b3c57da8752ee1f283ea1aa806afac13b88f1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourThickJoint.lean",
+      "bytes": 5613,
+      "sha256": "23c31e0a0b363603880832b9ed4d8339a27fa98c0f43e70170326d41afff6a2f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourThickOpenings.lean",
+      "bytes": 5429,
+      "sha256": "fde62ce1fa2221e7120d91251d5d5c6fb508a76fc403741f08e99b70d59cecc0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourThickSlots.lean",
+      "bytes": 4272,
+      "sha256": "63920c262a98d57b3b240831ce49901b2daa0b6c0e18acedf4715f36a9fdde69"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourThickTransfer.lean",
+      "bytes": 5111,
+      "sha256": "f173d46823c2837250a88f737b3b157bdfd272a65fa2db9845b65da2a61f5dc7"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourThirdBoundary.lean",
+      "bytes": 1801,
+      "sha256": "a7827f72bd3ede043909e8029f39acdf2becbf39f9dd1ae3fe57d810b30eb188"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourThirdHalf.lean",
+      "bytes": 2849,
+      "sha256": "81bda16c8728209ed067ef638a8e2b47a88e331ae9b9e5086495d49ac420d925"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourThirdProper.lean",
+      "bytes": 1679,
+      "sha256": "537237e562ae4da580ba2022201bdad2aa8b02d2c77ac39394213174d6e13716"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourTrade.lean",
+      "bytes": 5893,
+      "sha256": "c592ad6a636c982e68a3672fd9b26d84a95b39ee146d165cd109f24c0ac8c216"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourTradeSquares.lean",
+      "bytes": 5988,
+      "sha256": "d42dde7f7d771542132ac382d57975f534cce9caab51c4a4b8a2ef887d4e4e8f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourTransferNaturality.lean",
+      "bytes": 1560,
+      "sha256": "0bc6a109be9988f0fa946a47ac914bcfc9c5651f7343b0ec9cb073cb08a4a0ee"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourUpright.lean",
+      "bytes": 3737,
+      "sha256": "12b88cd2bd608c97966c5f612388c8c62e5b9a499fae233dc3143af4c1f16cd6"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourWireAlgebra.lean",
+      "bytes": 18581,
+      "sha256": "e6746f3492dbddb2d3f5edc6d8fcce68d6ef064fb081cfd54b78f351b4015cca"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourWireAssembly.lean",
+      "bytes": 5160,
+      "sha256": "4ee638db83b99c4d1f111452ce55b791899702bd3c8bc12418ef281227b4ecf3"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourWireCut.lean",
+      "bytes": 6379,
+      "sha256": "15eb39fe680d17c506260529d5bc3868ad07236e73b25df92793e3259e94fcca"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FourWireCutDefs.lean",
+      "bytes": 981,
+      "sha256": "e9dc1366ad26cc94532f2235fbc653ba497819a14df2edac55363f09e278f3c5"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FullCapBoundary.lean",
+      "bytes": 3313,
+      "sha256": "d3be25f2ebfa38f73f2cbd0e1309463b660908b6e633ae1ac85526f5baafedc6"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/FullCapWords.lean",
+      "bytes": 4832,
+      "sha256": "59ab8730af207e65200668e0870e43169a811e9388ea4bad227148d6d787fc82"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/GramInverse.lean",
+      "bytes": 3430,
+      "sha256": "2f87987c0e8fd2619d9db1e6cd6e6026178b939f6f2c7431c1783917a3fa7009"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/HomogeneousSchurProof.lean",
+      "bytes": 447,
+      "sha256": "e5eb9a57bd965e02e0178a6d3b0e0506acfe1664261d1a254e4fcfc2c5551b58"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/IntroExamples.lean",
+      "bytes": 5072,
+      "sha256": "9fde45128498b79bf5ae46b4f303add261dbfc2baaa139c9b090d75f9345dca9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/LocalAction.lean",
+      "bytes": 3093,
+      "sha256": "5808059c112037ed0639ea244c7da10abd47339917cde2b1d33f73ddb9efab2e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/LocalGroup.lean",
+      "bytes": 5190,
+      "sha256": "1731d3e761ecbaefac227f715e98deb76fbd8cdb4466849114d68c2715984c74"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MainResults.lean",
+      "bytes": 2994,
+      "sha256": "ac0367ed6e4f463c185360fbb2044877d79ec514c4f192beffde3952686c068f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MarkedAverage.lean",
+      "bytes": 8252,
+      "sha256": "2172426031535ce77c5956f6e5c604e859cc25723bd799e62673ed6dba64be0b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MarkedBoundaryExample.lean",
+      "bytes": 4757,
+      "sha256": "adbbad9f25ba70940b613f59a5f156780db74d8028562c20492e3fe1a3b27a9e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MarkedEdges.lean",
+      "bytes": 7381,
+      "sha256": "a13fdbe03879771510d0686afd2d82f09977d4da0a68e732879bf58aa6a4fdb3"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MarkedWitness.lean",
+      "bytes": 11842,
+      "sha256": "0db6da0471f9c434ca3fba46843a1b74328007c485f8d1e1be7ddef586b32ebd"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MatchingCoarse.lean",
+      "bytes": 9593,
+      "sha256": "860e937c21d0abb1cf8492d8d2e6fb86ea9d10208cef0a97d68742b45e6c39f8"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MatchingFaceCertificate.lean",
+      "bytes": 3358,
+      "sha256": "8b7e5618b31f9c964f2e793fda9877d6bc37e06d9414f3768543612d9e48920f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MatchingFine.lean",
+      "bytes": 6418,
+      "sha256": "26a469a2eb08592b2ea5e179d0aaa4008521533bd06eaf100cb237360a96ff94"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MatchingFineAverage.lean",
+      "bytes": 5280,
+      "sha256": "5b6ffd74783dfab3bb69b5950d685fd08bda13ab12338aa989786aab8fd8535b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MatchingFineSquares.lean",
+      "bytes": 11928,
+      "sha256": "ef3310b107fd19f5036941e2da011b11bf03650fc2ca3c1342e6ec61bc3b05f1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MatchingThreshold.lean",
+      "bytes": 5815,
+      "sha256": "f5d86c97f11ef4472c9d6e68a03fad22a5bb27ee60dad5208db44b4c62bb532f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MatchingUpper.lean",
+      "bytes": 5774,
+      "sha256": "95175787bf38b975035a26358c48986a8a8c3514c6a6745dbd77e1a8c9d208b7"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MatchingWeight.lean",
+      "bytes": 1237,
+      "sha256": "3cfb9616348502a84ac2ea7052228cc9d504c575a5192a4fa6730f6818053957"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Matchings.lean",
+      "bytes": 10591,
+      "sha256": "afcd5c1aa781eda1f41a2dca03138229398b4b84628bf24056fc3099eb9373bc"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/MatrixRange.lean",
+      "bytes": 1556,
+      "sha256": "f06682a6dc6b1e481500a28c08a55802de4094751af8a67d3648082b4d0a7b2c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Negative.lean",
+      "bytes": 7151,
+      "sha256": "9df739c2bf6e0963cb529183bb42d5df153757ccfabf1f8f184d954cfad4d3d6"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/NegativeOpenBend.lean",
+      "bytes": 8816,
+      "sha256": "6ea3abb4f78a3ea8e28121a4844d9fb0c428217404ee3f25b7d29e112946f1ac"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/NegativeOpenTransport.lean",
+      "bytes": 6649,
+      "sha256": "11fd86971d4f170138d094b0c3f70c29eba5b832f149b1a2417d91665131452a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Occupation.lean",
+      "bytes": 14653,
+      "sha256": "24410e7627be975e66c04058b220ea7adb20d35b216455412fe4927ce708e747"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/OccupationBasis.lean",
+      "bytes": 4236,
+      "sha256": "5bedad73c2ddef1adc740fb9f56e05620a8f2a6c9b6cc0e681be8fd8f03cfa1e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/OccupationCoefficient.lean",
+      "bytes": 8006,
+      "sha256": "42f7c975740bacccae126eebc469e483e97109cb03dddd261dedb1ff068502d2"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/OccupationRouting.lean",
+      "bytes": 4505,
+      "sha256": "e2a95e5e274302e4a1b4d403f4bb919501a1536942e4bc89feaad075fe937002"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/OccupationSeam.lean",
+      "bytes": 11256,
+      "sha256": "eaff39180a984ef54e78a1fa183bb522ee44fa5d74bc39b89bc69d9b9ded5fbe"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/OccupationSplit.lean",
+      "bytes": 5407,
+      "sha256": "a4ca5da82ed8df47703f3e6c5e0c74dc3068752b96bcfffb34e058e1a21c250d"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/OddCycleSquares.lean",
+      "bytes": 7692,
+      "sha256": "b0dd39870123273eaba333d93e24997afc82e17b831177cb94b74df4277ebbd1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/OddMatchingMass.lean",
+      "bytes": 6838,
+      "sha256": "cde720255a5ba2a932c395b20dd6121b88961ea38e9ddb4dbfa3fdea3311ba72"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/OnePort.lean",
+      "bytes": 1242,
+      "sha256": "fbf4afa6b5ed6e3246490f48c09d7dc659c9044f84ce4f5e0607833fdebd12c2"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/OpeningExamples.lean",
+      "bytes": 3795,
+      "sha256": "817b67b5d5256983aa25ba745d401406ec450ec5986f9b93db21253b2dc73512"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PacketScale.lean",
+      "bytes": 4164,
+      "sha256": "a4c81c87aacdc5931e436f6303b8a69741ededfacc5ffd6488f6bea61e730b29"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PacketSupport.lean",
+      "bytes": 7838,
+      "sha256": "3fb833549b7a80e7be52f7719f92dd09254180e2c8530bdc25a05a3538997a05"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairBound.lean",
+      "bytes": 11773,
+      "sha256": "85aed2cff989e34ab84854509ccd8660f52920a5a743e451da153c3637ff816b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairOrthonormalExample.lean",
+      "bytes": 6041,
+      "sha256": "6cf37679f23885f579cf4e264adf1458c489867e92e04010a26b453c7f8564cf"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairResidualEquality.lean",
+      "bytes": 2904,
+      "sha256": "53ebdd9c9286edf229c19196c3ac0f28f2a17dafa5f54e493ffb22a7333e40a0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairResidualExample.lean",
+      "bytes": 5042,
+      "sha256": "35c33876d8846623cfb08f06bec5ff5221d591ff5dd5325675f533aeec7004ad"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairResidualMaps.lean",
+      "bytes": 2802,
+      "sha256": "c88013e41b693b6129f34f9bb37b3a04d326afec59c32609d5f32fc470ddfb9e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairResidualOperator.lean",
+      "bytes": 2900,
+      "sha256": "feb4db2cb863b7ecbc4040b0283b6427038603b521f5a716bc3f458ada420ee2"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairResidualProjection.lean",
+      "bytes": 1555,
+      "sha256": "49acd25787098ba4c6591bc443b7c3dbb80a1ba07d43d13b55f56e77ab949611"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairResidualSquares.lean",
+      "bytes": 3238,
+      "sha256": "f3386ace2ce4710462122aa98dd3df1fa823233a3dbf2cb512aa062b5cb22d8a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairSeamCut.lean",
+      "bytes": 3895,
+      "sha256": "6b3d39d7abd41828b18934ab3e32c55058bf6d4b62fe04f0bc8a2b0030a8dac0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairSeamRank.lean",
+      "bytes": 1858,
+      "sha256": "35b35180bd082a2d9307180b89d4620fedb012b6e185ab74472282dd6549e622"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PairSquares.lean",
+      "bytes": 4669,
+      "sha256": "4f23bbbde0dcf220534bbfd8a86983083ac54ae6c61a5d6a0e2c5dbcf6de4357"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Paper.lean",
+      "bytes": 626,
+      "sha256": "02cdd6d28918a4146487b99c975c64073b1ea312e1baad7b7c157bc60226c107"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PaperCertificate.lean",
+      "bytes": 2491,
+      "sha256": "4a6e8ab1ca5b670a644a7356686ed999b46fbe7b03b4554f99e7e8333e13da6b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PathJacobi.lean",
+      "bytes": 4210,
+      "sha256": "af9884c258f0cde86926ec1b6f49214f900623e43a60a82703cd3dbd1a08a1fe"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PathJacobiCoefficients.lean",
+      "bytes": 2160,
+      "sha256": "056d7604b254dd42234af4ce2f669172f9542bb3a735ec0e032531e4adb7f3be"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PathJacobiImaginary.lean",
+      "bytes": 6000,
+      "sha256": "f0d17d51fdff2747249299a82bedcc0cc8f126f0841a9df589c56578f024f288"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PathMeans.lean",
+      "bytes": 3905,
+      "sha256": "259e99568fa5ea2eb512fead3b61a6d0cf28a52acd04f9bc4386acf2709c69a4"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PathSpectrum.lean",
+      "bytes": 11037,
+      "sha256": "a497913188800a5255e909cfdd9d5fa0ccd130b9b0c0b6a2a40440b4e0b60172"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PieceEnergies.lean",
+      "bytes": 3254,
+      "sha256": "e7d75d7700a54ae03139fca87c23399a756ab26ad9d97662143e782fc09c4b59"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PieceProductSquares.lean",
+      "bytes": 6051,
+      "sha256": "9a32fb3600ed229abadf07943ba4418cedd250605c5eb5c634914ab94338501b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PieceScoreProduct.lean",
+      "bytes": 4013,
+      "sha256": "ea9226c098642251f0ae8675e112b9813052c0a71c9255dbfd6a0ffcabadd954"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PieceSignProducts.lean",
+      "bytes": 3600,
+      "sha256": "57bd8fc62bffb28b877baa76f32b18a3e47065cec4d307da4066a7594ff0c717"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PivotBudget.lean",
+      "bytes": 5099,
+      "sha256": "710409a8cc35ecee770e267d861b3aa6934c2bc47e6792c0ae7263379e619f07"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PivotCertificate.lean",
+      "bytes": 2192,
+      "sha256": "ce66add38ff2538ccd816fca19d67e713fb49e5bda67baf0363d65740a897d9e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Polarization.lean",
+      "bytes": 5410,
+      "sha256": "47ca946bd15c378b822c36cde154afb5e6f0c512f3b14e22577add2aa8fca5b1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PortAverages.lean",
+      "bytes": 5193,
+      "sha256": "46ee3a98bdd67d1ded4f01b638853a27539703abe1332f2850644700a0e3e9d8"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/PortIntersection.lean",
+      "bytes": 2095,
+      "sha256": "0a7a661e84c41b00fd128ad545383f1141507c25e15aa136890925e517c8a03e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Quadratic.lean",
+      "bytes": 7171,
+      "sha256": "64b1084c2d2f77af13d5ba24104a84cd3a4d43352f0df941f52b8b8e67962701"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RawCycleClass.lean",
+      "bytes": 2719,
+      "sha256": "d7215ade8ca1d7cbef5e5c5e4a13f11fafc1ce9786bb73ece90fff4c534c15a1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RawFaceCertificate.lean",
+      "bytes": 2618,
+      "sha256": "304af7991e51f43acbbaca545ca20e26d66cc1bac23746a907198b268a476aa4"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RawFaceMeans.lean",
+      "bytes": 11982,
+      "sha256": "5817d4a33c8ad1adecd6fcff62e263b6c6dec3f8e4ab89242ccc38f381538c7e"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RawFaceWeights.lean",
+      "bytes": 5919,
+      "sha256": "8bf8cdabf2cd023cf47495ff237560b67334cb0e17b25cbcfbfe9b1bd8be3f34"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RawOddCycleSquares.lean",
+      "bytes": 6464,
+      "sha256": "8b24f496676b34ea7aa754d3d9c78588588ca57fbefb3a0153208360d1b2cc9b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RawTripleFaces.lean",
+      "bytes": 9661,
+      "sha256": "057e9bbc921cedb45470b6d3031b515ab74c33089bf9d5bcc26a0272da225732"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RefinedCoarse.lean",
+      "bytes": 5152,
+      "sha256": "fe9f706463b60966529d7998107c4303192a21ca73b39a2c5b5c96bd56b798db"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RefinedThreshold.lean",
+      "bytes": 2564,
+      "sha256": "785d1040396c26ac11c5069f85ecc9f93c997d8fc2aa8a204d2184d0e78a044c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedAdjoint.lean",
+      "bytes": 3282,
+      "sha256": "cf39562cc32e31b3c145d4f63ff9b1484b505405c7642b8f3caddda43c3c5996"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedCables.lean",
+      "bytes": 2552,
+      "sha256": "f4542cf85855e26dfc25ea41c14e92b6282aab6e9ebc7a02563f45459f155c85"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedCapMatrix.lean",
+      "bytes": 2739,
+      "sha256": "50d5bfeab8ff13220092fb202923890a35451cd4c0a9bd899da6ddbdeea216b6"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedClasp.lean",
+      "bytes": 3393,
+      "sha256": "a560297d7d6d85e5e1d58d0598d6f7fe20cc13a2306d9f99a30e541d0fb67c13"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedFamilyProjection.lean",
+      "bytes": 10571,
+      "sha256": "77b90086a66569036937eb626de95187def79027d1e8f533a838e5eec9c1d7cf"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedGluing.lean",
+      "bytes": 3304,
+      "sha256": "dfa68f62fff18edbecdf309f52d319b8894c40d1f3453f18939ec979deb6e412"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedOccupationFrame.lean",
+      "bytes": 3730,
+      "sha256": "aa3f7d9f46d353def292838a0872184a7cf99ff96ec15bc059512103f79c2ace"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedSector.lean",
+      "bytes": 3439,
+      "sha256": "73d3cc3e7e85525e7f092dec2567bd8bd585c631b43ccd38aacdaf46cc7a6129"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedSubspaceProjection.lean",
+      "bytes": 12439,
+      "sha256": "502365d674f743a06a99c3aecd9aca1e3470bc420b8a8136f0d470e9efc644f9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedTrace.lean",
+      "bytes": 7199,
+      "sha256": "c0837d361145ae4a77c613b9b1cea3ff23d36c7a129005eeb0e8aa818c718671"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutedUniform.lean",
+      "bytes": 4408,
+      "sha256": "ff2fbf617eb7023cbd2b2bfef3888ee02b9caab4721a508ae0832a7354815917"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingAttachment.lean",
+      "bytes": 3503,
+      "sha256": "b2e4b596b75e31d01f63424038bdc409699e883ec0dbec5392ff4830b132900f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingDefect.lean",
+      "bytes": 5728,
+      "sha256": "cffe5641c2147533d9be01214258ffa4bad5791395742812094b383b977f1593"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingExits.lean",
+      "bytes": 7645,
+      "sha256": "063ac5538b862af5074de45035b6ed73426339321e3502e1c359ef10a160f826"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingFibres.lean",
+      "bytes": 9614,
+      "sha256": "aab863b06c48dc936f452283007bb442c8172a73f3d580fae3a8249dd4467c4d"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingInsertion.lean",
+      "bytes": 5624,
+      "sha256": "557473ae74f162ff39731df4be89a430e5506e75ff7fa2d7a3719d431297a68f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingLayout.lean",
+      "bytes": 1406,
+      "sha256": "f7296080137981d965474a2bbbc533a69d332fcfe40998b8cda01327342579d0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingOperators.lean",
+      "bytes": 6092,
+      "sha256": "4cb10185ac8fe1f05650a789d393d8edbb2ff45d630fca20a47449f507947d30"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingPacketReadout.lean",
+      "bytes": 4933,
+      "sha256": "8948761ed211a2f66382eb5f5629fec765e3681b442fcfb350c9185f65e7fc51"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingReadout.lean",
+      "bytes": 2736,
+      "sha256": "30530ad9607117079916bbc49583bc86ce8f65f234d938bc652b75bef81d567c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/RoutingTransport.lean",
+      "bytes": 3579,
+      "sha256": "d5fc8b8f2522ef240d701207c234f4791405c2e5fd7ee0f1bd6cc15ec076f32b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Routings.lean",
+      "bytes": 21964,
+      "sha256": "25364699646a6e0f3c22107852917e7c4ba03cdbdbcda72f5f0703fafa5ca111"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SchurAverage.lean",
+      "bytes": 5940,
+      "sha256": "7e2f9f46259d9ff0ffa72f11c97115ebf280c5080ab87027ed873a5d9582d692"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SchurDoubleCoset.lean",
+      "bytes": 5338,
+      "sha256": "96816e66c0369dc1e1ea03674ab24c75a1b37eaa99e00a86a7538c38c3bdf981"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SchurFibreCount.lean",
+      "bytes": 5030,
+      "sha256": "d277638c66e621dccc9be8d531ad9536d628741e211f5e3ad7169d78cf702b5d"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SchurNormalization.lean",
+      "bytes": 4369,
+      "sha256": "b05b23b9108fe7e3d5f81f21bbedf23862da0f0cfb05e85a7778590e4dbfe74b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SchurSubsetCount.lean",
+      "bytes": 1510,
+      "sha256": "eff22081480d62a76ab1fd3fcee4b61e414ceb0e0bb4a53ec651d941ae0aa735"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SchurWireCriterion.lean",
+      "bytes": 2734,
+      "sha256": "eb6b2895cc5a7bd41e9a333e1d33db38e72f2a2f1b006b57f10d0ff6524ef42b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SectorProjection.lean",
+      "bytes": 1305,
+      "sha256": "0d756e71251087c6e546a57754fa9fd27f84ef8bdfe68adb8df61b8f3ec28c90"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SixCycleExample.lean",
+      "bytes": 2151,
+      "sha256": "4e1f8fd2976561ced0e7a9207cbee764def69fb1e2ea2c74d8de9262a739ab60"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Statement.lean",
+      "bytes": 2564,
+      "sha256": "8a090a567e3b0403fec939160e6d6cbc24f157848a46d4311139d9f783b942e2"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/StraightCut.lean",
+      "bytes": 7922,
+      "sha256": "ab36965759d6f01f6ab6b45fc26682b5ebbe72fe28774628e404364239af0f7a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Support.lean",
+      "bytes": 3898,
+      "sha256": "be6b3cc81fb2a31c08cc0bfd82fa9b74ead51cf171e657980d9facf91a0566a9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SupportCoordinates.lean",
+      "bytes": 4352,
+      "sha256": "022533ef9e0448ee0846e856efd0df1613614c49ada468cb0d810106fa04b500"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SupportCup.lean",
+      "bytes": 5798,
+      "sha256": "3ac6bcd70cba13f06ea39b9b51dece597394e4a25a79312299475041e923f013"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/SupportRouteExamples.lean",
+      "bytes": 6602,
+      "sha256": "7b5ed9fcd15e0efe21a859d0b88b9e0a4e26a1534dbe614ff673ab367550d174"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TenEndpoint.lean",
+      "bytes": 3892,
+      "sha256": "d42c8cf9b7891cdc7cca810d351ecb9a2d1987b84d587f47e26ddc6c25aac37b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TensorCoordinates.lean",
+      "bytes": 2036,
+      "sha256": "0ce0f68560e41b241327ff10d03d1ba9a7aed3547c4ceb469b715efba6a5d19b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeAverageClosure.lean",
+      "bytes": 5859,
+      "sha256": "d06e3dd20c44bb1d8e574429f714006f0a850c848e18894f13c969865d47a817"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeBlocks.lean",
+      "bytes": 6250,
+      "sha256": "49977a414408c91720bd7fcfa206e27e47c250e046fca599b20933b9cbc15aee"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeCanonical.lean",
+      "bytes": 5431,
+      "sha256": "8d267cc2c415cb06ff3de0c3c3f6d4219fc9708551ffc85e256461704c51fdc9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeCanonicalGlue.lean",
+      "bytes": 6773,
+      "sha256": "532874c672c26ae9750bfb3606f962d6e3eb2ef93122fd06a899aab846668c86"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeCertificate.lean",
+      "bytes": 932,
+      "sha256": "066b21c4f77129f1e90dd5bbff66abb95e08d94af3a3df2f738bc6fe8266e1db"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeCertificateData.lean",
+      "bytes": 5236,
+      "sha256": "75a353f93c7259586d4d3029080188e127e56151a1a48936c03a83b2497feb98"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeChunks.lean",
+      "bytes": 863,
+      "sha256": "4c640e2a6561bdf47564d7873f1b3b88b0a77011520e0689d04cd4a567b38924"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeCoarse.lean",
+      "bytes": 4378,
+      "sha256": "3c40a6aaf69032052d1ce25c2627bd6900d30dd18cd7c389f0421057d16ac829"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeCyclicRead.lean",
+      "bytes": 3930,
+      "sha256": "5388c94beb9b8fc59ff3970d5a4711b5d06a74a71e7bec6565d4d53349ddbf91"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeEndpoint.lean",
+      "bytes": 8735,
+      "sha256": "31088b494203de867ce0dda79006d64f33964bc6db552edebc0ca5b36477f180"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeEvaluation.lean",
+      "bytes": 4053,
+      "sha256": "8fd5fe5f1309bf0181894f5d3446327e64b4aa5f177aecb44229ab240132b3e4"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeFine.lean",
+      "bytes": 4307,
+      "sha256": "f621d06d1f22ea2f0da45c4a7fbcb974ca8562b22d244cf6e5afe79ba7a03e3c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeFixed.lean",
+      "bytes": 1330,
+      "sha256": "313ad0d3f35bb1c926a8b592fc0282b4616f5e6351373f02e50c938badd6a36c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeFixedData.lean",
+      "bytes": 981,
+      "sha256": "5536db4069da5a5b74116796cd03fe5176b801a5cfeff4123f02c2385be966a1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeGeneralEnds.lean",
+      "bytes": 6132,
+      "sha256": "b3c8405e7f76ac6df02c9e1a5a9e855d0cc9ea4b8b93d12879f47e124e6f9189"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeGeneralOpen.lean",
+      "bytes": 4094,
+      "sha256": "570a99a0737972f276cf49f6839733e00670152f01a75f75e406b40b8c4aa505"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeGeneralRaw.lean",
+      "bytes": 5264,
+      "sha256": "90ef6dcea3372eb74401e297321c0f6a114727ad37898f3061a9da6f93885d81"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeGeneralSupported.lean",
+      "bytes": 2916,
+      "sha256": "526f723bd908634a873c45058f8fdc19edb3b0b86efdd746f725a7cc7317a2a6"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeGram.lean",
+      "bytes": 8250,
+      "sha256": "1f4ad9a69fda0e9c817f9085fc426e2c7845deaad95c466cbe425e1e9ff355fe"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeLastCap.lean",
+      "bytes": 9656,
+      "sha256": "a774dd1ef58efc59a9f8f97dbf7e3cd140fc33d3b797a351415625c96293cacc"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeLastRouted.lean",
+      "bytes": 4300,
+      "sha256": "801f5ef15576d6b5368456065463df5b16966e6cd5108ce849336bdefa684fa3"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeMarked.lean",
+      "bytes": 1820,
+      "sha256": "1f8466883e095fbacd6f710c8305a9af442cabd87e904d7963b92732ed214c58"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeMarkedAverage.lean",
+      "bytes": 7021,
+      "sha256": "d0cd0ad7174f55a55a8c823f15c8e7810f356d3f88ee456b70f3a1ccd9d8dc00"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeMarkedMatrix.lean",
+      "bytes": 2817,
+      "sha256": "433c74c3111fd7769274fc5fce4ce29a8fae3ca15ee7c14c8635468bec886956"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeOnesExample.lean",
+      "bytes": 9296,
+      "sha256": "60ad8a282ae5cbbdb95626aac4f52080b16dc2fbe0f1ecc625f7652c4a987aab"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeOrbitGap.lean",
+      "bytes": 2441,
+      "sha256": "e548231f377e5f1e6a80425cd43b6d052c1029b6d8ea519bf8466565c8a01b31"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeOriginal.lean",
+      "bytes": 3503,
+      "sha256": "76ff90d51a4d953db2ce4990d944a94d5b5fa797d919010c2816d699fd1be2d7"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeOriginalSupported.lean",
+      "bytes": 1616,
+      "sha256": "b07b828037397ca5d1a749dd5d56c2266e215765cb4489b3ba908e0d49e2a1c4"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneBasis.lean",
+      "bytes": 2151,
+      "sha256": "702db4b443e919a9b4b03583c37110c97ed9c64f9264b9f813c39e1ec7fb6517"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneBoundary.lean",
+      "bytes": 1595,
+      "sha256": "bec241cd804e59aa721fcfca859b0b1cd0097392d406eebc5a3545f49c61d562"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneCap.lean",
+      "bytes": 4516,
+      "sha256": "dd9392a1204a1a401a4b399bd137a73e9a702f4b1d1c2b2823b16d3058ab5013"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneIntrinsicRange.lean",
+      "bytes": 2017,
+      "sha256": "32d7d31614bd03ec3ba1d59f6d209778eea1f2fc2fced3d45fb19c139a6c0a9f"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneMarcus.lean",
+      "bytes": 3143,
+      "sha256": "dab1eb22327b4556d8f668207a4e7204d88f841a35d027a7eb3943f74b8af3fc"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneProjection.lean",
+      "bytes": 4312,
+      "sha256": "b7cebbf9efc8d55d6b7d6125364e7be24140835049bdfadb92f98cc0b1769976"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlanePullback.lean",
+      "bytes": 2237,
+      "sha256": "3a98a60ce4d687567620034d0643afd10d8973d4f4ecdfb809487f2a4a04f9ef"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneRestriction.lean",
+      "bytes": 3462,
+      "sha256": "75ed0839a8d5d4c91eb4f150d867fc3231cf91807f2574b6d1a3c03b88a6cb45"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneRouted.lean",
+      "bytes": 4460,
+      "sha256": "90c4f3c1593de3ca86e96e37454a17f635543bf0840a7d8fb55871ddc1385361"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneSpan.lean",
+      "bytes": 3131,
+      "sha256": "0b08cfc5aac444d7b909cdb27358ce0e11f16cf64e60a29fc2bdba8c211f917c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneTensorRange.lean",
+      "bytes": 1974,
+      "sha256": "b58c33e58e61a1a7a1b753d08c787951607fd17237e66dac72002d061fbe8cda"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneTheorem.lean",
+      "bytes": 4489,
+      "sha256": "1d23ec3bbdcf8c19d40a39fc3bafae4b998e60526603b5bc70d97797738e2838"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePlaneWords.lean",
+      "bytes": 3233,
+      "sha256": "8031f3243d63ae18bb691a3564489edfdb73e6be6567ca40ae33b19905fba7a0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreePos.lean",
+      "bytes": 7426,
+      "sha256": "4920331ddc638458e8b0c4c238fba074ca1d11b822554a3a4ecc86faa05f5714"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeQuadratic.lean",
+      "bytes": 1184,
+      "sha256": "2708c758b066dda005453e4272acfab49462a74772313e513686f0cfe0352916"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeSupport.lean",
+      "bytes": 5130,
+      "sha256": "711df1cbb170b16d704ff48020ccf60f0e5d1da77b8bc7c8f6ee7ef3ad4b6db4"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeSupportedAssembly.lean",
+      "bytes": 5161,
+      "sha256": "891c3df31b3f10cb8c2d45109d31825f51e9bc9fd11bb4825cda87b992623540"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeSupportedMarcus.lean",
+      "bytes": 779,
+      "sha256": "e08a3b14cead7ad46ef65da867720ecfdb59db5e80e486625d0cd916466b43cb"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeSupportedProduct.lean",
+      "bytes": 3622,
+      "sha256": "3e33a2c9722acca3bfa6c732de6814002a68cf318e07d6c5cc072fe4130e6bc9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeThin.lean",
+      "bytes": 5350,
+      "sha256": "b5d2933834394284f080d03217cdb04f652b4e18626d03276f58266c08415db9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeTransfer.lean",
+      "bytes": 3124,
+      "sha256": "0211a4a4cd6436ee0dee6c106bc3b0115b5a340d34f39c37d8e4d0f92b94d117"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeVerifyFixed.lean",
+      "bytes": 6996,
+      "sha256": "ecf23f68afeba81ad6de5e95bebe5e4eb5a6e0f363f68f4c42ad1d6dd06c7a54"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeVerifyRaw.lean",
+      "bytes": 6997,
+      "sha256": "e7ae5eb20ba724349adcf22ba58eb4a3e0baf9346d722c4b6f448e99827120f3"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeVerifyRoutesA.lean",
+      "bytes": 11018,
+      "sha256": "6e2db3e598950ecb19843c76d900edc478692cc6757aa001e75855d3e8acaca0"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeVerifyRoutesB.lean",
+      "bytes": 13712,
+      "sha256": "747503380b319fdf874380bb5104e54ef65f939d177a4b9c0684892074525136"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeVerifyRoutesC.lean",
+      "bytes": 13982,
+      "sha256": "85ce12c4fa26b9ce84c87bad9121f6dfa320212bded93fbd2f322e33bf8077a9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeVerifyRoutesD.lean",
+      "bytes": 13349,
+      "sha256": "34a7680d9a5e2ce7ef2d9cb81d4e6b26074ea7a2a9e200e393593849a9af3c0a"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeVerifyTarget.lean",
+      "bytes": 9334,
+      "sha256": "55d8c9642b5575bf743e11ce88fcba61a2c95bb1bd299caca4f675b3d89559cd"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeWire.lean",
+      "bytes": 3710,
+      "sha256": "4acb7ebb9e8289e27ca0b08001daa131bcd0ade0be91682a7ad59d0b19864255"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ThreeWireGlue.lean",
+      "bytes": 8166,
+      "sha256": "8c301ca587fb65e24e36aa0abe87e92d0de0a5bd03430ee5c5141f9c719396f5"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Threshold.lean",
+      "bytes": 10965,
+      "sha256": "edaeeca7a2537c150aa1f1c51dae1583caf09a528077f53f7366ed5927f7fa3d"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TraceBound.lean",
+      "bytes": 3618,
+      "sha256": "32752eff2c026474e09427d8390cd1654c378d9709c0d66d0df754d7fd2f5f33"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TradeMatrix.lean",
+      "bytes": 6211,
+      "sha256": "58bb1a3c8caaf307465a65d6309317d8a0240d060ca4878250dc31b405b10f95"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TradePivots.lean",
+      "bytes": 10701,
+      "sha256": "1e9ee8d25d7ab6db168946f5b8b397eb41539006c082613fb8cf076831a47bd1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/Transfer.lean",
+      "bytes": 11640,
+      "sha256": "e741a0b1c17f9421c849bc63e3d178d62f8e00783cf1f12431c5bde0508022bb"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TransferBlocks.lean",
+      "bytes": 17166,
+      "sha256": "b8dc2ef8a93e151ad6ef78404b2809b38a6590c8f2a4e0a8942529559d619778"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TwoCapExample.lean",
+      "bytes": 3430,
+      "sha256": "767cde3c7cc570dfe650c63794f96436c33b66047240b7a3bbbeda70333f3cc7"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TwoFullCaps.lean",
+      "bytes": 4904,
+      "sha256": "efc8c6092a300e0db5437dd975e839bad444dd44de5618cf05a892bbbe434409"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TwoMarkedExample.lean",
+      "bytes": 6015,
+      "sha256": "25d4cb577d25aaaf0f1268e6b79f6d1badb2a09579920d88e1e4843a8a3841a1"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TwoStep.lean",
+      "bytes": 5639,
+      "sha256": "91368d34647db8bc43548ab4573d1dfe90c798924cd61dc72de523d93f193761"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TwoStepGlobalSquares.lean",
+      "bytes": 6350,
+      "sha256": "830bb33fb504673bb3d54e805e759d3c05d67af36e4fcd63c135f6151f4757ef"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TwoStepLocalSquares.lean",
+      "bytes": 4633,
+      "sha256": "9352665a737f43c141e6c6a0f3a29e8753e5cdf82237245dcf03a57024db7551"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/TwoStepSpectatorSquares.lean",
+      "bytes": 4137,
+      "sha256": "52a4f68c2561ea3b01b8903b65a68a040fce7a86b30ae2a9b415077499c2b1aa"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/VerifiedPaper.lean",
+      "bytes": 1516,
+      "sha256": "2e2d02b79ac16f276e29a212afc2899d4fc448b53716d9ef050e3b707cf72507"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/WholeEdges.lean",
+      "bytes": 5583,
+      "sha256": "c0856769205575679ae4979650e89fb79838a44a72be1513ecab9cdeeefcce9b"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/WireSchur.lean",
+      "bytes": 11495,
+      "sha256": "e906f30da87fcd59851fd3ce2e40ad91ae657843db88dc166fa0936f9e7ecb1c"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ZeroCap.lean",
+      "bytes": 8643,
+      "sha256": "4fc6278cb81016b21806a9116fd49f9f59cda06d73206f28f229a80bb10b11a9"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ZeroCapClasp.lean",
+      "bytes": 3574,
+      "sha256": "f65f8359ad686779cb4921090b6eb5b1e6cace76066319c06e2c15684d0bdfe3"
+    },
+    {
+      "path": "code/Lean/BlockPermanents/ZeroCapDefs.lean",
+      "bytes": 3318,
+      "sha256": "e0c2996da3933addd127f4c05764d171a8447a413984fb9603a981180a5f6f08"
+    },
+    {
+      "path": "code/Lean/BlockPermanents.lean",
+      "bytes": 14759,
+      "sha256": "8b18830f2eb4ed8ec7fa667d9c062686f8a2a2508acfbd16c1e446caf592e390"
+    },
+    {
+      "path": "code/Lean/MANUSCRIPT_INDEX.md",
+      "bytes": 18363,
+      "sha256": "26a92d73c16d135a83f13b04df04a188e93c7e8c70ca9e71fdd61107b355a67b"
+    },
+    {
+      "path": "code/Lean/PROOF_MAP.md",
+      "bytes": 14800,
+      "sha256": "80d9c12e1232a2a057009a959bc02c646f9fdcfc052c0240eae8d94e6ae03b6f"
+    },
+    {
+      "path": "code/Lean/README.md",
+      "bytes": 6175,
+      "sha256": "c60b695850088884efbfd374332583da70e09ad30e8a53b527ed559d87a2591c"
+    },
+    {
+      "path": "code/Lean/STAGE_1.md",
+      "bytes": 2591,
+      "sha256": "849b8e5971a617e62e75ee3d61800f991a908ef5dc30fe0bd84e90dcff5cc9e3"
+    },
+    {
+      "path": "code/Lean/STAGE_10.md",
+      "bytes": 2068,
+      "sha256": "60dcf758bdc7c62c9bf74b7939ef5aa0a4651dbb968b7b0c31322758b84d7da2"
+    },
+    {
+      "path": "code/Lean/STAGE_11.md",
+      "bytes": 951,
+      "sha256": "71dd8292dde972a636416787c96f0a5405afbe415f26637f3e9676c70bdda6ce"
+    },
+    {
+      "path": "code/Lean/STAGE_12.md",
+      "bytes": 563,
+      "sha256": "198f499da8d499917067477a0a5a37735bcdccd370146a22b04046c658c2cbd4"
+    },
+    {
+      "path": "code/Lean/STAGE_13.md",
+      "bytes": 872,
+      "sha256": "98e14c4906acf8ab86415e2cf44a4afb58f32cc10af700b6aba66b791a2e7c33"
+    },
+    {
+      "path": "code/Lean/STAGE_14.md",
+      "bytes": 787,
+      "sha256": "6c271d54b844bb221247ffd55f068001111c3e0ce812e5765623f7a173a67b81"
+    },
+    {
+      "path": "code/Lean/STAGE_15.md",
+      "bytes": 2231,
+      "sha256": "d44bf967566278c546b3673b4eb07323e091c2e930dbb6c5f71e7a127d455072"
+    },
+    {
+      "path": "code/Lean/STAGE_16.md",
+      "bytes": 654,
+      "sha256": "1458c0137752e277f6199981cb315ff58f181f68627e02f6ca40fc45866609ba"
+    },
+    {
+      "path": "code/Lean/STAGE_17.md",
+      "bytes": 893,
+      "sha256": "48129ad4ab8dc398bcdb10a552883e89abcd74d22cca927854eb6c0765b2fd5c"
+    },
+    {
+      "path": "code/Lean/STAGE_18.md",
+      "bytes": 1069,
+      "sha256": "5e316806e5fe03acbf1d8e2b7c05c84d9d426783ea9bebf70d76f90a731bc0d4"
+    },
+    {
+      "path": "code/Lean/STAGE_19.md",
+      "bytes": 1230,
+      "sha256": "833f1436be0f73269e91384c8654e028de23bddc08fe27f6846439fb9468686f"
+    },
+    {
+      "path": "code/Lean/STAGE_2.md",
+      "bytes": 2032,
+      "sha256": "c606bc984b0f38f5aa6b1f79a330cd2470d1f45e67fa1113b5ab4e9286d5d7e8"
+    },
+    {
+      "path": "code/Lean/STAGE_20.md",
+      "bytes": 2083,
+      "sha256": "a353c81a8ab15fb343db0ff51c0b3ab1862f3ad58626077c455a7a07c86cd975"
+    },
+    {
+      "path": "code/Lean/STAGE_21.md",
+      "bytes": 815,
+      "sha256": "99d91de17a696b2b69b959ca044dc8f407837212e64a7bb29d79d9343a594cdd"
+    },
+    {
+      "path": "code/Lean/STAGE_22.md",
+      "bytes": 925,
+      "sha256": "4c5daa12ac40ff79b42d94d42c76246a4be1b42f5a31dd9c97374e9e8c50de88"
+    },
+    {
+      "path": "code/Lean/STAGE_23.md",
+      "bytes": 749,
+      "sha256": "c5e0db175b760769b83f0bd72b1950d034d56bbb69121e75db99a2d300b66e5e"
+    },
+    {
+      "path": "code/Lean/STAGE_24.md",
+      "bytes": 1771,
+      "sha256": "9368b9056b1f768a42b630acd3f1c04e749be757cd31552a6e5385c4f51e8b97"
+    },
+    {
+      "path": "code/Lean/STAGE_25.md",
+      "bytes": 2472,
+      "sha256": "e0fa7d9d2210f8cbba1928ffc59006b63382ac4019f962e8390dc9f77f800245"
+    },
+    {
+      "path": "code/Lean/STAGE_26.md",
+      "bytes": 594,
+      "sha256": "d9f4bf91729f880363c0ea61134d2bd6c7e630dd27cd84f59bac78f0ea38e664"
+    },
+    {
+      "path": "code/Lean/STAGE_27.md",
+      "bytes": 747,
+      "sha256": "7f87b49df9cdf6d04b9ab2e98a173d9c9bd579a2910916aedda2d876b31da35b"
+    },
+    {
+      "path": "code/Lean/STAGE_28.md",
+      "bytes": 843,
+      "sha256": "8281347866a0a29964ed41af956430880d4257f8ef499c547fbd67241d2b7a7e"
+    },
+    {
+      "path": "code/Lean/STAGE_29.md",
+      "bytes": 647,
+      "sha256": "c984b5604814f71cc4b876a102b7150e39e76b6cf2e6c39e362bb313cc9ff6cf"
+    },
+    {
+      "path": "code/Lean/STAGE_3.md",
+      "bytes": 2006,
+      "sha256": "ea37e736fe73cd1461be639c31643d2fb2a6863b391e18c406d21c1f348e9657"
+    },
+    {
+      "path": "code/Lean/STAGE_30.md",
+      "bytes": 4240,
+      "sha256": "bf66e1659fd2b3145fb714dc378c03f1957d0bda69b04830fa73b36a3b825983"
+    },
+    {
+      "path": "code/Lean/STAGE_31.md",
+      "bytes": 830,
+      "sha256": "da17e9cada86319abfbb2fc9fafa560874c960c1398b3c8e9c84c9cbfcdb9540"
+    },
+    {
+      "path": "code/Lean/STAGE_32.md",
+      "bytes": 718,
+      "sha256": "21c2f0b06730377a7fb97ba2bd1df851a58d2dbbfad2bebb8a785d7e1a85e74b"
+    },
+    {
+      "path": "code/Lean/STAGE_33.md",
+      "bytes": 643,
+      "sha256": "eebf5c9b01a221c0317b29566e57f7b50c518aea7407c2628c579a55d6a3c6f8"
+    },
+    {
+      "path": "code/Lean/STAGE_34.md",
+      "bytes": 1360,
+      "sha256": "8af75b9b85fda88f28ada35aa14c8b75e3f6bc405c12309adc78979d9a6c6e60"
+    },
+    {
+      "path": "code/Lean/STAGE_35.md",
+      "bytes": 3068,
+      "sha256": "d5741b5acb6b949280a90054f85bb9f270e5ac2b153e427617eb15c1ea4a750e"
+    },
+    {
+      "path": "code/Lean/STAGE_36.md",
+      "bytes": 785,
+      "sha256": "62195231ef85ec66a5b14a677baadd75b66e55c5d711c2b93edaab4149f733b3"
+    },
+    {
+      "path": "code/Lean/STAGE_37.md",
+      "bytes": 636,
+      "sha256": "48d24f6049a214f288b22ef55a1261423e9591730653ca5f832ab1432ff6d78d"
+    },
+    {
+      "path": "code/Lean/STAGE_38.md",
+      "bytes": 952,
+      "sha256": "6575013f3a07baaa1cb0796ec3da296540e2c8fc7ff47f3d2348b32316358ebc"
+    },
+    {
+      "path": "code/Lean/STAGE_39.md",
+      "bytes": 1659,
+      "sha256": "ea1f429a1d07d9ab7f0a4dfa299c0cab6a3c148fcc6f25169a89726fa4ebdc2a"
+    },
+    {
+      "path": "code/Lean/STAGE_4.md",
+      "bytes": 1973,
+      "sha256": "3d5f0f9393ad88c6ec1893161adfd68e450b84c30a2b1207d214d8195f45a082"
+    },
+    {
+      "path": "code/Lean/STAGE_40.md",
+      "bytes": 3271,
+      "sha256": "5d5a5bed6c52482e60dc8910aec444daa659f539dc25de7426a9ea69a0a59b4e"
+    },
+    {
+      "path": "code/Lean/STAGE_5.md",
+      "bytes": 2185,
+      "sha256": "f7dabe73c7f126dab169c580bb7c1a4e6bec2c829df6f3556953687cf0601001"
+    },
+    {
+      "path": "code/Lean/STAGE_6.md",
+      "bytes": 598,
+      "sha256": "d374607fe28521a86e59fcf3b8d1e83dd8475e61603421850a371314a8f20748"
+    },
+    {
+      "path": "code/Lean/STAGE_7.md",
+      "bytes": 550,
+      "sha256": "71a149ea8995f4ec8bde6b52e00583c0a9af2fe02f89ad4da7e94e2abb6e18ca"
+    },
+    {
+      "path": "code/Lean/STAGE_8.md",
+      "bytes": 600,
+      "sha256": "1b150803207a96a068a62335425b5c8367acc87c8d4ddd80672888fd8239d4c0"
+    },
+    {
+      "path": "code/Lean/STAGE_9.md",
+      "bytes": 759,
+      "sha256": "a1fa4fbfba5b26525c87258ea6040b3962a5030cc7bb09abee3f0df870974027"
+    },
+    {
+      "path": "code/Lean/VERIFICATION.txt",
+      "bytes": 33379,
+      "sha256": "67c4e2b056d55fafb1d8eaf8c988c4f9369c8cc4ed76025028f7c1c41b2728c5"
+    },
+    {
+      "path": "code/Lean/lake-manifest.json",
+      "bytes": 3502,
+      "sha256": "2118c52bab6b032ac2c334dfcf5c21824df3ebbc4853aa20406dcd9c5d26b0d3"
+    },
+    {
+      "path": "code/Lean/lakefile.toml",
+      "bytes": 227,
+      "sha256": "7110ace8972441f27e2114fd2904cae1f8f94eb66cb2fe887cdb085c94310ec9"
+    },
+    {
+      "path": "code/Lean/lean-toolchain",
+      "bytes": 25,
+      "sha256": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+    },
+    {
+      "path": "code/Lean/verify.sh",
+      "bytes": 329,
+      "sha256": "5270e5b42d5120642dd5a78981ab04f925b5246dce611437e299a0b521229b58"
+    },
+    {
+      "path": "code/computations/README.md",
+      "bytes": 5466,
+      "sha256": "5120c828dff425a7fb9eab05b6b33a6393c755f4f5a0f549292335c9b6cab0d1"
+    },
+    {
+      "path": "code/computations/five-packet-obstruction/README.md",
+      "bytes": 2124,
+      "sha256": "9f3a982e2c20f8d92b34a97ab74979c50728ef260fbaa2f378ced14833cae249"
+    },
+    {
+      "path": "code/computations/five-packet-obstruction/audit_five_packet_webs.py",
+      "bytes": 6713,
+      "sha256": "dbd1e244942f4b6ed017b5e3ed960114ca9a03abb8e6b460d2853c71598f495c"
+    },
+    {
+      "path": "code/computations/five-packet-obstruction/five_packet_density.cpp",
+      "bytes": 5832,
+      "sha256": "e4d318c1ace268869960ca168076efb0b3eb715405e462ebb68af5325069bb05"
+    },
+    {
+      "path": "code/computations/five-packet-obstruction/five_packet_ppt_witness_cut0.bin",
+      "bytes": 58512,
+      "sha256": "b3a3f9d210caf4da0147f96a5b88fca8671971dc20f90e47434362d46cddb3cc"
+    },
+    {
+      "path": "code/computations/five-packet-obstruction/five_packet_ppt_witness_cut1.bin",
+      "bytes": 769512,
+      "sha256": "d352207dc5928596f4ffaca558ea7ad7cc8d010c8f36ea7a4e5dcb227b75a486"
+    },
+    {
+      "path": "code/computations/five-packet-obstruction/five_packet_ppt_witness_cut2.bin",
+      "bytes": 2766664,
+      "sha256": "e960fd83adc662a66fd6435abbbc394ee4b6e21b541f778dd75d6938c9684e39"
+    },
+    {
+      "path": "code/computations/five-packet-obstruction/verify_five_packet_ppt.cpp",
+      "bytes": 6832,
+      "sha256": "f057e46d7792cb0627579c409e58a54c7ac95597d6d0074d2ae403615ad03f3e"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/audit/audit_exact_balanced.py",
+      "bytes": 1469,
+      "sha256": "74aaf715f6bcae9064e1312d188b55188b22dc7de685a802c8c33d2216c17fbe"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/audit/audit_exact_one.py",
+      "bytes": 1101,
+      "sha256": "619501513cc8ea8f27cd817e0453982f6b4755e96ddaf8d777a3203da41e9181"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/audit/check_rational38.py",
+      "bytes": 1397,
+      "sha256": "864b4b776798c97e3d6737226d1730a7839b48a76812f0320be9ea0be7da512e"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/check.py",
+      "bytes": 1971,
+      "sha256": "e18ced29b55d8447af5808a4246bcae1a7c7f6170bf3692a8671fe5d4c318ac6"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/exact_twobend.py",
+      "bytes": 3353,
+      "sha256": "f03230f40de7a16c09772936becb5a2d21dfdb7f7ae3bc16493f8b27a3bcad86"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/requirements.txt",
+      "bytes": 31,
+      "sha256": "d6ccfe00a0218546b9808412499bb7df41a1836ff42a33bb6f7ac787881e8501"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/two_bends/balanced_-1_-1.json",
+      "bytes": 88414,
+      "sha256": "f78f9906b292d829068641a3b2312039533373c1daae3379cf932ba8b9d6461c"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/two_bends/balanced_1_-1.json",
+      "bytes": 49329,
+      "sha256": "d085ec08f94673524417d32f5b3cfe0697addf8ae03647a45eb44554c26332d0"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/two_bends/balanced_1_1.json",
+      "bytes": 98258,
+      "sha256": "b9a5b88d13c4d38988bbf9f9916fd3dfc74edde17da5e87fd3239452e09c530f"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/two_bends/balanced_exact.py",
+      "bytes": 11431,
+      "sha256": "a4fb68cfedcb58cca33ea04bbc751419a9e8f5fb7835e34d20b3e95b4be8bedd"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/two_bends/blocks38_d6.npz",
+      "bytes": 34907,
+      "sha256": "fe63cb44ddd99197cbe51f98250c0003736769b2fe358ce996999a3c995f7b7a"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/two_bends/one_d6.npz",
+      "bytes": 5001,
+      "sha256": "8ecefeb3495f17643d964da4e95c8eca95275fd07bd1bffbf4c16946bbf84848"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/two_bends/one_exact.py",
+      "bytes": 8490,
+      "sha256": "6a111f5025d2f4d819d59bc3e9406db23a2b3379bf23025112d3c138238b502d"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/two_bends/one_exact_d6.json",
+      "bytes": 102341,
+      "sha256": "16dc19087bc6c13ae8cac3bfbd1a72a9197e31119d749bd1cddaf58f9d3dc4d8"
+    },
+    {
+      "path": "code/computations/four-quadratic-certificate/two_bends/rational38_d6.json",
+      "bytes": 5769,
+      "sha256": "1df9520884409bb8da34e909f61b66873ff2c491f1f09c51824e8a3da3c1e63e"
+    },
+    {
+      "path": "code/computations/three-quadratic-certificate/verify.py",
+      "bytes": 9013,
+      "sha256": "8994489d9644775d04f680350c553e1e12d8b2944a3ae37caa72f6cece2cb4ef"
+    },
+    {
+      "path": "code/computations/web-checks/audit_web_clasps.py",
+      "bytes": 4822,
+      "sha256": "dab631936dd847b768b7b5044aa5a6b48082d3af181461bbd95337e98eedcceb"
+    },
+    {
+      "path": "code/computations/web-checks/check_closed_bend.py",
+      "bytes": 2326,
+      "sha256": "3666a0c3334d47aad82bc9b9a6eeb02a8e57b5e2b3487b06c220520beee4ec6d"
+    },
+    {
+      "path": "code/computations/web-checks/check_determinant_web.py",
+      "bytes": 2378,
+      "sha256": "cb0c9295f0ba7c92bda966e18aebdd560c6d1198c810293395eaf9d32c377de8"
+    },
+    {
+      "path": "code/computations/web-checks/check_exterior_web.py",
+      "bytes": 1621,
+      "sha256": "08a4cdb7a18ed73bafac14710357905ce6546dbc0c1b8d5e9507dc9167b463bd"
+    },
+    {
+      "path": "code/computations/web-checks/check_general.py",
+      "bytes": 4271,
+      "sha256": "28306a513b152c1101a42b90b85b4e3e3c96ce7f085d7bb71e3cbf9462f59b3c"
+    },
+    {
+      "path": "code/computations/web-checks/check_opening_closure.py",
+      "bytes": 768,
+      "sha256": "f9ef59cf635fde3638432c10c45e378ff9d2cfb3bf194952e249b0d6ba0b562a"
+    },
+    {
+      "path": "code/computations/web-checks/check_quadratic_exact.py",
+      "bytes": 3868,
+      "sha256": "55dff744e50de0658fbc4d0806e8f4e4aec39d014bcd7732a9f5113ec84b7582"
+    },
+    {
+      "path": "code/computations/web-checks/check_rank_reduction.py",
+      "bytes": 1537,
+      "sha256": "eee13d90b2175cadf212b0e48b37ebd0eb4013e7fb0bf619821c782d30a5b8c4"
+    },
+    {
+      "path": "code/computations/web-checks/closed_native_reduce.py",
+      "bytes": 6426,
+      "sha256": "414fe2c7ebcd7c281242527e3a8807234470a246daaed6b09d0a24ae759bed3c"
+    },
+    {
+      "path": "code/computations/web-checks/closed_native_results.json",
+      "bytes": 131449,
+      "sha256": "e995ccda2db7ba98fe0b3b0a266815c596bfd13c74dfd5ee41ef79773b45825c"
+    },
+    {
+      "path": "code/computations/web-checks/verify_quadratic_transport.py",
+      "bytes": 2623,
+      "sha256": "4f7c12d2df8aaf7f54a48f63d7122c465ca8c1107a1fef881ea27c8ab6e5e55f"
+    },
+    {
+      "path": "code/computations/web-checks/verify_sl2_sl3.py",
+      "bytes": 7641,
+      "sha256": "d1685acc059f8d563a04cfc4a566189abc39942beb14041a52e0023857d821ef"
+    },
+    {
+      "path": "code/computations/web-checks/verify_tl_two_blocks.py",
+      "bytes": 10928,
+      "sha256": "3456323834bec283931cca3744b31732c59f72ff77b0b1c1a4d7d5994925a1cd"
+    },
+    {
+      "path": "figures/web-1a-01.png",
+      "bytes": 31862,
+      "sha256": "0c99c8ae85be676684d80a61344f6c6a06c5b3c5971c3409b297aba1983caf2c"
+    },
+    {
+      "path": "figures/web-1b-01.png",
+      "bytes": 12987,
+      "sha256": "3cd0e77d976c5b7f7247a6a8122806081a8210886c28d4e093a695155ac599f1"
+    },
+    {
+      "path": "figures/web-1b-02.png",
+      "bytes": 13491,
+      "sha256": "71adaa819df79525411069ec3eb3afe6e44babedf062f3af0110e9d5628c0b9e"
+    },
+    {
+      "path": "figures/web-1b-03.png",
+      "bytes": 18655,
+      "sha256": "c9f5a3b9f73aa528293ab727826446fb2791620d1da72a19d7bcd35d056f7d54"
+    },
+    {
+      "path": "figures/web-1b-04.png",
+      "bytes": 16917,
+      "sha256": "6dfb4c39ee18fca8e7e7e2e6db6d5a37e86bdc3cb7dd2ebcd9f3ce85da986470"
+    },
+    {
+      "path": "figures/web-1b-05.png",
+      "bytes": 17157,
+      "sha256": "0be61d531479afbf7fa8ad36cb1abaaa855f3a76d9402ddb0551e5fc53c11e5c"
+    },
+    {
+      "path": "figures/web-1d-01.png",
+      "bytes": 53263,
+      "sha256": "f6fde5bddd67dc2b15961a4194030b7a488e95485a2f65a92cee6c5f2da9dfd6"
+    },
+    {
+      "path": "figures/web-1d-02.png",
+      "bytes": 8516,
+      "sha256": "53d9c8521114a1e37b52ec9b27e5ce1feb0e44ddaaf206cce09b03897fb24b23"
+    },
+    {
+      "path": "figures/web-2a-01.png",
+      "bytes": 10415,
+      "sha256": "e9067c696a4d70185ee9151c066f62f0802949073c0f5d2513232f77a7436774"
+    },
+    {
+      "path": "figures/web-2a-02.png",
+      "bytes": 14746,
+      "sha256": "93828361cf93debe4620723694d4ddaaec94fe23814959d584dd7c8ec58ae599"
+    },
+    {
+      "path": "figures/web-2b-01.png",
+      "bytes": 17103,
+      "sha256": "86fa61cc4d384518c5e15b8b8a09c799714192c1e48d29a7d129c754e907d211"
+    },
+    {
+      "path": "figures/web-2b-02.png",
+      "bytes": 10141,
+      "sha256": "e1a55674b74c43ecf1553f0b29b4a34cce0d1838fd1462400b278594e47896a0"
+    },
+    {
+      "path": "figures/web-2c-01.png",
+      "bytes": 19838,
+      "sha256": "cd09b176b8d87a9bddd2ff69d06d5106176f453d0780e874ab6a72ca86ed9bd1"
+    },
+    {
+      "path": "figures/web-2c-02.png",
+      "bytes": 13298,
+      "sha256": "71f417c514e4e929e2dee07f20a5cdcc12749152f3b4732f9556192e9612c508"
+    },
+    {
+      "path": "figures/web-2c-03.png",
+      "bytes": 10536,
+      "sha256": "807083cf2782237b6825c82e32cc8c45c41fab73d9721eb256c0777e6d6fc22d"
+    },
+    {
+      "path": "figures/web-2c-04.png",
+      "bytes": 28666,
+      "sha256": "eca8ef6839598ac1d737699c909f0d7c4ea0b17dd8655516a58ea58b9035e845"
+    },
+    {
+      "path": "figures/web-2c-05.png",
+      "bytes": 37182,
+      "sha256": "7ac0051a5d90c0e0f38766c73ae3d78b873cbf1e1381e14be00861cfc1e3ba0e"
+    },
+    {
+      "path": "figures/web-2d-01.png",
+      "bytes": 12082,
+      "sha256": "7449cb85d54adcc0e42ef7bdae0c2f7b2df1344b13b1670865626e17595bf6f0"
+    },
+    {
+      "path": "figures/web-2e-01.png",
+      "bytes": 11988,
+      "sha256": "975784024b9ed3e837ab51421c03ca3d07aa8f839a5dbf056871628cb6ba51ed"
+    },
+    {
+      "path": "figures/web-2e-02.png",
+      "bytes": 22563,
+      "sha256": "8d76d746132e03360fe1208db7a6a71706c6d511591a4904a8d2d2d962410a7d"
+    },
+    {
+      "path": "figures/web-2e-03.png",
+      "bytes": 8711,
+      "sha256": "06e79101ad3b848d0d0762e5d82344aae7cbb5dec5d78b14ec5a9c7630eb6565"
+    },
+    {
+      "path": "figures/web-2f-01.png",
+      "bytes": 11230,
+      "sha256": "82d6b06a65f542625aae493d9ba75c233f239454952bb87f2780ab28e1cb142a"
+    },
+    {
+      "path": "figures/web-3a-01.png",
+      "bytes": 23473,
+      "sha256": "5fa88574a82fa4749a017eb45af62d32fd4288063a40d6b4e8ef14f805edd4f8"
+    },
+    {
+      "path": "figures/web-3b-01.png",
+      "bytes": 13612,
+      "sha256": "c0d1bba0fd90267b0c348f53c28b9f71a861906d5ba4f46e9dea1f0705165ff8"
+    },
+    {
+      "path": "figures/web-3b-02.png",
+      "bytes": 11657,
+      "sha256": "72aa97a735ba594021fa487302b20594e0e3c3ccbb7f5438321083e9c7a19585"
+    },
+    {
+      "path": "figures/web-3b-03.png",
+      "bytes": 16315,
+      "sha256": "6c4f6906e67b775ea9a8191c1817059519ad47024097b5575a3ac6fe65e87f8e"
+    },
+    {
+      "path": "figures/web-3c-01.png",
+      "bytes": 13707,
+      "sha256": "9ccf0ad992ec9e4aed057e7e18d05484127f7585566bf96fd04d27f82f6587a5"
+    },
+    {
+      "path": "figures/web-3c-02.png",
+      "bytes": 14197,
+      "sha256": "092c54ac8de8dcaa39c768086ece4243648c9ce5973864c04b389390746be990"
+    },
+    {
+      "path": "figures/web-3c-03.png",
+      "bytes": 25196,
+      "sha256": "2de9d735e8f4d5bdb3fab0365a683264161c725d65430239f753cb537e6ac327"
+    },
+    {
+      "path": "figures/web-3c-04.png",
+      "bytes": 15005,
+      "sha256": "21c3d6c8ff6e9e52a723b738714ce4af681fff2346b2552ca596a2a0c658879e"
+    },
+    {
+      "path": "figures/web-3d-01.png",
+      "bytes": 13478,
+      "sha256": "cea44c1d4d545369e319e0c3d16056f28ac950b9eb9366d1a6cd1fb05de9d2c5"
+    },
+    {
+      "path": "figures/web-3d-02.png",
+      "bytes": 5758,
+      "sha256": "3dcb645c8a0a23567bba0a175f27b904f1b8174d973ef33f229cf50e78fddf4f"
+    },
+    {
+      "path": "figures/web-3d-03.png",
+      "bytes": 11320,
+      "sha256": "daf8f551f9452cc0a89e2f8a2500800e3e5800b8da2f4b1b7b2eced4958a8485"
+    },
+    {
+      "path": "figures/web-3e-01.png",
+      "bytes": 10864,
+      "sha256": "c4032a8112a6adc848f6da9331b818a3312412593b087ea91d709d944d1e3b5a"
+    },
+    {
+      "path": "figures/web-3e-02.png",
+      "bytes": 12070,
+      "sha256": "9df55a32f16b6e8d761de8cda2415ea3bb63fd3beab5c9287f59adedbb77e0ed"
+    },
+    {
+      "path": "figures/web-3e-03.png",
+      "bytes": 10322,
+      "sha256": "915fa1670778728d44ce3a80658a41b572c6c1e88d079bdbf28e24f8e4d1550c"
+    },
+    {
+      "path": "figures/web-4a-01.png",
+      "bytes": 11633,
+      "sha256": "333d33e0788732010d71eac61fb53632a1a65ba065b221c680f7ac69db5f4e35"
+    },
+    {
+      "path": "figures/web-4a-02.png",
+      "bytes": 7297,
+      "sha256": "a5d17457c3bf78fd6035de534cf798f421933b1aad7ba5228654958ec0f1e58d"
+    },
+    {
+      "path": "figures/web-4b-01.png",
+      "bytes": 17043,
+      "sha256": "5f95ad4a8038007a6ee1b393cba21af3d301552fac5b828fe1a259d29b004344"
+    },
+    {
+      "path": "figures/web-4b-02.png",
+      "bytes": 9886,
+      "sha256": "2a182ef80eb55b2354f1ad33b0a2b7642628771081384c1050b30296ce95a06a"
+    },
+    {
+      "path": "figures/web-4b-03.png",
+      "bytes": 16203,
+      "sha256": "f813a4601b7d5307e76640705727062327fba61999f3138f2696144127907cab"
+    },
+    {
+      "path": "figures/web-5a-01.png",
+      "bytes": 10487,
+      "sha256": "66feb28598fcb4347c5e53eac34cc1611223e34372d5218384fedfe698567571"
+    },
+    {
+      "path": "figures/web-5a-02.png",
+      "bytes": 13510,
+      "sha256": "cc9880e6696c7311673ec20cea3a58b11e6a5ce6c1ab1d17cddf9690cb9d39f3"
+    },
+    {
+      "path": "figures/web-5a-03.png",
+      "bytes": 25984,
+      "sha256": "03fcfd13a74e3f7484c1d621a3aa27744ae62e5ea64762b7f6c84538f28496bb"
+    },
+    {
+      "path": "figures/web-5b-01.png",
+      "bytes": 15860,
+      "sha256": "701a27e4959504ca391d26ea7d464d4648fa50f5c2b6ae58c4ba19f1fb83da11"
+    },
+    {
+      "path": "figures/web-5b-02.png",
+      "bytes": 9368,
+      "sha256": "55dd8a9872bbf155b75d53bb63f45e19faed1072e555d8045fd8231f3c03c837"
+    },
+    {
+      "path": "figures/web-5c-01.png",
+      "bytes": 19074,
+      "sha256": "509a4328a545a47ed29feaa3a4e6692c6a1302ec8bcf0484f1e683af67c47cf3"
+    },
+    {
+      "path": "figures/web-5c-02.png",
+      "bytes": 22043,
+      "sha256": "a3047f7e9a8ad72eaaebb715569269256cb303eff023cc3f5a34de7fec3c24f3"
+    },
+    {
+      "path": "figures/web-5d-01.png",
+      "bytes": 23342,
+      "sha256": "9a87d7491f290cab80abb09cf0b48408925f74fd9e583fde2d721b7a3fd17cb3"
+    },
+    {
+      "path": "figures/web-5d-02.png",
+      "bytes": 13809,
+      "sha256": "7dce82814312c98ccde2f26396e5b82ec97b2b8ebc7eb5462595e8e2ab172a22"
+    },
+    {
+      "path": "figures/web-6a-01.png",
+      "bytes": 11296,
+      "sha256": "56b7790ec5aa6a46b9a655df158207cc23cb61fdf07c34d4bc3da0477dbda021"
+    },
+    {
+      "path": "figures/web-6a-02.png",
+      "bytes": 19014,
+      "sha256": "4f9e33dac135b10e03f8964991375ce57dafe0bdf5fb5430ff65f17cc5e833c4"
+    },
+    {
+      "path": "figures/web-6a-03.png",
+      "bytes": 13022,
+      "sha256": "61d817a1027e91e20a4dfcde35d22f6c0fc6ba6b11cfbdbe2f7f03ebd7c1ea57"
+    },
+    {
+      "path": "figures/web-6a-04.png",
+      "bytes": 14555,
+      "sha256": "6c2a540d8ae85c8e245089e8e5ec6868f9970768d4362124809e31ca8564ce5a"
+    },
+    {
+      "path": "figures/web-6b-01.png",
+      "bytes": 14997,
+      "sha256": "9e00af35e3bd9d24edbb4f6720fb5a0fc0d95ce10d13f1bc5503a920b88cb33a"
+    },
+    {
+      "path": "figures/web-6b-02.png",
+      "bytes": 6552,
+      "sha256": "50577dddf008dc2958ea1a450fc3fbd4e6dc951b6cf1ea204298b687f7bbf302"
+    },
+    {
+      "path": "figures/web-6c-01.png",
+      "bytes": 12745,
+      "sha256": "a60ea9aed3b5a9d49a7d83456a581870e08db9b6fb64a610af696012a275d6a4"
+    },
+    {
+      "path": "figures/web-6c-02.png",
+      "bytes": 10413,
+      "sha256": "194bc7bafa17b764ea560e933c29a68e578ad29f9dd88e187cee5d5a3ef49897"
+    },
+    {
+      "path": "figures/web-6c-03.png",
+      "bytes": 10503,
+      "sha256": "47902e4868797114c3577e6f38bb31efc01b3676456ac1a276fef3a09bc81b80"
+    },
+    {
+      "path": "figures/web-7a-01.png",
+      "bytes": 12471,
+      "sha256": "a9ad00ba5735f4961e0829187117be8af4d3172476b852205a8ec12b102746ed"
+    },
+    {
+      "path": "figures/web-7b-01.png",
+      "bytes": 10086,
+      "sha256": "2838e01caa70c39ff42ccd94de6fab1f9f73be1699878e237a70191bc029c917"
+    },
+    {
+      "path": "figures/web-7b-02.png",
+      "bytes": 15405,
+      "sha256": "30a6f52c2f49bd1035a0842c3c7aa20d08b3f1d4a79d3ff0d27ba4647b0aff6f"
+    },
+    {
+      "path": "figures/web-7b-03.png",
+      "bytes": 13052,
+      "sha256": "af6e5d5ffc5a519438b61c252fc6600a912e442cba0b07c2af7446b47d993195"
+    },
+    {
+      "path": "figures/web-7b-04.png",
+      "bytes": 8912,
+      "sha256": "0eaccd36ae7260abace85cbf4013ada556397674184aaa117d768f67b06747b8"
+    },
+    {
+      "path": "figures/web-7c-01.png",
+      "bytes": 8828,
+      "sha256": "fcda32360bbf6ee8ed91aa5294e5eccfdba0fd449e1f5502e80248e099bfcdbd"
+    },
+    {
+      "path": "figures/web-7e-01.png",
+      "bytes": 9183,
+      "sha256": "e99ed1346c2b67b4534752129904bf61bb2a5aca8e08e54f693d9a67eb628050"
+    },
+    {
+      "path": "figures/web-7e-02.png",
+      "bytes": 13702,
+      "sha256": "192dccec9c98dc0abaadb2667f3305f27c17403db0f2b0c1490a618cd16006ff"
+    },
+    {
+      "path": "figures/web-8a-01.png",
+      "bytes": 11619,
+      "sha256": "031f2dfe2a34f32c4db07b01d5ddf1023106a4f512955e2038adf8bd0d3a48bf"
+    },
+    {
+      "path": "figures/web-8a-02.png",
+      "bytes": 23837,
+      "sha256": "4e211be937bbc975c4043588ec2be557a6285c9ce58e0c26beaef3ebccf94f59"
+    },
+    {
+      "path": "figures/web-8a-03.png",
+      "bytes": 19489,
+      "sha256": "eb8ed6cb9d503ca3daf1a60c951d6d70e758d5643e125116cbbac37c1374dac5"
+    },
+    {
+      "path": "figures/web-8b-01.png",
+      "bytes": 18865,
+      "sha256": "7d7d31ca61f34b9d1dfb36447d72180359b4c87e09edd9119657f793c5908fc0"
+    },
+    {
+      "path": "figures/web-8b-02.png",
+      "bytes": 10912,
+      "sha256": "9c05117707ed3eb580b535adbf06cc6a9ea137816703d1cc2277c5d002b0bb62"
+    },
+    {
+      "path": "figures/web-8c-01.png",
+      "bytes": 29116,
+      "sha256": "ce0904ce81a8db6b91bdda208990964d1162925db33fdcbf2442795c781cf167"
+    },
+    {
+      "path": "figures/web-8c-02.png",
+      "bytes": 22324,
+      "sha256": "1ddf32653118f3d2867d6183ac9525abf714c4d7b8f84a3fea3d2a4b07a00d8d"
+    },
+    {
+      "path": "figures/web-9a-01.png",
+      "bytes": 13587,
+      "sha256": "b19bca2bdf670dc870881e9305522fd59742e20b37ddd3433202e7e66d0f5b05"
+    },
+    {
+      "path": "figures/web-9a-02.png",
+      "bytes": 16067,
+      "sha256": "3ecf6980f7b051f2d25d0e37395d632823db339abdda046db37d803a7f3f8821"
+    },
+    {
+      "path": "figures/web-aa-01.png",
+      "bytes": 10159,
+      "sha256": "506607ef2b11d3dfa328a8059c9fac0ff3e932145770db90f25e22a58d283de4"
+    },
+    {
+      "path": "figures/web-ab-01.png",
+      "bytes": 11102,
+      "sha256": "69d241e0cad180d82d6f40db486c2437ca79081292d4f442f5efbf5b5c8e5ed6"
+    },
+    {
+      "path": "figures/web-ab-02.png",
+      "bytes": 15905,
+      "sha256": "76ae3380b90b0899ccfa5a0edc621fb9a36fdc897998bec0fd6c47bdf225eeee"
+    },
+    {
+      "path": "figures/web-ac-01.png",
+      "bytes": 13648,
+      "sha256": "faf81a8a0ba8ed47bae72cf3477c2f87363c1f25ef2905fa8ce336abb19e836c"
+    },
+    {
+      "path": "figures/web-ba-01.png",
+      "bytes": 18092,
+      "sha256": "0a5d61c24c9ffee73ec27bba4588b8b2cf01e7453ba3de6ddd982698cb766fbd"
+    },
+    {
+      "path": "figures/web-ba-02.png",
+      "bytes": 22308,
+      "sha256": "526f3679d54e5e8041da0f838e2624c25b875e55072dc2a9f11cfd3a0b317648"
+    },
+    {
+      "path": "figures/web-bb-01.png",
+      "bytes": 11990,
+      "sha256": "a82ee7968ebf23cc5a8da777fbc0da63f66fae51a3a49ced929414b8f4f78a22"
+    },
+    {
+      "path": "llms.txt",
+      "bytes": 860,
+      "sha256": "8cc1ddb96baf6a391b9a67fec1379b7f9804437ba9402fe55ff16700e8d24133"
+    },
+    {
+      "path": "paper/README.md",
+      "bytes": 1561,
+      "sha256": "e440c752069229b4e5a015af0e80ed387ffaddd16634fc8315f71cd338539451"
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 174356,
+      "sha256": "3f36e28e17db38eb4711229793e3264510ebd086f481f389fcc5920cff39a3b1"
+    },
+    {
+      "path": "paper/paper.pdf",
+      "bytes": 652868,
+      "sha256": "636575cb457c744ed0e47e887736c13c704094a12f2e3197e6b4b7a2bf323fc1"
+    },
+    {
+      "path": "paper/stage-40-source.patch",
+      "bytes": 1157,
+      "sha256": "7a4c50837ee5dad5af4f53f35ef1a0f859017770edc40b9bc9742998ae7e6c3b"
+    }
+  ]
+}

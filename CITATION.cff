@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using this repository."
+title: "Positivity in symmetric webs and block permanents — Lean verification"
+type: software
+authors:
+  - family-names: Tubbenhauer
+    given-names: Daniel
+    orcid: "https://orcid.org/0000-0001-7265-5047"
+url: "https://www.dtubbenhauer.com/blockpermanents.html"
+preferred-citation:
+  type: unpublished
+  title: "Positivity in symmetric webs and block permanents"
+  authors:
+    - family-names: Tubbenhauer
+      given-names: Daniel
+      orcid: "https://orcid.org/0000-0001-7265-5047"
+  year: 2026
+  url: "https://www.dtubbenhauer.com/blockpermanents.html"
+  notes: "Working manuscript."

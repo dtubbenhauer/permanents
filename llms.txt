@@ -1,0 +1,21 @@
+# Positivity in symmetric webs and block permanents
+
+> Daniel Tubbenhauer’s manuscript and the Lean verification of its block-permanent inequalities.
+
+## Read
+
+- [Reading guide](AI_README.md)
+- [Full manuscript in Markdown](ai/paper.md)
+- [Manuscript PDF](paper/paper.pdf)
+- [LaTeX source](paper/main.tex)
+
+## Check a claim
+
+- [Numbered manuscript results and examples](ai/theorem-index.md)
+- [Machine-readable declaration index](ai/theorem-index.json)
+- [Matrix formulation](code/Lean/BlockPermanents/Statement.lean)
+- [Main theorem and logarithmic consequence](code/Lean/BlockPermanents/PaperCertificate.lean)
+- [Mathematical inputs and audit policy](code/Lean/ASSUMPTIONS.md)
+- [Averaging correction in Lemma 5B.1](ERRATUM.md)
+- [Build and audit instructions](code/Lean/README.md)
+- [Companion computations and witness files](code/computations/README.md)

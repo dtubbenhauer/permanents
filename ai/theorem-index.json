@@ -1,0 +1,2241 @@
+{
+  "title": "Positivity in Symmetric Webs and Block Permanents",
+  "numbered_results": [
+    {
+      "number": "1A.1",
+      "kind": "Theorem",
+      "description": "Matrix inequality for every stated case, including the threshold and its logarithmic consequence.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 150,
+        "href": "../paper/main.tex#L150",
+        "label": "thm:matrix"
+      },
+      "lean_declarations": [
+        "BlockPermanents.PaperCertificate.manuscript",
+        "BlockPermanents.PaperCertificate.logarithmic"
+      ]
+    },
+    {
+      "number": "1B.2",
+      "kind": "Lemma",
+      "description": "Two quadratic packets. Direct expansion identifies the permanent difference with four times the one-cap energy.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 304,
+        "href": "../paper/main.tex#L304",
+        "label": "lem:intro-square"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Quadratic.four_times_one_cap"
+      ]
+    },
+    {
+      "number": "2A.2",
+      "kind": "Lemma",
+      "description": "Both digon identities for the actual symmetric split and merge.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 618,
+        "href": "../paper/main.tex#L618"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Digon.merge_split",
+        "BlockPermanents.Digon.split_merge"
+      ]
+    },
+    {
+      "number": "2B.2",
+      "kind": "Lemma",
+      "description": "Homogeneous and isometric Schur identities in the finite-dimensional representation, for arbitrary sizes. The proof counts permutation double cosets.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 673,
+        "href": "../paper/main.tex#L673"
+      },
+      "lean_declarations": [
+        "BlockPermanents.SchurNormalization.homogeneousSchur",
+        "BlockPermanents.SchurNormalization.homogeneousSchur_implies_unbent"
+      ]
+    },
+    {
+      "number": "2B.6",
+      "kind": "Lemma",
+      "description": "Clasp recursion on ordinary words from the one-strand Schur relation.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 693,
+        "href": "../paper/main.tex#L693"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Digon.clasp_recursion",
+        "BlockPermanents.ZeroCap.singleton_clasp"
+      ]
+    },
+    {
+      "number": "2C.1",
+      "kind": "Lemma",
+      "description": "The trace cup has closed value equal to the dimension. The reverse composite on a product is its evaluation times the trace cup.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 709,
+        "href": "../paper/main.tex#L709"
+      },
+      "lean_declarations": [
+        "BlockPermanents.SupportCup.bubble",
+        "BlockPermanents.IntroExamples.cap_cup_action"
+      ]
+    },
+    {
+      "number": "2C.2",
+      "kind": "Lemma",
+      "description": "Partial transpose preserves the quadratic-form evaluation on a product when the marked input is conjugated.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 727,
+        "href": "../paper/main.tex#L727"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Bend.evaluate_bend"
+      ]
+    },
+    {
+      "number": "2C.6",
+      "kind": "Lemma",
+      "description": "The bent Schur operator is the binomially weighted sum of actual cap-adjoint products.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 755,
+        "href": "../paper/main.tex#L755",
+        "label": "thm:bent"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Bend.bent_schur",
+        "BlockPermanents.SchurNormalization.homogeneousSchur"
+      ]
+    },
+    {
+      "number": "2D.1",
+      "kind": "Lemma",
+      "description": "Exact orthogonal decomposition of the Gram form at a cut.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 799,
+        "href": "../paper/main.tex#L799"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Support.orthogonal_cut"
+      ]
+    },
+    {
+      "number": "2E.3",
+      "kind": "Lemma",
+      "description": "Fine and packet closures equal the respective permanents. The polarized identity allows distinct packets on the two sides.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 842,
+        "href": "../paper/main.tex#L842",
+        "label": "loc:gramclosures"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Closures.fine_closure",
+        "BlockPermanents.Closures.packet_closure",
+        "BlockPermanents.Closures.defect_closure"
+      ]
+    },
+    {
+      "number": "2F.1",
+      "kind": "Lemma",
+      "description": "Exact two-block gap on symmetric packets at every positive thickness, including the empty sum of proper cuts.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 872,
+        "href": "../paper/main.tex#L872",
+        "label": "loc:two"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Bend.two_block_gap",
+        "BlockPermanents.two_block_squares"
+      ]
+    },
+    {
+      "number": "3A.2",
+      "kind": "Lemma",
+      "description": "Rectangular Schur opening on all ordinary and marked word coordinates, including the zero and terminal terms.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1183,
+        "href": "../paper/main.tex#L1183",
+        "label": "prop:tr-zero"
+      },
+      "lean_declarations": [
+        "BlockPermanents.ZeroCap.opening"
+      ]
+    },
+    {
+      "number": "3B.2",
+      "kind": "Lemma",
+      "description": "Transfer under simultaneous upper/lower relabeling, including the tensor-coordinate representation.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1220,
+        "href": "../paper/main.tex#L1220",
+        "label": "lem:tr-transfer"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Transfer.packet_transfer",
+        "BlockPermanents.Transfer.tensor_packet_transfer"
+      ]
+    },
+    {
+      "number": "3C.2",
+      "kind": "Lemma",
+      "description": "Corrected bend with the two full caps and their mixed terms, for arbitrary thickness and positive ordinary packet count.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1309,
+        "href": "../paper/main.tex#L1309"
+      },
+      "lean_declarations": [
+        "BlockPermanents.TwoFullCaps.full_words"
+      ]
+    },
+    {
+      "number": "3C.5",
+      "kind": "Lemma",
+      "description": "Exact three-packet raw opening of the original marked operator, including the negative terminal square.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1352,
+        "href": "../paper/main.tex#L1352"
+      },
+      "lean_declarations": [
+        "BlockPermanents.ThreeGeneralOpen.canonical_raw",
+        "BlockPermanents.ThreeGeneralOpen.original_bent"
+      ]
+    },
+    {
+      "number": "3D.1",
+      "kind": "Lemma",
+      "description": "Supported trace bubble and last-cap decomposition, with the perpendicular component retained.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1376,
+        "href": "../paper/main.tex#L1376"
+      },
+      "lean_declarations": [
+        "BlockPermanents.ThreeLastCap.concrete_resolution",
+        "BlockPermanents.ThreePlane.routed_resolution"
+      ]
+    },
+    {
+      "number": "3D.2",
+      "kind": "Theorem",
+      "description": "Supported decomposition and positivity on an arbitrary marked subspace of the stated dimension. This establishes the stronger operator statement independently of the matching proof of the matrix inequality.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1402,
+        "href": "../paper/main.tex#L1402",
+        "label": "thm:three"
+      },
+      "lean_declarations": [
+        "BlockPermanents.ThreePlane.subspace_decomposition",
+        "BlockPermanents.ThreePlane.subspace_compression_psd"
+      ]
+    },
+    {
+      "number": "3E.2",
+      "kind": "Lemma",
+      "description": "The iterated transfer has the printed coefficient for each routing. Clasp insertion identifies the coefficient recurrence with the actual operator iteration.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1477,
+        "href": "../paper/main.tex#L1477"
+      },
+      "lean_declarations": [
+        "BlockPermanents.RoutingFibres.iterate_expand",
+        "BlockPermanents.RoutingFibres.iterate_clasp_step",
+        "BlockPermanents.RoutingFibres.iterate_one"
+      ]
+    },
+    {
+      "number": "3E.3",
+      "kind": "Lemma",
+      "description": "Split-end coefficient in the signed marked transfer, on the representation of actual strand permutations.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1495,
+        "href": "../paper/main.tex#L1495"
+      },
+      "lean_declarations": [
+        "BlockPermanents.RoutingFibres.marked_expand",
+        "BlockPermanents.RoutingFibres.signedTransfer_eq_marked"
+      ]
+    },
+    {
+      "number": "4B.2",
+      "kind": "Lemma",
+      "description": "Each clasped routed Gram is scalar on its occupation sector. The generalized inverse of the sector blocks gives the orthogonal projector onto the sum of the reflected cap images, also for an arbitrary marked subspace.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1607,
+        "href": "../paper/main.tex#L1607",
+        "label": "prop:routedcaps"
+      },
+      "lean_declarations": [
+        "BlockPermanents.RoutedTrace.clasped_intersection",
+        "BlockPermanents.RoutedFamilyProjection.family_gram",
+        "BlockPermanents.RoutedFamilyProjection.projection_spec",
+        "BlockPermanents.RoutedFamilyProjection.mem_projection_range",
+        "BlockPermanents.RoutedSubspaceProjection.dual_range",
+        "BlockPermanents.RoutedSubspaceProjection.for_subspace"
+      ]
+    },
+    {
+      "number": "5A.3",
+      "kind": "Lemma",
+      "description": "Gram entries on each sector, nonsingular Gram estimate, and projection onto the span using the generalized inverse in the singular case.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1719,
+        "href": "../paper/main.tex#L1719",
+        "label": "lem:fourports"
+      },
+      "lean_declarations": [
+        "BlockPermanents.RoutedTrace.last_cap_gram",
+        "BlockPermanents.Routings.capGram_posDef",
+        "BlockPermanents.GramInverse.projection_spec"
+      ]
+    },
+    {
+      "number": "5B.1",
+      "kind": "Lemma",
+      "description": "Four-packet marked transfer, support under the clasp, and its simultaneous average. See the proof correction below.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1795,
+        "href": "../paper/main.tex#L1795"
+      },
+      "lean_declarations": [
+        "BlockPermanents.TransferBlocks.four_supported",
+        "BlockPermanents.FourTarget.four_average_actual"
+      ]
+    },
+    {
+      "number": "5C.2",
+      "kind": "Lemma",
+      "description": "All three families of open cuts, with the signed terminal terms, on the actual four-packet word boundary.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1894,
+        "href": "../paper/main.tex#L1894",
+        "label": "lem:fourbend"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FourNative.four_packet_bend"
+      ]
+    },
+    {
+      "number": "5D.1",
+      "kind": "Theorem",
+      "description": "Positive compression on the whole space supported by an arbitrary marked subspace of dimension at most two, and the four-quadratic PSD matrix consequence.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1947,
+        "href": "../paper/main.tex#L1947",
+        "label": "thm:fourquad"
+      },
+      "lean_declarations": [
+        "BlockPermanents.VerifiedPaper.plane_compression",
+        "BlockPermanents.VerifiedPaper.four_quadratic"
+      ]
+    },
+    {
+      "number": "6A.3",
+      "kind": "Lemma",
+      "description": "Balanced opening with the two crossing pairings, proper caps and terminal terms.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2155,
+        "href": "../paper/main.tex#L2155"
+      },
+      "lean_declarations": [
+        "BlockPermanents.BalancedAssembly.opening",
+        "BlockPermanents.BalancedEvaluation.opening"
+      ]
+    },
+    {
+      "number": "6B.1",
+      "kind": "Lemma",
+      "description": "Last-cap coefficients and the individual trace-cup remainders on the two independently marked subspaces.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2175,
+        "href": "../paper/main.tex#L2175"
+      },
+      "lean_declarations": [
+        "BlockPermanents.BalancedLast.subspace_last_cap_weight"
+      ]
+    },
+    {
+      "number": "6B.3",
+      "kind": "Lemma",
+      "description": "Positivity of each supported balanced compression for thickness at least four, followed by the four-block matrix inequality.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2220,
+        "href": "../paper/main.tex#L2220",
+        "label": "cor:fourthick"
+      },
+      "lean_declarations": [
+        "BlockPermanents.BalancedLast.subspace_marked_decomposition",
+        "BlockPermanents.BalancedLast.subspace_compression_psd",
+        "BlockPermanents.BalancedLast.marcus_thick"
+      ]
+    },
+    {
+      "number": "6C.1",
+      "kind": "Lemma",
+      "description": "Signed gluing identity at every positive real parameter.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2278,
+        "href": "../paper/main.tex#L2278"
+      },
+      "lean_declarations": [
+        "BlockPermanents.BalancedSigned.signed_gluing"
+      ]
+    },
+    {
+      "number": "6C.3",
+      "kind": "Theorem",
+      "description": "Four cubic packets in every Gram dimension. Includes the signed square certificate and its PSD matrix consequence.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2306,
+        "href": "../paper/main.tex#L2306",
+        "label": "thm:fourcubic"
+      },
+      "lean_declarations": [
+        "BlockPermanents.BalancedCubic.cubic_certificate_all_dimensions",
+        "BlockPermanents.BalancedCubicMarcus.marcus"
+      ]
+    },
+    {
+      "number": "7A.1",
+      "kind": "Lemma",
+      "description": "Pair lower bound and the actual residual halfweb Gram factor on arbitrary symmetric second inputs, including its polarized form.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2360,
+        "href": "../paper/main.tex#L2360",
+        "label": "lem:threshold-pair"
+      },
+      "lean_declarations": [
+        "BlockPermanents.PairResidual.full_caps_residual_squares",
+        "BlockPermanents.PairResidual.full_caps_residual_operator"
+      ]
+    },
+    {
+      "number": "7B.3",
+      "kind": "Lemma",
+      "description": "Fine matching bound on matrix packets. The averaged identity retains the positive cut remainder.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2444,
+        "href": "../paper/main.tex#L2444"
+      },
+      "lean_declarations": [
+        "BlockPermanents.MatchingFineSquares.average_identity",
+        "BlockPermanents.MatchingFineSquares.unit_identity"
+      ]
+    },
+    {
+      "number": "7B.5",
+      "kind": "Lemma",
+      "description": "Packet peel identity, including its exact exit-square remainder and the average over the marked packet.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2485,
+        "href": "../paper/main.tex#L2485"
+      },
+      "lean_declarations": [
+        "BlockPermanents.MatchingCoarse.peel_identity",
+        "BlockPermanents.MatchingCoarse.averaged_peel_identity"
+      ]
+    },
+    {
+      "number": "7B.7",
+      "kind": "Lemma",
+      "description": "Matching-moment upper bound for the Gram permanent, with the stated deletion recurrence for its coefficients.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2498,
+        "href": "../paper/main.tex#L2498"
+      },
+      "lean_declarations": [
+        "BlockPermanents.MatchingUpper.permanent_le_upper",
+        "BlockPermanents.Threshold.pathCoeff"
+      ]
+    },
+    {
+      "number": "7C.1",
+      "kind": "Theorem",
+      "description": "The general matrix threshold follows both from the earlier integer-weight comparison and from the manuscript’s Jacobi spectrum and Maclaurin estimate.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2511,
+        "href": "../paper/main.tex#L2511",
+        "label": "thm:threshold"
+      },
+      "lean_declarations": [
+        "BlockPermanents.MatchingThreshold.marcus_threshold",
+        "BlockPermanents.PathSpectrum.spectral_threshold",
+        "BlockPermanents.PaperCertificate.spectral_threshold"
+      ]
+    },
+    {
+      "number": "7D.1",
+      "kind": "Lemma",
+      "description": "Parameterized four-face trade, including the reflected-square difference for all positive parameters.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2558,
+        "href": "../paper/main.tex#L2558",
+        "label": "lem:th-fourtrade"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FourTrade.gram_trade",
+        "BlockPermanents.FourTradeSquares.gram_identity"
+      ]
+    },
+    {
+      "number": "7D.3",
+      "kind": "Lemma",
+      "description": "The tridiagonal PSD condition gives the claimed bound on every PSD block matrix. Pivot elimination and parameter trades give the signed square certificate on unit packets.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2569,
+        "href": "../paper/main.tex#L2569",
+        "label": "prop:th-matrix"
+      },
+      "lean_declarations": [
+        "BlockPermanents.PivotCertificate.marcus",
+        "BlockPermanents.PivotCertificate.unit_identity",
+        "BlockPermanents.TradePivots.trade_parameter"
+      ]
+    },
+    {
+      "number": "7E.1",
+      "kind": "Lemma",
+      "description": "Unordered two-step path bound, with incident exterior squares and opposite-edge reflected squares.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2618,
+        "href": "../paper/main.tex#L2618",
+        "label": "lem:th-path"
+      },
+      "lean_declarations": [
+        "BlockPermanents.TwoStepSquares.unordered_path_squares"
+      ]
+    },
+    {
+      "number": "8A.1",
+      "kind": "Theorem",
+      "description": "Five matrix packets of thickness at least three in every Gram dimension. The five-packet expansion has its own exact certificate.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2634,
+        "href": "../paper/main.tex#L2634",
+        "label": "thm:five"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FiveFullCertificate.unit_identity",
+        "BlockPermanents.FiveFullCertificate.marcus_five"
+      ]
+    },
+    {
+      "number": "8A.5",
+      "kind": "Lemma",
+      "description": "Positive free-cable form and the full test with explicit proper-cut remainders. The uniform coefficient is 41/20.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2714,
+        "href": "../paper/main.tex#L2714",
+        "label": "lem:five-projection"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FiveProjection.remainder_posSemidef",
+        "BlockPermanents.FiveFreeResidual.testing_free_cable_squares",
+        "BlockPermanents.FiveFreeCoefficient.uniform_eq_iff"
+      ]
+    },
+    {
+      "number": "8B.3",
+      "kind": "Lemma",
+      "description": "Reflected Gram trace for arbitrary admissible parameters and the plain and spectator-weighted averages.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2806,
+        "href": "../paper/main.tex#L2806",
+        "label": "lem:five-mixed"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FiveMixedSquares.physical_trace",
+        "BlockPermanents.FiveMixedAverageSquares.plain_squares",
+        "BlockPermanents.FiveMixedAverageSquares.weighted_squares"
+      ]
+    },
+    {
+      "number": "8C.1",
+      "kind": "Lemma",
+      "description": "Both long-cycle inequalities with the squared differences retained.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2844,
+        "href": "../paper/main.tex#L2844",
+        "label": "lem:five-long"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FiveScalarSquares.long_cycle_squares"
+      ]
+    },
+    {
+      "number": "9A.2",
+      "kind": "Lemma",
+      "description": "Five actual plane quadratics give a negative fifth marked closure. The witness is evaluated using the whole clasps.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2995,
+        "href": "../paper/main.tex#L2995"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Negative.witness_factors",
+        "BlockPermanents.MarkedWitness.negative_fifth_full_clasps"
+      ]
+    },
+    {
+      "number": "AA.1",
+      "kind": "Lemma",
+      "description": "Exact three- and four-subset exit sums with the printed coefficients and the individual weighted remainders.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3024,
+        "href": "../paper/main.tex#L3024"
+      },
+      "lean_declarations": [
+        "BlockPermanents.RawTripleFaces.triple_faces",
+        "BlockPermanents.RawTripleFaces.quadruple_faces"
+      ]
+    },
+    {
+      "number": "AA.3",
+      "kind": "Lemma",
+      "description": "The physical four-face slack summed once per actual face and disjoint matching, including its recurrence, boundary values and nonnegative remainder.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3064,
+        "href": "../paper/main.tex#L3064"
+      },
+      "lean_declarations": [
+        "BlockPermanents.RawFaceCertificate.raw_identity",
+        "BlockPermanents.RawFaceCertificate.raw_bound",
+        "BlockPermanents.FaceCounts.coeff_succ"
+      ]
+    },
+    {
+      "number": "AB.1",
+      "kind": "Lemma",
+      "description": "Both signs of the unnormalized odd-cycle cut, with actual matching masses and oriented cycles, including the smallest permitted label set.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3098,
+        "href": "../paper/main.tex#L3098"
+      },
+      "lean_declarations": [
+        "BlockPermanents.RawCycleSquares.odd_cycle_squares",
+        "BlockPermanents.RawCycleSquares.odd_cycle_real"
+      ]
+    },
+    {
+      "number": "AC.1",
+      "kind": "Lemma",
+      "description": "Both signs on each cycle type. Local reflected energies multiply over disjoint assignments, with the parity factor, and the class-size sum yields the matrix criterion.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3153,
+        "href": "../paper/main.tex#L3153"
+      },
+      "lean_declarations": [
+        "BlockPermanents.PieceProductSquares.product_squares",
+        "BlockPermanents.PieceProductSquares.class_squares",
+        "BlockPermanents.DisjointCycleCertificate.certificate",
+        "BlockPermanents.DisjointCycleCertificate.marcus"
+      ]
+    },
+    {
+      "number": "BA.3",
+      "kind": "Lemma",
+      "description": "Occupation coefficient for a routed cap and the complex Gram seam with its occupation norm factors.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3258,
+        "href": "../paper/main.tex#L3258",
+        "label": "lem:cert-seam"
+      },
+      "lean_declarations": [
+        "BlockPermanents.OccupationCoefficient.routed_entry",
+        "BlockPermanents.OccupationRouting.operator_split",
+        "BlockPermanents.OccupationRouting.complex_seam"
+      ]
+    },
+    {
+      "number": "BB.1",
+      "kind": "Lemma",
+      "description": "Forced-edge factorization, polynomial extraction, and the marked readout on the quadratic packets used in this appendix.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3300,
+        "href": "../paper/main.tex#L3300",
+        "label": "lem:cert-mark"
+      },
+      "lean_declarations": [
+        "BlockPermanents.MarkedEdges.quadratic_readout",
+        "BlockPermanents.ForcedQuadratics.forced_weight",
+        "BlockPermanents.ForcedWitness.evaluate_eq",
+        "BlockPermanents.RoutingFibres.quadratic_polynomial"
+      ]
+    },
+    {
+      "number": "1A.2",
+      "kind": "Example",
+      "description": "Direct 24 and 8 permanent values, with the gap 16 counted by permutations which split both packets.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 186,
+        "href": "../paper/main.tex#L186",
+        "label": "ex:style-matchings"
+      },
+      "lean_declarations": [
+        "BlockPermanents.OpeningExamples.all_ones_example",
+        "BlockPermanents.OpeningExamples.whole_split_counts",
+        "BlockPermanents.OpeningExamples.whole_permanent_and_gap"
+      ]
+    },
+    {
+      "number": "1B.3",
+      "kind": "Example",
+      "description": "Direct complex matching term, cap matrix, squared norm 5/2 and gap 10.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 324,
+        "href": "../paper/main.tex#L324",
+        "label": "ex:style-complex"
+      },
+      "lean_declarations": [
+        "BlockPermanents.ComplexCapExample.matching_term",
+        "BlockPermanents.ComplexCapExample.single_cap",
+        "BlockPermanents.ComplexCapExample.permanent_gap"
+      ]
+    },
+    {
+      "number": "2A.3",
+      "kind": "Example",
+      "description": "Direct 2+1 fork on the clasped word with two identical letters, with weights 1/3 and 2/3.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 654,
+        "href": "../paper/main.tex#L654",
+        "label": "e:oneofthem"
+      },
+      "lean_declarations": [
+        "BlockPermanents.OpeningExamples.fork_two_one"
+      ]
+    },
+    {
+      "number": "2C.4",
+      "kind": "Example",
+      "description": "Direct interchange on alternating tensors and positive cap–cup after bending.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 740,
+        "href": "../paper/main.tex#L740"
+      },
+      "lean_declarations": [
+        "BlockPermanents.IntroExamples.alternating_ne_zero",
+        "BlockPermanents.IntroExamples.interchange_alternating",
+        "BlockPermanents.IntroExamples.bent_interchange_psd"
+      ]
+    },
+    {
+      "number": "2C.9",
+      "kind": "Example",
+      "description": "Direct two- and three-strand bent expansions.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 777,
+        "href": "../paper/main.tex#L777"
+      },
+      "lean_declarations": [
+        "BlockPermanents.IntroExamples.two_strands",
+        "BlockPermanents.IntroExamples.three_strands"
+      ]
+    },
+    {
+      "number": "2F.3",
+      "kind": "Example",
+      "description": "Direct nontrivial four-strand cut values and total gap 14.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 889,
+        "href": "../paper/main.tex#L889"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FourAtomExample.proper_values",
+        "BlockPermanents.FourAtomExample.gap_fourteen"
+      ]
+    },
+    {
+      "number": "3A.4",
+      "kind": "Example",
+      "description": "Direct three-quadratic opening, including the surviving upright term.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1197,
+        "href": "../paper/main.tex#L1197"
+      },
+      "lean_declarations": [
+        "BlockPermanents.IntroExamples.three_quadratic",
+        "BlockPermanents.IntroExamples.upright_two"
+      ]
+    },
+    {
+      "number": "3B.4",
+      "kind": "Example",
+      "description": "Direct evaluation of the four terms on the indicated unaveraged boundary, and their identity after relabeling.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1236,
+        "href": "../paper/main.tex#L1236"
+      },
+      "lean_declarations": [
+        "BlockPermanents.MarkedBoundaryExample.drawings",
+        "BlockPermanents.MarkedBoundaryExample.fixed_boundary",
+        "BlockPermanents.MarkedBoundaryExample.averaged"
+      ]
+    },
+    {
+      "number": "3D.4",
+      "kind": "Example",
+      "description": "Direct surviving terms, zero perpendicular part, normalized gap 84 and raw permanents 720 and 48.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1432,
+        "href": "../paper/main.tex#L1432"
+      },
+      "lean_declarations": [
+        "BlockPermanents.ThreeOnesExample.physical_terms",
+        "BlockPermanents.ThreeOnesExample.raw_permanents"
+      ]
+    },
+    {
+      "number": "4A.1",
+      "kind": "Example",
+      "description": "Direct one-strand bubble, crossed gluing and the behavior of reflected images on the marked line and its orthogonal complement.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1531,
+        "href": "../paper/main.tex#L1531",
+        "label": "ex:inter-thin"
+      },
+      "lean_declarations": [
+        "BlockPermanents.SupportRouteExamples.supported_bubble",
+        "BlockPermanents.SupportRouteExamples.crossed_gluing",
+        "BlockPermanents.SupportRouteExamples.reflected_agree",
+        "BlockPermanents.SupportRouteExamples.perpendicular_rows"
+      ]
+    },
+    {
+      "number": "4B.3",
+      "kind": "Example",
+      "description": "Direct three-placement expansion, the single surviving term and the final clasp factor 1/3.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1640,
+        "href": "../paper/main.tex#L1640",
+        "label": "ex:inter-two-marks"
+      },
+      "lean_declarations": [
+        "BlockPermanents.TwoMarkedExample.three_placements",
+        "BlockPermanents.TwoMarkedExample.sole_survivor",
+        "BlockPermanents.TwoMarkedExample.adapted_wire",
+        "BlockPermanents.TwoMarkedExample.subspace_example"
+      ]
+    },
+    {
+      "number": "5A.2",
+      "kind": "Example",
+      "description": "Direct Gram matrix and the single- and joint-projection energies 1/2 and 2/3.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1698,
+        "href": "../paper/main.tex#L1698"
+      },
+      "lean_declarations": [
+        "BlockPermanents.TwoCapExample.gram",
+        "BlockPermanents.TwoCapExample.separate_energy",
+        "BlockPermanents.TwoCapExample.joint_energy"
+      ]
+    },
+    {
+      "number": "6B.4",
+      "kind": "Example",
+      "description": "Direct cubic shortfall with single-edge budget 9 and coherent energy 16.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2233,
+        "href": "../paper/main.tex#L2233"
+      },
+      "lean_declarations": [
+        "BlockPermanents.BalancedLastExample.cubic_shortfall"
+      ]
+    },
+    {
+      "number": "7A.2",
+      "kind": "Example",
+      "description": "Direct middle matrix, trace, squared norm and equality on the orthonormal pair.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2390,
+        "href": "../paper/main.tex#L2390"
+      },
+      "lean_declarations": [
+        "BlockPermanents.PairOrthonormalExample.middle_trace",
+        "BlockPermanents.PairOrthonormalExample.middle_energy",
+        "BlockPermanents.PairOrthonormalExample.equality_four"
+      ]
+    },
+    {
+      "number": "7B.2",
+      "kind": "Example",
+      "description": "Direct four-label evaluations of the one- and two-matching moments.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2419,
+        "href": "../paper/main.tex#L2419",
+        "label": "ex:th-matchings"
+      },
+      "lean_declarations": [
+        "BlockPermanents.CountingExamples.four_matchings"
+      ]
+    },
+    {
+      "number": "7C.2",
+      "kind": "Example",
+      "description": "Four- and five-packet threshold comparison and the four-label coefficient polynomial.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2550,
+        "href": "../paper/main.tex#L2550"
+      },
+      "lean_declarations": [
+        "BlockPermanents.CountingExamples.four_path_coefficients",
+        "BlockPermanents.Threshold.five_coefficients"
+      ]
+    },
+    {
+      "number": "7D.4",
+      "kind": "Example",
+      "description": "Direct exact tridiagonal pivots, PSD certificate and six-block consequence.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2578,
+        "href": "../paper/main.tex#L2578"
+      },
+      "lean_declarations": [
+        "BlockPermanents.TradePivots.six_four",
+        "BlockPermanents.Threshold.tradeMatrix_six_four_psd",
+        "BlockPermanents.RefinedThreshold.six_four"
+      ]
+    },
+    {
+      "number": "8A.2",
+      "kind": "Example",
+      "description": "Direct cap energies of the orthogonal cubic and its disjoint pair cuts.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2638,
+        "href": "../paper/main.tex#L2638"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FiveCubicExample.cut_energy",
+        "BlockPermanents.FiveCubicExample.disjoint_pairs",
+        "BlockPermanents.FiveCubicExample.coarse_five"
+      ]
+    },
+    {
+      "number": "8B.2",
+      "kind": "Example",
+      "description": "Direct unit Gram constructions with opposite signed triangle terms.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2799,
+        "href": "../paper/main.tex#L2799"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FiveTriangleExample.triangle_sign"
+      ]
+    },
+    {
+      "number": "9A.1",
+      "kind": "Example",
+      "description": "Two marked ends and the five coefficients of the pictured routing.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 2967,
+        "href": "../paper/main.tex#L2967"
+      },
+      "lean_declarations": [
+        "BlockPermanents.CountingExamples.whole_edges",
+        "BlockPermanents.CountingExamples.five_marks"
+      ]
+    },
+    {
+      "number": "AC.3",
+      "kind": "Example",
+      "description": "Direct polynomial for a triangle, a transposition and an allocated fixed point, and class size 120.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3178,
+        "href": "../paper/main.tex#L3178"
+      },
+      "lean_declarations": [
+        "BlockPermanents.SixCycleExample.polynomial",
+        "BlockPermanents.SixCycleExample.class_card"
+      ]
+    },
+    {
+      "number": "AC.4",
+      "kind": "Example",
+      "description": "Exact ten-label coefficient table and resulting thickness range.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3201,
+        "href": "../paper/main.tex#L3201"
+      },
+      "lean_declarations": [
+        "BlockPermanents.CycleCoefficients.ten_coefficients",
+        "BlockPermanents.TenEndpoint.marcus_ten"
+      ]
+    },
+    {
+      "number": "BA.2",
+      "kind": "Example",
+      "description": "Direct evaluation of the reflected vector, its squared norm 1/2 and the glued seam value 1/2.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3223,
+        "href": "../paper/main.tex#L3223",
+        "label": "ex:cert-half"
+      },
+      "lean_declarations": [
+        "BlockPermanents.SupportRouteExamples.reflected_seam",
+        "BlockPermanents.SupportRouteExamples.seam_energy",
+        "BlockPermanents.SupportRouteExamples.glued_seam"
+      ]
+    },
+    {
+      "number": "BB.2",
+      "kind": "Example",
+      "description": "Direct rational fine and coarse closures, all five marks, their mean and agreement with the forced-edge calculation.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 3341,
+        "href": "../paper/main.tex#L3341"
+      },
+      "lean_declarations": [
+        "BlockPermanents.Negative.all_marked_values",
+        "BlockPermanents.Negative.mean_is_defect",
+        "BlockPermanents.ForcedWitness.witness_eq_transfer"
+      ]
+    }
+  ],
+  "proof_notes": [
+    {
+      "name": "Remark after Example 3A.4",
+      "description": "The open bend has a nonzero witness of eigenvalue −2 at thickness at least two. The fine cuts vanish on that witness.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1201,
+        "href": "../paper/main.tex#L1201"
+      },
+      "lean_declarations": [
+        "BlockPermanents.NegativeOpenBend.eigenvector",
+        "BlockPermanents.NegativeOpenBend.nonzero",
+        "BlockPermanents.NegativeOpenBend.fine_cuts"
+      ]
+    },
+    {
+      "name": "Correction in the proof of Lemma 5B.1",
+      "description": "After averaging over four packet labels, the identity is [B]₄ = [X₃]₄. The printed conclusion for [Q]₄ follows.",
+      "manuscript": {
+        "path": "paper/main.tex",
+        "line": 1857,
+        "href": "../paper/main.tex#L1857"
+      },
+      "lean_declarations": [
+        "BlockPermanents.FourTarget.four_average_actual"
+      ]
+    }
+  ],
+  "lean_declarations": {
+    "BlockPermanents.BalancedAssembly.opening": {
+      "module": "BlockPermanents.BalancedAssembly",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedAssembly.lean",
+      "line": 67,
+      "href": "../code/Lean/BlockPermanents/BalancedAssembly.lean#L67"
+    },
+    "BlockPermanents.BalancedCubic.cubic_certificate_all_dimensions": {
+      "module": "BlockPermanents.BalancedCubicCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedCubicCertificate.lean",
+      "line": 85,
+      "href": "../code/Lean/BlockPermanents/BalancedCubicCertificate.lean#L85"
+    },
+    "BlockPermanents.BalancedCubicMarcus.marcus": {
+      "module": "BlockPermanents.BalancedCubicMarcus",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedCubicMarcus.lean",
+      "line": 49,
+      "href": "../code/Lean/BlockPermanents/BalancedCubicMarcus.lean#L49"
+    },
+    "BlockPermanents.BalancedEvaluation.opening": {
+      "module": "BlockPermanents.BalancedEvaluation",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedEvaluation.lean",
+      "line": 39,
+      "href": "../code/Lean/BlockPermanents/BalancedEvaluation.lean#L39"
+    },
+    "BlockPermanents.BalancedLast.marcus_thick": {
+      "module": "BlockPermanents.BalancedLastMarcus",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedLastMarcus.lean",
+      "line": 12,
+      "href": "../code/Lean/BlockPermanents/BalancedLastMarcus.lean#L12"
+    },
+    "BlockPermanents.BalancedLast.subspace_compression_psd": {
+      "module": "BlockPermanents.BalancedLastIntrinsic",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedLastIntrinsic.lean",
+      "line": 61,
+      "href": "../code/Lean/BlockPermanents/BalancedLastIntrinsic.lean#L61"
+    },
+    "BlockPermanents.BalancedLast.subspace_last_cap_weight": {
+      "module": "BlockPermanents.BalancedLastIntrinsic",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedLastIntrinsic.lean",
+      "line": 21,
+      "href": "../code/Lean/BlockPermanents/BalancedLastIntrinsic.lean#L21"
+    },
+    "BlockPermanents.BalancedLast.subspace_marked_decomposition": {
+      "module": "BlockPermanents.BalancedLastIntrinsic",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedLastIntrinsic.lean",
+      "line": 35,
+      "href": "../code/Lean/BlockPermanents/BalancedLastIntrinsic.lean#L35"
+    },
+    "BlockPermanents.BalancedLastExample.cubic_shortfall": {
+      "module": "BlockPermanents.BalancedLastExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedLastExample.lean",
+      "line": 41,
+      "href": "../code/Lean/BlockPermanents/BalancedLastExample.lean#L41"
+    },
+    "BlockPermanents.BalancedSigned.signed_gluing": {
+      "module": "BlockPermanents.BalancedSigned",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/BalancedSigned.lean",
+      "line": 88,
+      "href": "../code/Lean/BlockPermanents/BalancedSigned.lean#L88"
+    },
+    "BlockPermanents.Bend.bent_schur": {
+      "module": "BlockPermanents.Bend",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Bend.lean",
+      "line": 170,
+      "href": "../code/Lean/BlockPermanents/Bend.lean#L170"
+    },
+    "BlockPermanents.Bend.evaluate_bend": {
+      "module": "BlockPermanents.Bend",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Bend.lean",
+      "line": 78,
+      "href": "../code/Lean/BlockPermanents/Bend.lean#L78"
+    },
+    "BlockPermanents.Bend.two_block_gap": {
+      "module": "BlockPermanents.Bend",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Bend.lean",
+      "line": 329,
+      "href": "../code/Lean/BlockPermanents/Bend.lean#L329"
+    },
+    "BlockPermanents.Closures.defect_closure": {
+      "module": "BlockPermanents.Closures",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Closures.lean",
+      "line": 321,
+      "href": "../code/Lean/BlockPermanents/Closures.lean#L321"
+    },
+    "BlockPermanents.Closures.fine_closure": {
+      "module": "BlockPermanents.Closures",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Closures.lean",
+      "line": 244,
+      "href": "../code/Lean/BlockPermanents/Closures.lean#L244"
+    },
+    "BlockPermanents.Closures.packet_closure": {
+      "module": "BlockPermanents.Closures",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Closures.lean",
+      "line": 149,
+      "href": "../code/Lean/BlockPermanents/Closures.lean#L149"
+    },
+    "BlockPermanents.ComplexCapExample.matching_term": {
+      "module": "BlockPermanents.ComplexCapExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ComplexCapExample.lean",
+      "line": 22,
+      "href": "../code/Lean/BlockPermanents/ComplexCapExample.lean#L22"
+    },
+    "BlockPermanents.ComplexCapExample.permanent_gap": {
+      "module": "BlockPermanents.ComplexCapExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ComplexCapExample.lean",
+      "line": 79,
+      "href": "../code/Lean/BlockPermanents/ComplexCapExample.lean#L79"
+    },
+    "BlockPermanents.ComplexCapExample.single_cap": {
+      "module": "BlockPermanents.ComplexCapExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ComplexCapExample.lean",
+      "line": 65,
+      "href": "../code/Lean/BlockPermanents/ComplexCapExample.lean#L65"
+    },
+    "BlockPermanents.CountingExamples.five_marks": {
+      "module": "BlockPermanents.CountingExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/CountingExamples.lean",
+      "line": 65,
+      "href": "../code/Lean/BlockPermanents/CountingExamples.lean#L65"
+    },
+    "BlockPermanents.CountingExamples.four_matchings": {
+      "module": "BlockPermanents.CountingExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/CountingExamples.lean",
+      "line": 25,
+      "href": "../code/Lean/BlockPermanents/CountingExamples.lean#L25"
+    },
+    "BlockPermanents.CountingExamples.four_path_coefficients": {
+      "module": "BlockPermanents.CountingExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/CountingExamples.lean",
+      "line": 42,
+      "href": "../code/Lean/BlockPermanents/CountingExamples.lean#L42"
+    },
+    "BlockPermanents.CountingExamples.whole_edges": {
+      "module": "BlockPermanents.CountingExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/CountingExamples.lean",
+      "line": 63,
+      "href": "../code/Lean/BlockPermanents/CountingExamples.lean#L63"
+    },
+    "BlockPermanents.CycleCoefficients.ten_coefficients": {
+      "module": "BlockPermanents.CycleCoefficients",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/CycleCoefficients.lean",
+      "line": 83,
+      "href": "../code/Lean/BlockPermanents/CycleCoefficients.lean#L83"
+    },
+    "BlockPermanents.Digon.clasp_recursion": {
+      "module": "BlockPermanents.Digon",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Digon.lean",
+      "line": 48,
+      "href": "../code/Lean/BlockPermanents/Digon.lean#L48"
+    },
+    "BlockPermanents.Digon.merge_split": {
+      "module": "BlockPermanents.Digon",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Digon.lean",
+      "line": 23,
+      "href": "../code/Lean/BlockPermanents/Digon.lean#L23"
+    },
+    "BlockPermanents.Digon.split_merge": {
+      "module": "BlockPermanents.Digon",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Digon.lean",
+      "line": 31,
+      "href": "../code/Lean/BlockPermanents/Digon.lean#L31"
+    },
+    "BlockPermanents.DisjointCycleCertificate.certificate": {
+      "module": "BlockPermanents.DisjointCycleCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/DisjointCycleCertificate.lean",
+      "line": 103,
+      "href": "../code/Lean/BlockPermanents/DisjointCycleCertificate.lean#L103"
+    },
+    "BlockPermanents.DisjointCycleCertificate.marcus": {
+      "module": "BlockPermanents.DisjointCycleCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/DisjointCycleCertificate.lean",
+      "line": 139,
+      "href": "../code/Lean/BlockPermanents/DisjointCycleCertificate.lean#L139"
+    },
+    "BlockPermanents.FaceCounts.coeff_succ": {
+      "module": "BlockPermanents.FaceCounts",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FaceCounts.lean",
+      "line": 80,
+      "href": "../code/Lean/BlockPermanents/FaceCounts.lean#L80"
+    },
+    "BlockPermanents.FiveCubicExample.coarse_five": {
+      "module": "BlockPermanents.FiveCubicExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveCubicExample.lean",
+      "line": 155,
+      "href": "../code/Lean/BlockPermanents/FiveCubicExample.lean#L155"
+    },
+    "BlockPermanents.FiveCubicExample.cut_energy": {
+      "module": "BlockPermanents.FiveCubicExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveCubicExample.lean",
+      "line": 55,
+      "href": "../code/Lean/BlockPermanents/FiveCubicExample.lean#L55"
+    },
+    "BlockPermanents.FiveCubicExample.disjoint_pairs": {
+      "module": "BlockPermanents.FiveCubicExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveCubicExample.lean",
+      "line": 150,
+      "href": "../code/Lean/BlockPermanents/FiveCubicExample.lean#L150"
+    },
+    "BlockPermanents.FiveFreeCoefficient.uniform_eq_iff": {
+      "module": "BlockPermanents.FiveFreeCoefficient",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveFreeCoefficient.lean",
+      "line": 83,
+      "href": "../code/Lean/BlockPermanents/FiveFreeCoefficient.lean#L83"
+    },
+    "BlockPermanents.FiveFreeResidual.testing_free_cable_squares": {
+      "module": "BlockPermanents.FiveFreeResidual",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveFreeResidual.lean",
+      "line": 201,
+      "href": "../code/Lean/BlockPermanents/FiveFreeResidual.lean#L201"
+    },
+    "BlockPermanents.FiveFullCertificate.marcus_five": {
+      "module": "BlockPermanents.FiveFullCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveFullCertificate.lean",
+      "line": 89,
+      "href": "../code/Lean/BlockPermanents/FiveFullCertificate.lean#L89"
+    },
+    "BlockPermanents.FiveFullCertificate.unit_identity": {
+      "module": "BlockPermanents.FiveFullCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveFullCertificate.lean",
+      "line": 14,
+      "href": "../code/Lean/BlockPermanents/FiveFullCertificate.lean#L14"
+    },
+    "BlockPermanents.FiveMixedAverageSquares.plain_squares": {
+      "module": "BlockPermanents.FiveMixedAverageSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveMixedAverageSquares.lean",
+      "line": 107,
+      "href": "../code/Lean/BlockPermanents/FiveMixedAverageSquares.lean#L107"
+    },
+    "BlockPermanents.FiveMixedAverageSquares.weighted_squares": {
+      "module": "BlockPermanents.FiveMixedAverageSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveMixedAverageSquares.lean",
+      "line": 117,
+      "href": "../code/Lean/BlockPermanents/FiveMixedAverageSquares.lean#L117"
+    },
+    "BlockPermanents.FiveMixedSquares.physical_trace": {
+      "module": "BlockPermanents.FiveMixedSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveMixedSquares.lean",
+      "line": 93,
+      "href": "../code/Lean/BlockPermanents/FiveMixedSquares.lean#L93"
+    },
+    "BlockPermanents.FiveProjection.remainder_posSemidef": {
+      "module": "BlockPermanents.FiveProjection",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveProjection.lean",
+      "line": 197,
+      "href": "../code/Lean/BlockPermanents/FiveProjection.lean#L197"
+    },
+    "BlockPermanents.FiveScalarSquares.long_cycle_squares": {
+      "module": "BlockPermanents.FiveScalarSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveScalarSquares.lean",
+      "line": 41,
+      "href": "../code/Lean/BlockPermanents/FiveScalarSquares.lean#L41"
+    },
+    "BlockPermanents.FiveTriangleExample.triangle_sign": {
+      "module": "BlockPermanents.FiveTriangleExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FiveTriangleExample.lean",
+      "line": 95,
+      "href": "../code/Lean/BlockPermanents/FiveTriangleExample.lean#L95"
+    },
+    "BlockPermanents.ForcedQuadratics.forced_weight": {
+      "module": "BlockPermanents.ForcedQuadratics",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ForcedQuadratics.lean",
+      "line": 66,
+      "href": "../code/Lean/BlockPermanents/ForcedQuadratics.lean#L66"
+    },
+    "BlockPermanents.ForcedWitness.evaluate_eq": {
+      "module": "BlockPermanents.ForcedWitness",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ForcedWitness.lean",
+      "line": 106,
+      "href": "../code/Lean/BlockPermanents/ForcedWitness.lean#L106"
+    },
+    "BlockPermanents.ForcedWitness.witness_eq_transfer": {
+      "module": "BlockPermanents.ForcedWitness",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ForcedWitness.lean",
+      "line": 291,
+      "href": "../code/Lean/BlockPermanents/ForcedWitness.lean#L291"
+    },
+    "BlockPermanents.FourAtomExample.gap_fourteen": {
+      "module": "BlockPermanents.FourAtomExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FourAtomExample.lean",
+      "line": 87,
+      "href": "../code/Lean/BlockPermanents/FourAtomExample.lean#L87"
+    },
+    "BlockPermanents.FourAtomExample.proper_values": {
+      "module": "BlockPermanents.FourAtomExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FourAtomExample.lean",
+      "line": 77,
+      "href": "../code/Lean/BlockPermanents/FourAtomExample.lean#L77"
+    },
+    "BlockPermanents.FourNative.four_packet_bend": {
+      "module": "BlockPermanents.FourBendIdentity",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FourBendIdentity.lean",
+      "line": 14,
+      "href": "../code/Lean/BlockPermanents/FourBendIdentity.lean#L14"
+    },
+    "BlockPermanents.FourTarget.four_average_actual": {
+      "module": "BlockPermanents.FourTarget",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FourTarget.lean",
+      "line": 72,
+      "href": "../code/Lean/BlockPermanents/FourTarget.lean#L72"
+    },
+    "BlockPermanents.FourTrade.gram_trade": {
+      "module": "BlockPermanents.FourTrade",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FourTrade.lean",
+      "line": 99,
+      "href": "../code/Lean/BlockPermanents/FourTrade.lean#L99"
+    },
+    "BlockPermanents.FourTradeSquares.gram_identity": {
+      "module": "BlockPermanents.FourTradeSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FourTradeSquares.lean",
+      "line": 74,
+      "href": "../code/Lean/BlockPermanents/FourTradeSquares.lean#L74"
+    },
+    "BlockPermanents.GramInverse.projection_spec": {
+      "module": "BlockPermanents.GramInverse",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/GramInverse.lean",
+      "line": 70,
+      "href": "../code/Lean/BlockPermanents/GramInverse.lean#L70"
+    },
+    "BlockPermanents.IntroExamples.alternating_ne_zero": {
+      "module": "BlockPermanents.IntroExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/IntroExamples.lean",
+      "line": 29,
+      "href": "../code/Lean/BlockPermanents/IntroExamples.lean#L29"
+    },
+    "BlockPermanents.IntroExamples.bent_interchange_psd": {
+      "module": "BlockPermanents.IntroExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/IntroExamples.lean",
+      "line": 65,
+      "href": "../code/Lean/BlockPermanents/IntroExamples.lean#L65"
+    },
+    "BlockPermanents.IntroExamples.cap_cup_action": {
+      "module": "BlockPermanents.IntroExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/IntroExamples.lean",
+      "line": 53,
+      "href": "../code/Lean/BlockPermanents/IntroExamples.lean#L53"
+    },
+    "BlockPermanents.IntroExamples.interchange_alternating": {
+      "module": "BlockPermanents.IntroExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/IntroExamples.lean",
+      "line": 23,
+      "href": "../code/Lean/BlockPermanents/IntroExamples.lean#L23"
+    },
+    "BlockPermanents.IntroExamples.three_quadratic": {
+      "module": "BlockPermanents.IntroExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/IntroExamples.lean",
+      "line": 98,
+      "href": "../code/Lean/BlockPermanents/IntroExamples.lean#L98"
+    },
+    "BlockPermanents.IntroExamples.three_strands": {
+      "module": "BlockPermanents.IntroExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/IntroExamples.lean",
+      "line": 80,
+      "href": "../code/Lean/BlockPermanents/IntroExamples.lean#L80"
+    },
+    "BlockPermanents.IntroExamples.two_strands": {
+      "module": "BlockPermanents.IntroExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/IntroExamples.lean",
+      "line": 70,
+      "href": "../code/Lean/BlockPermanents/IntroExamples.lean#L70"
+    },
+    "BlockPermanents.IntroExamples.upright_two": {
+      "module": "BlockPermanents.IntroExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/IntroExamples.lean",
+      "line": 92,
+      "href": "../code/Lean/BlockPermanents/IntroExamples.lean#L92"
+    },
+    "BlockPermanents.MarkedBoundaryExample.averaged": {
+      "module": "BlockPermanents.MarkedBoundaryExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MarkedBoundaryExample.lean",
+      "line": 90,
+      "href": "../code/Lean/BlockPermanents/MarkedBoundaryExample.lean#L90"
+    },
+    "BlockPermanents.MarkedBoundaryExample.drawings": {
+      "module": "BlockPermanents.MarkedBoundaryExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MarkedBoundaryExample.lean",
+      "line": 54,
+      "href": "../code/Lean/BlockPermanents/MarkedBoundaryExample.lean#L54"
+    },
+    "BlockPermanents.MarkedBoundaryExample.fixed_boundary": {
+      "module": "BlockPermanents.MarkedBoundaryExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MarkedBoundaryExample.lean",
+      "line": 68,
+      "href": "../code/Lean/BlockPermanents/MarkedBoundaryExample.lean#L68"
+    },
+    "BlockPermanents.MarkedEdges.quadratic_readout": {
+      "module": "BlockPermanents.MarkedEdges",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MarkedEdges.lean",
+      "line": 145,
+      "href": "../code/Lean/BlockPermanents/MarkedEdges.lean#L145"
+    },
+    "BlockPermanents.MarkedWitness.negative_fifth_full_clasps": {
+      "module": "BlockPermanents.MarkedAverage",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MarkedAverage.lean",
+      "line": 169,
+      "href": "../code/Lean/BlockPermanents/MarkedAverage.lean#L169"
+    },
+    "BlockPermanents.MatchingCoarse.averaged_peel_identity": {
+      "module": "BlockPermanents.MatchingCoarse",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MatchingCoarse.lean",
+      "line": 179,
+      "href": "../code/Lean/BlockPermanents/MatchingCoarse.lean#L179"
+    },
+    "BlockPermanents.MatchingCoarse.peel_identity": {
+      "module": "BlockPermanents.MatchingCoarse",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MatchingCoarse.lean",
+      "line": 146,
+      "href": "../code/Lean/BlockPermanents/MatchingCoarse.lean#L146"
+    },
+    "BlockPermanents.MatchingFineSquares.average_identity": {
+      "module": "BlockPermanents.MatchingFineSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MatchingFineSquares.lean",
+      "line": 202,
+      "href": "../code/Lean/BlockPermanents/MatchingFineSquares.lean#L202"
+    },
+    "BlockPermanents.MatchingFineSquares.unit_identity": {
+      "module": "BlockPermanents.MatchingFineSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MatchingFineSquares.lean",
+      "line": 228,
+      "href": "../code/Lean/BlockPermanents/MatchingFineSquares.lean#L228"
+    },
+    "BlockPermanents.MatchingThreshold.marcus_threshold": {
+      "module": "BlockPermanents.MatchingThreshold",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MatchingThreshold.lean",
+      "line": 93,
+      "href": "../code/Lean/BlockPermanents/MatchingThreshold.lean#L93"
+    },
+    "BlockPermanents.MatchingUpper.permanent_le_upper": {
+      "module": "BlockPermanents.MatchingUpper",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MatchingUpper.lean",
+      "line": 115,
+      "href": "../code/Lean/BlockPermanents/MatchingUpper.lean#L115"
+    },
+    "BlockPermanents.Negative.all_marked_values": {
+      "module": "BlockPermanents.Negative",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Negative.lean",
+      "line": 145,
+      "href": "../code/Lean/BlockPermanents/Negative.lean#L145"
+    },
+    "BlockPermanents.Negative.mean_is_defect": {
+      "module": "BlockPermanents.Negative",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Negative.lean",
+      "line": 157,
+      "href": "../code/Lean/BlockPermanents/Negative.lean#L157"
+    },
+    "BlockPermanents.Negative.witness_factors": {
+      "module": "BlockPermanents.Negative",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Negative.lean",
+      "line": 129,
+      "href": "../code/Lean/BlockPermanents/Negative.lean#L129"
+    },
+    "BlockPermanents.NegativeOpenBend.eigenvector": {
+      "module": "BlockPermanents.NegativeOpenBend",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/NegativeOpenBend.lean",
+      "line": 89,
+      "href": "../code/Lean/BlockPermanents/NegativeOpenBend.lean#L89"
+    },
+    "BlockPermanents.NegativeOpenBend.fine_cuts": {
+      "module": "BlockPermanents.NegativeOpenBend",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/NegativeOpenBend.lean",
+      "line": 177,
+      "href": "../code/Lean/BlockPermanents/NegativeOpenBend.lean#L177"
+    },
+    "BlockPermanents.NegativeOpenBend.nonzero": {
+      "module": "BlockPermanents.NegativeOpenBend",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/NegativeOpenBend.lean",
+      "line": 156,
+      "href": "../code/Lean/BlockPermanents/NegativeOpenBend.lean#L156"
+    },
+    "BlockPermanents.OccupationCoefficient.routed_entry": {
+      "module": "BlockPermanents.OccupationCoefficient",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/OccupationCoefficient.lean",
+      "line": 140,
+      "href": "../code/Lean/BlockPermanents/OccupationCoefficient.lean#L140"
+    },
+    "BlockPermanents.OccupationRouting.complex_seam": {
+      "module": "BlockPermanents.OccupationRouting",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/OccupationRouting.lean",
+      "line": 79,
+      "href": "../code/Lean/BlockPermanents/OccupationRouting.lean#L79"
+    },
+    "BlockPermanents.OccupationRouting.operator_split": {
+      "module": "BlockPermanents.OccupationRouting",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/OccupationRouting.lean",
+      "line": 50,
+      "href": "../code/Lean/BlockPermanents/OccupationRouting.lean#L50"
+    },
+    "BlockPermanents.OpeningExamples.all_ones_example": {
+      "module": "BlockPermanents.OpeningExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/OpeningExamples.lean",
+      "line": 22,
+      "href": "../code/Lean/BlockPermanents/OpeningExamples.lean#L22"
+    },
+    "BlockPermanents.OpeningExamples.fork_two_one": {
+      "module": "BlockPermanents.OpeningExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/OpeningExamples.lean",
+      "line": 60,
+      "href": "../code/Lean/BlockPermanents/OpeningExamples.lean#L60"
+    },
+    "BlockPermanents.OpeningExamples.whole_permanent_and_gap": {
+      "module": "BlockPermanents.OpeningExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/OpeningExamples.lean",
+      "line": 37,
+      "href": "../code/Lean/BlockPermanents/OpeningExamples.lean#L37"
+    },
+    "BlockPermanents.OpeningExamples.whole_split_counts": {
+      "module": "BlockPermanents.OpeningExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/OpeningExamples.lean",
+      "line": 12,
+      "href": "../code/Lean/BlockPermanents/OpeningExamples.lean#L12"
+    },
+    "BlockPermanents.PairOrthonormalExample.equality_four": {
+      "module": "BlockPermanents.PairOrthonormalExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PairOrthonormalExample.lean",
+      "line": 116,
+      "href": "../code/Lean/BlockPermanents/PairOrthonormalExample.lean#L116"
+    },
+    "BlockPermanents.PairOrthonormalExample.middle_energy": {
+      "module": "BlockPermanents.PairOrthonormalExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PairOrthonormalExample.lean",
+      "line": 79,
+      "href": "../code/Lean/BlockPermanents/PairOrthonormalExample.lean#L79"
+    },
+    "BlockPermanents.PairOrthonormalExample.middle_trace": {
+      "module": "BlockPermanents.PairOrthonormalExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PairOrthonormalExample.lean",
+      "line": 58,
+      "href": "../code/Lean/BlockPermanents/PairOrthonormalExample.lean#L58"
+    },
+    "BlockPermanents.PairResidual.full_caps_residual_operator": {
+      "module": "BlockPermanents.PairResidualOperator",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PairResidualOperator.lean",
+      "line": 34,
+      "href": "../code/Lean/BlockPermanents/PairResidualOperator.lean#L34"
+    },
+    "BlockPermanents.PairResidual.full_caps_residual_squares": {
+      "module": "BlockPermanents.PairResidualSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PairResidualSquares.lean",
+      "line": 33,
+      "href": "../code/Lean/BlockPermanents/PairResidualSquares.lean#L33"
+    },
+    "BlockPermanents.PaperCertificate.logarithmic": {
+      "module": "BlockPermanents.PaperCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PaperCertificate.lean",
+      "line": 33,
+      "href": "../code/Lean/BlockPermanents/PaperCertificate.lean#L33"
+    },
+    "BlockPermanents.PaperCertificate.manuscript": {
+      "module": "BlockPermanents.PaperCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PaperCertificate.lean",
+      "line": 39,
+      "href": "../code/Lean/BlockPermanents/PaperCertificate.lean#L39"
+    },
+    "BlockPermanents.PaperCertificate.spectral_threshold": {
+      "module": "BlockPermanents.PaperCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PaperCertificate.lean",
+      "line": 16,
+      "href": "../code/Lean/BlockPermanents/PaperCertificate.lean#L16"
+    },
+    "BlockPermanents.PathSpectrum.spectral_threshold": {
+      "module": "BlockPermanents.PathSpectrum",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PathSpectrum.lean",
+      "line": 209,
+      "href": "../code/Lean/BlockPermanents/PathSpectrum.lean#L209"
+    },
+    "BlockPermanents.PieceProductSquares.class_squares": {
+      "module": "BlockPermanents.PieceProductSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PieceProductSquares.lean",
+      "line": 111,
+      "href": "../code/Lean/BlockPermanents/PieceProductSquares.lean#L111"
+    },
+    "BlockPermanents.PieceProductSquares.product_squares": {
+      "module": "BlockPermanents.PieceSignProducts",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PieceSignProducts.lean",
+      "line": 49,
+      "href": "../code/Lean/BlockPermanents/PieceSignProducts.lean#L49"
+    },
+    "BlockPermanents.PivotCertificate.marcus": {
+      "module": "BlockPermanents.PivotCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PivotCertificate.lean",
+      "line": 36,
+      "href": "../code/Lean/BlockPermanents/PivotCertificate.lean#L36"
+    },
+    "BlockPermanents.PivotCertificate.unit_identity": {
+      "module": "BlockPermanents.PivotCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PivotCertificate.lean",
+      "line": 17,
+      "href": "../code/Lean/BlockPermanents/PivotCertificate.lean#L17"
+    },
+    "BlockPermanents.Quadratic.four_times_one_cap": {
+      "module": "BlockPermanents.Quadratic",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Quadratic.lean",
+      "line": 129,
+      "href": "../code/Lean/BlockPermanents/Quadratic.lean#L129"
+    },
+    "BlockPermanents.RawCycleSquares.odd_cycle_real": {
+      "module": "BlockPermanents.RawOddCycleSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RawOddCycleSquares.lean",
+      "line": 87,
+      "href": "../code/Lean/BlockPermanents/RawOddCycleSquares.lean#L87"
+    },
+    "BlockPermanents.RawCycleSquares.odd_cycle_squares": {
+      "module": "BlockPermanents.RawOddCycleSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RawOddCycleSquares.lean",
+      "line": 126,
+      "href": "../code/Lean/BlockPermanents/RawOddCycleSquares.lean#L126"
+    },
+    "BlockPermanents.RawFaceCertificate.raw_bound": {
+      "module": "BlockPermanents.RawFaceCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RawFaceCertificate.lean",
+      "line": 40,
+      "href": "../code/Lean/BlockPermanents/RawFaceCertificate.lean#L40"
+    },
+    "BlockPermanents.RawFaceCertificate.raw_identity": {
+      "module": "BlockPermanents.RawFaceCertificate",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RawFaceCertificate.lean",
+      "line": 30,
+      "href": "../code/Lean/BlockPermanents/RawFaceCertificate.lean#L30"
+    },
+    "BlockPermanents.RawTripleFaces.quadruple_faces": {
+      "module": "BlockPermanents.RawTripleFaces",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RawTripleFaces.lean",
+      "line": 118,
+      "href": "../code/Lean/BlockPermanents/RawTripleFaces.lean#L118"
+    },
+    "BlockPermanents.RawTripleFaces.triple_faces": {
+      "module": "BlockPermanents.RawTripleFaces",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RawTripleFaces.lean",
+      "line": 109,
+      "href": "../code/Lean/BlockPermanents/RawTripleFaces.lean#L109"
+    },
+    "BlockPermanents.RefinedThreshold.six_four": {
+      "module": "BlockPermanents.RefinedThreshold",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RefinedThreshold.lean",
+      "line": 51,
+      "href": "../code/Lean/BlockPermanents/RefinedThreshold.lean#L51"
+    },
+    "BlockPermanents.RoutedFamilyProjection.family_gram": {
+      "module": "BlockPermanents.RoutedFamilyProjection",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutedFamilyProjection.lean",
+      "line": 81,
+      "href": "../code/Lean/BlockPermanents/RoutedFamilyProjection.lean#L81"
+    },
+    "BlockPermanents.RoutedFamilyProjection.mem_projection_range": {
+      "module": "BlockPermanents.RoutedFamilyProjection",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutedFamilyProjection.lean",
+      "line": 166,
+      "href": "../code/Lean/BlockPermanents/RoutedFamilyProjection.lean#L166"
+    },
+    "BlockPermanents.RoutedFamilyProjection.projection_spec": {
+      "module": "BlockPermanents.RoutedFamilyProjection",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutedFamilyProjection.lean",
+      "line": 133,
+      "href": "../code/Lean/BlockPermanents/RoutedFamilyProjection.lean#L133"
+    },
+    "BlockPermanents.RoutedSubspaceProjection.dual_range": {
+      "module": "BlockPermanents.RoutedSubspaceProjection",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutedSubspaceProjection.lean",
+      "line": 146,
+      "href": "../code/Lean/BlockPermanents/RoutedSubspaceProjection.lean#L146"
+    },
+    "BlockPermanents.RoutedSubspaceProjection.for_subspace": {
+      "module": "BlockPermanents.RoutedSubspaceProjection",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutedSubspaceProjection.lean",
+      "line": 209,
+      "href": "../code/Lean/BlockPermanents/RoutedSubspaceProjection.lean#L209"
+    },
+    "BlockPermanents.RoutedTrace.clasped_intersection": {
+      "module": "BlockPermanents.RoutedCables",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutedCables.lean",
+      "line": 36,
+      "href": "../code/Lean/BlockPermanents/RoutedCables.lean#L36"
+    },
+    "BlockPermanents.RoutedTrace.last_cap_gram": {
+      "module": "BlockPermanents.PortIntersection",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/PortIntersection.lean",
+      "line": 28,
+      "href": "../code/Lean/BlockPermanents/PortIntersection.lean#L28"
+    },
+    "BlockPermanents.RoutingFibres.iterate_clasp_step": {
+      "module": "BlockPermanents.ExitTransfer",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ExitTransfer.lean",
+      "line": 49,
+      "href": "../code/Lean/BlockPermanents/ExitTransfer.lean#L49"
+    },
+    "BlockPermanents.RoutingFibres.iterate_expand": {
+      "module": "BlockPermanents.RoutingExits",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutingExits.lean",
+      "line": 69,
+      "href": "../code/Lean/BlockPermanents/RoutingExits.lean#L69"
+    },
+    "BlockPermanents.RoutingFibres.iterate_one": {
+      "module": "BlockPermanents.RoutingAttachment",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutingAttachment.lean",
+      "line": 65,
+      "href": "../code/Lean/BlockPermanents/RoutingAttachment.lean#L65"
+    },
+    "BlockPermanents.RoutingFibres.marked_expand": {
+      "module": "BlockPermanents.RoutingExits",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutingExits.lean",
+      "line": 116,
+      "href": "../code/Lean/BlockPermanents/RoutingExits.lean#L116"
+    },
+    "BlockPermanents.RoutingFibres.quadratic_polynomial": {
+      "module": "BlockPermanents.RoutingPacketReadout",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/RoutingPacketReadout.lean",
+      "line": 72,
+      "href": "../code/Lean/BlockPermanents/RoutingPacketReadout.lean#L72"
+    },
+    "BlockPermanents.RoutingFibres.signedTransfer_eq_marked": {
+      "module": "BlockPermanents.ExitTransfer",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ExitTransfer.lean",
+      "line": 70,
+      "href": "../code/Lean/BlockPermanents/ExitTransfer.lean#L70"
+    },
+    "BlockPermanents.Routings.capGram_posDef": {
+      "module": "BlockPermanents.Routings",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Routings.lean",
+      "line": 282,
+      "href": "../code/Lean/BlockPermanents/Routings.lean#L282"
+    },
+    "BlockPermanents.SchurNormalization.homogeneousSchur": {
+      "module": "BlockPermanents.HomogeneousSchurProof",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/HomogeneousSchurProof.lean",
+      "line": 8,
+      "href": "../code/Lean/BlockPermanents/HomogeneousSchurProof.lean#L8"
+    },
+    "BlockPermanents.SchurNormalization.homogeneousSchur_implies_unbent": {
+      "module": "BlockPermanents.SchurNormalization",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SchurNormalization.lean",
+      "line": 73,
+      "href": "../code/Lean/BlockPermanents/SchurNormalization.lean#L73"
+    },
+    "BlockPermanents.SixCycleExample.class_card": {
+      "module": "BlockPermanents.SixCycleExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SixCycleExample.lean",
+      "line": 32,
+      "href": "../code/Lean/BlockPermanents/SixCycleExample.lean#L32"
+    },
+    "BlockPermanents.SixCycleExample.polynomial": {
+      "module": "BlockPermanents.SixCycleExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SixCycleExample.lean",
+      "line": 26,
+      "href": "../code/Lean/BlockPermanents/SixCycleExample.lean#L26"
+    },
+    "BlockPermanents.Support.orthogonal_cut": {
+      "module": "BlockPermanents.Support",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Support.lean",
+      "line": 17,
+      "href": "../code/Lean/BlockPermanents/Support.lean#L17"
+    },
+    "BlockPermanents.SupportCup.bubble": {
+      "module": "BlockPermanents.SupportCup",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SupportCup.lean",
+      "line": 38,
+      "href": "../code/Lean/BlockPermanents/SupportCup.lean#L38"
+    },
+    "BlockPermanents.SupportRouteExamples.crossed_gluing": {
+      "module": "BlockPermanents.SupportRouteExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SupportRouteExamples.lean",
+      "line": 48,
+      "href": "../code/Lean/BlockPermanents/SupportRouteExamples.lean#L48"
+    },
+    "BlockPermanents.SupportRouteExamples.glued_seam": {
+      "module": "BlockPermanents.SupportRouteExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SupportRouteExamples.lean",
+      "line": 127,
+      "href": "../code/Lean/BlockPermanents/SupportRouteExamples.lean#L127"
+    },
+    "BlockPermanents.SupportRouteExamples.perpendicular_rows": {
+      "module": "BlockPermanents.SupportRouteExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SupportRouteExamples.lean",
+      "line": 79,
+      "href": "../code/Lean/BlockPermanents/SupportRouteExamples.lean#L79"
+    },
+    "BlockPermanents.SupportRouteExamples.reflected_agree": {
+      "module": "BlockPermanents.SupportRouteExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SupportRouteExamples.lean",
+      "line": 61,
+      "href": "../code/Lean/BlockPermanents/SupportRouteExamples.lean#L61"
+    },
+    "BlockPermanents.SupportRouteExamples.reflected_seam": {
+      "module": "BlockPermanents.SupportRouteExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SupportRouteExamples.lean",
+      "line": 114,
+      "href": "../code/Lean/BlockPermanents/SupportRouteExamples.lean#L114"
+    },
+    "BlockPermanents.SupportRouteExamples.seam_energy": {
+      "module": "BlockPermanents.SupportRouteExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SupportRouteExamples.lean",
+      "line": 121,
+      "href": "../code/Lean/BlockPermanents/SupportRouteExamples.lean#L121"
+    },
+    "BlockPermanents.SupportRouteExamples.supported_bubble": {
+      "module": "BlockPermanents.SupportRouteExamples",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/SupportRouteExamples.lean",
+      "line": 38,
+      "href": "../code/Lean/BlockPermanents/SupportRouteExamples.lean#L38"
+    },
+    "BlockPermanents.TenEndpoint.marcus_ten": {
+      "module": "BlockPermanents.TenEndpoint",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TenEndpoint.lean",
+      "line": 56,
+      "href": "../code/Lean/BlockPermanents/TenEndpoint.lean#L56"
+    },
+    "BlockPermanents.ThreeGeneralOpen.canonical_raw": {
+      "module": "BlockPermanents.ThreeCanonical",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ThreeCanonical.lean",
+      "line": 36,
+      "href": "../code/Lean/BlockPermanents/ThreeCanonical.lean#L36"
+    },
+    "BlockPermanents.ThreeGeneralOpen.original_bent": {
+      "module": "BlockPermanents.ThreeOriginal",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ThreeOriginal.lean",
+      "line": 58,
+      "href": "../code/Lean/BlockPermanents/ThreeOriginal.lean#L58"
+    },
+    "BlockPermanents.ThreeLastCap.concrete_resolution": {
+      "module": "BlockPermanents.ThreeLastCap",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ThreeLastCap.lean",
+      "line": 141,
+      "href": "../code/Lean/BlockPermanents/ThreeLastCap.lean#L141"
+    },
+    "BlockPermanents.ThreeOnesExample.physical_terms": {
+      "module": "BlockPermanents.ThreeOnesExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ThreeOnesExample.lean",
+      "line": 101,
+      "href": "../code/Lean/BlockPermanents/ThreeOnesExample.lean#L101"
+    },
+    "BlockPermanents.ThreeOnesExample.raw_permanents": {
+      "module": "BlockPermanents.ThreeOnesExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ThreeOnesExample.lean",
+      "line": 167,
+      "href": "../code/Lean/BlockPermanents/ThreeOnesExample.lean#L167"
+    },
+    "BlockPermanents.ThreePlane.routed_resolution": {
+      "module": "BlockPermanents.ThreePlaneRouted",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ThreePlaneRouted.lean",
+      "line": 37,
+      "href": "../code/Lean/BlockPermanents/ThreePlaneRouted.lean#L37"
+    },
+    "BlockPermanents.ThreePlane.subspace_compression_psd": {
+      "module": "BlockPermanents.ThreePlaneTheorem",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ThreePlaneTheorem.lean",
+      "line": 72,
+      "href": "../code/Lean/BlockPermanents/ThreePlaneTheorem.lean#L72"
+    },
+    "BlockPermanents.ThreePlane.subspace_decomposition": {
+      "module": "BlockPermanents.ThreePlaneTheorem",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ThreePlaneTheorem.lean",
+      "line": 44,
+      "href": "../code/Lean/BlockPermanents/ThreePlaneTheorem.lean#L44"
+    },
+    "BlockPermanents.Threshold.five_coefficients": {
+      "module": "BlockPermanents.Threshold",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Threshold.lean",
+      "line": 232,
+      "href": "../code/Lean/BlockPermanents/Threshold.lean#L232"
+    },
+    "BlockPermanents.Threshold.pathCoeff": {
+      "module": "BlockPermanents.Threshold",
+      "kind": "definition",
+      "path": "code/Lean/BlockPermanents/Threshold.lean",
+      "line": 109,
+      "href": "../code/Lean/BlockPermanents/Threshold.lean#L109"
+    },
+    "BlockPermanents.Threshold.tradeMatrix_six_four_psd": {
+      "module": "BlockPermanents.Threshold",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Threshold.lean",
+      "line": 266,
+      "href": "../code/Lean/BlockPermanents/Threshold.lean#L266"
+    },
+    "BlockPermanents.TradePivots.six_four": {
+      "module": "BlockPermanents.TradePivots",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TradePivots.lean",
+      "line": 236,
+      "href": "../code/Lean/BlockPermanents/TradePivots.lean#L236"
+    },
+    "BlockPermanents.TradePivots.trade_parameter": {
+      "module": "BlockPermanents.TradePivots",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TradePivots.lean",
+      "line": 194,
+      "href": "../code/Lean/BlockPermanents/TradePivots.lean#L194"
+    },
+    "BlockPermanents.Transfer.packet_transfer": {
+      "module": "BlockPermanents.Transfer",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Transfer.lean",
+      "line": 157,
+      "href": "../code/Lean/BlockPermanents/Transfer.lean#L157"
+    },
+    "BlockPermanents.Transfer.tensor_packet_transfer": {
+      "module": "BlockPermanents.Transfer",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/Transfer.lean",
+      "line": 216,
+      "href": "../code/Lean/BlockPermanents/Transfer.lean#L216"
+    },
+    "BlockPermanents.TransferBlocks.four_supported": {
+      "module": "BlockPermanents.TransferBlocks",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TransferBlocks.lean",
+      "line": 379,
+      "href": "../code/Lean/BlockPermanents/TransferBlocks.lean#L379"
+    },
+    "BlockPermanents.TwoCapExample.gram": {
+      "module": "BlockPermanents.TwoCapExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TwoCapExample.lean",
+      "line": 32,
+      "href": "../code/Lean/BlockPermanents/TwoCapExample.lean#L32"
+    },
+    "BlockPermanents.TwoCapExample.joint_energy": {
+      "module": "BlockPermanents.TwoCapExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TwoCapExample.lean",
+      "line": 68,
+      "href": "../code/Lean/BlockPermanents/TwoCapExample.lean#L68"
+    },
+    "BlockPermanents.TwoCapExample.separate_energy": {
+      "module": "BlockPermanents.TwoCapExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TwoCapExample.lean",
+      "line": 62,
+      "href": "../code/Lean/BlockPermanents/TwoCapExample.lean#L62"
+    },
+    "BlockPermanents.TwoFullCaps.full_words": {
+      "module": "BlockPermanents.FullCapWords",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/FullCapWords.lean",
+      "line": 77,
+      "href": "../code/Lean/BlockPermanents/FullCapWords.lean#L77"
+    },
+    "BlockPermanents.TwoMarkedExample.adapted_wire": {
+      "module": "BlockPermanents.TwoMarkedExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TwoMarkedExample.lean",
+      "line": 83,
+      "href": "../code/Lean/BlockPermanents/TwoMarkedExample.lean#L83"
+    },
+    "BlockPermanents.TwoMarkedExample.sole_survivor": {
+      "module": "BlockPermanents.TwoMarkedExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TwoMarkedExample.lean",
+      "line": 55,
+      "href": "../code/Lean/BlockPermanents/TwoMarkedExample.lean#L55"
+    },
+    "BlockPermanents.TwoMarkedExample.subspace_example": {
+      "module": "BlockPermanents.TwoMarkedExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TwoMarkedExample.lean",
+      "line": 106,
+      "href": "../code/Lean/BlockPermanents/TwoMarkedExample.lean#L106"
+    },
+    "BlockPermanents.TwoMarkedExample.three_placements": {
+      "module": "BlockPermanents.TwoMarkedExample",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TwoMarkedExample.lean",
+      "line": 18,
+      "href": "../code/Lean/BlockPermanents/TwoMarkedExample.lean#L18"
+    },
+    "BlockPermanents.TwoStepSquares.unordered_path_squares": {
+      "module": "BlockPermanents.TwoStepGlobalSquares",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/TwoStepGlobalSquares.lean",
+      "line": 123,
+      "href": "../code/Lean/BlockPermanents/TwoStepGlobalSquares.lean#L123"
+    },
+    "BlockPermanents.VerifiedPaper.four_quadratic": {
+      "module": "BlockPermanents.VerifiedPaper",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/VerifiedPaper.lean",
+      "line": 27,
+      "href": "../code/Lean/BlockPermanents/VerifiedPaper.lean#L27"
+    },
+    "BlockPermanents.VerifiedPaper.plane_compression": {
+      "module": "BlockPermanents.VerifiedPaper",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/VerifiedPaper.lean",
+      "line": 18,
+      "href": "../code/Lean/BlockPermanents/VerifiedPaper.lean#L18"
+    },
+    "BlockPermanents.ZeroCap.opening": {
+      "module": "BlockPermanents.ZeroCap",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ZeroCap.lean",
+      "line": 118,
+      "href": "../code/Lean/BlockPermanents/ZeroCap.lean#L118"
+    },
+    "BlockPermanents.ZeroCap.singleton_clasp": {
+      "module": "BlockPermanents.ZeroCap",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/ZeroCap.lean",
+      "line": 20,
+      "href": "../code/Lean/BlockPermanents/ZeroCap.lean#L20"
+    },
+    "BlockPermanents.two_block_squares": {
+      "module": "BlockPermanents.MainResults",
+      "kind": "theorem",
+      "path": "code/Lean/BlockPermanents/MainResults.lean",
+      "line": 43,
+      "href": "../code/Lean/BlockPermanents/MainResults.lean#L43"
+    }
+  }
+}

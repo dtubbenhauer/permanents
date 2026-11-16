@@ -53,7 +53,7 @@ The web diagrams are editable TikZ in the [LaTeX source](paper/main.tex). The [p
 
 ## Reproducing the verification
 
-The build requires the `code/Lean/` directory from the full verification package. If your checkout contains only `code/computations/`, the [theorem index](ai/theorem-index.md) still gives the Lean declaration for each numbered statement.
+The build requires the `code/Lean/` directory from the full verification package.
 
 With Git and [elan](https://github.com/leanprover/elan) installed, run the following from the root of a checkout containing the Lean sources.
 

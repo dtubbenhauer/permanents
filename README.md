@@ -115,4 +115,4 @@ For five quadratic packets the distinction matters. The finite witness rules out
 
 ## Erratum
 
-In the last sentence of the proof of Lemma 5B.1, the four-packet average must be applied to both sides of the intermediate equality. It should read $[B]_{S_4}=[X_3]_{S_4}$. With this correction the proof gives the stated conclusion $[Q]_{S_4}=X_4$. [Erratum](ERRATUM.md) · [Manuscript passage](paper/main.tex#L1857)
+Empty so far.

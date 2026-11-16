@@ -11,7 +11,7 @@
     "audit": "code/Lean/verify.sh",
     "numbered_results": "ai/theorem-index.json",
     "computations": "code/computations/README.md",
-    "correction": "ERRATUM.md"
+    "correction": "code/Lean/MANUSCRIPT_INDEX.md"
   },
   "toolchain": "leanprover/lean4:v4.19.0",
   "mathlib_commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
@@ -32,14 +32,14 @@
       "sha256": "66cfae095c0644581abd87d9755c0c2b5c900bb3c2ee4009d0148a656838355a"
     },
     {
-      "path": "ERRATUM.md",
-      "bytes": 620,
-      "sha256": "c70346be262efd52dd47fef65bf8ee58fc08dee909ea3201d597bdedf27b5e91"
+      "path": "LICENSE",
+      "bytes": 1211,
+      "sha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e"
     },
     {
       "path": "README.md",
-      "bytes": 3789,
-      "sha256": "8f3a0f21a180fbc1d88181bb5649a4d1a9dfc2b38842baad596f127057ea478a"
+      "bytes": 6579,
+      "sha256": "28cedfb074ba8ccec54fc3bd0a35f28b59b14c327d724b300b6ce430a28b6f4c"
     },
     {
       "path": "ai/paper.md",
@@ -65,6 +65,11 @@
       "path": "code/Lean/Audit.lean",
       "bytes": 30994,
       "sha256": "f7674fc53d0ea229c2129827c8a9048ab5609665a8fd67412c9f4afc6e2d2a86"
+    },
+    {
+      "path": "code/Lean/BlockPermanents.lean",
+      "bytes": 14759,
+      "sha256": "8b18830f2eb4ed8ec7fa667d9c062686f8a2a2508acfbd16c1e446caf592e390"
     },
     {
       "path": "code/Lean/BlockPermanents/BalancedAssembly.lean",
@@ -1970,11 +1975,6 @@
       "path": "code/Lean/BlockPermanents/ZeroCapDefs.lean",
       "bytes": 3318,
       "sha256": "e0c2996da3933addd127f4c05764d171a8447a413984fb9603a981180a5f6f08"
-    },
-    {
-      "path": "code/Lean/BlockPermanents.lean",
-      "bytes": 14759,
-      "sha256": "8b18830f2eb4ed8ec7fa667d9c062686f8a2a2508acfbd16c1e446caf592e390"
     },
     {
       "path": "code/Lean/MANUSCRIPT_INDEX.md",

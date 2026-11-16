@@ -1,0 +1,26 @@
+# Lean and Lake build products
+.lake/
+*.olean
+*.ilean
+
+# Local Python and notebook outputs
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+
+# Local LaTeX builds
+/paper/*.aux
+/paper/*.fdb_latexmk
+/paper/*.fls
+/paper/*.log
+/paper/*.out
+/paper/*.synctex.gz
+/paper/*.toc
+/paper/main.pdf
+/paper/stage-40.tex
+
+# Rebuilt computational intermediates
+/code/computations/five-packet-obstruction/five_packet_density
+/code/computations/five-packet-obstruction/verify_five_packet_ppt
+/code/computations/five-packet-obstruction/five_packet_density_cut*_d8.bin
+/code/computations/four-quadratic-certificate/two_bends/canon_*.json
